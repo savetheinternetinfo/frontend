@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import Helmet from "react-helmet";
 import Logo from "../assets/favicon.ico";
+import Home from "./Home";
+import About from "./About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { LanguageContext } from "../contexts/LanguageContext";
-import Home from "./Home";
 
 function App() {
   const ctx = useContext(LanguageContext);
@@ -19,7 +20,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={Home} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </Router>
     </React.Fragment>
