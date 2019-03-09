@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import Helmet from "react-helmet";
 import Logo from "../assets/favicon.ico";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { LanguageContext } from "../contexts/LanguageContext";
+import Home from "./Home";
 
 function App() {
   const ctx = useContext(LanguageContext);
@@ -14,14 +16,12 @@ function App() {
         <title>Save the Internet</title>
         <link rel="icon" type="image/png" href={Logo} sizes="16x16" />
       </Helmet>
-      <button
-        onClick={() => {
-          ctx.language = "de-de";
-          console.log(ctx);
-        }}
-      >
-        Example: Change Language to German
-      </button>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={Home} />
+        </Switch>
+      </Router>
     </React.Fragment>
   );
 }
