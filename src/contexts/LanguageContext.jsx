@@ -1,7 +1,7 @@
 import React from "react";
 
 let initialState = {
-  language: "en-en"
+  language: navigator.language
 };
 
 export const LanguageContext = React.createContext(initialState);
