@@ -1,7 +1,9 @@
 import React from "react";
+import * as Feather from "react-feather";
 
 function Icon({ icon }) {
-  return <div className="text-white">{icon}</div>;
+  const IconComponent = Feather[icon];
+  return <IconComponent className="text-white" />;
 }
 
 export default Icon;

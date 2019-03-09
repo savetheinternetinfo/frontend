@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import * as Feather from "react-feather";
 
 function NavIcon({ icon, route }) {
+  const IconComponent = Feather[icon];
   return (
     <Link
       to={route}
@@ -10,7 +12,7 @@ function NavIcon({ icon, route }) {
         transition: "color .25s ease-in-out"
       }}
     >
-      {icon}
+      <IconComponent />
     </Link>
   );
 }
