@@ -1,23 +1,24 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import NavLink from "./common/NavLink";
+import NavURL from "./common/NavURL";
 import NavIcon from "./common/NavIcon";
+
+import FlagMenu from "./common/FlagMenu";
 
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-blue p-6">
-      <div className="flex items-center flex-no-shrink text-white mr-6" />
-      <NavLink text="About us" route="/" />
+    <nav className="flex flex-row-reverse bg-blue">
+      <FlagMenu />
+      <NavURL text="Demos" route="/" />
+      <NavURL text="About" route="/" />
+      <NavURL text="Memes" route="/" />
+      <NavURL text="Gallery" route="/" />
+      <NavURL text="About us" route="/" />
 
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="text-sm lg:flex-grow">
-          <NavLink text="About us" route="/" />
-          <NavLink text="Gallery" route="/" />
-          <NavLink text="Memes" route="/" />
-          <NavLink text="About" route="/" />
-          <NavLink text="Demos" route="/" />
-        </div>
-      </div>
+      <NavIcon icon="Home" url="http://google.com" />
+      <NavIcon icon="Youtube" url="http://google.com" />
+      <NavIcon icon="Instagram" url="http://google.com" />
+      <NavIcon icon="Twitter" url="http://google.com" />
+      <NavIcon icon="Facebook" url="http://google.com" />
     </nav>
   );
 }

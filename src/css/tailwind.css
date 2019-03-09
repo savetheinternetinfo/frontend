@@ -4861,6 +4861,32 @@ table {
   z-index: auto;
 }
 
+.underline {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+
+.underline:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 100%;
+  bottom: 0px;
+  background: #fff;
+  height: 2px;
+  transition-property: left right;
+  transition-duration: .2s;
+  transition-timing-function: ease-out;
+}
+
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after {
+  right: 0;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;
