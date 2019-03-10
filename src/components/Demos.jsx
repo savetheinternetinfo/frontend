@@ -8,6 +8,7 @@ import { LanguageContext } from "../contexts/LanguageContext";
 function Demos() {
   const ctx = useContext(LanguageContext);
   const [count, setCount] = useState(0);
+  const [events, setEvents] = useState([]);
   const eventlist = useRef(null);
   useEffect(() => {
     if (count === 0) {
@@ -37,7 +38,7 @@ function Demos() {
 
       function bindPopoup(feature, layer) {
         let popupText = "";
-
+        let na = [];
         for (let index = 0; index < feature.properties.length; index++) {
           const element = feature.properties[index];
           if (element.fa_icon === "fa-clock-o") {
@@ -50,14 +51,17 @@ function Demos() {
             format = format.replace(/.YYYY/, "");
             element.value = momentObj.locale(ctx.language).format(format);
           }
+          na.push({ icon: element.fa_icon, val: element.value });
           popupText += `<p class="mb-0 font-thin"><i class="fa ${
             element.fa_icon
           }" aria-hidden="true"></i> ${element.value}</p>`;
         }
-
-        let listText = `<li class="shadow-md p-2 mb-4 rounded-lg cursor-pointer" id="markerListItem" data-latlang="${
+        let tmp = events;
+        tmp.push(na);
+        setEvents(tmp);
+        /*let listText = `<li class="shadow-md p-2 mb-4 rounded-lg cursor-pointer" id="markerListItem" data-latlang="${
           feature.geometry.coordinates
-        }">${popupText}</li>`;
+        }">${popupText}</li>`;*/
         let popup = layer.bindPopup(popupText);
         popup.on("click", function(e) {
           demomap.flyTo(e.latlng, 14, {
@@ -65,7 +69,6 @@ function Demos() {
             duration: 1.5
           });
         });
-        //jQuery("#event-list").append(listText);
       }
 
       let geoJSONLayer = leaflet
@@ -95,7 +98,15 @@ function Demos() {
           style={{ height: window.innerHeight / 1.8 + "px" }}
           id="demomap"
         />
-        <div className="" ref={eventlist} />
+        <div className="flex flex-wrap" ref={eventlist}>
+          {events.map(x => {
+            return (
+              <div className="w-1/4 p-2">
+                <div className="bg-grey-lighter rounded p-4 w-full">a</div>
+              </div>
+            );
+          })}
+        </div>
       </React.Fragment>
     </div>
   );
