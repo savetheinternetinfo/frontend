@@ -15,25 +15,25 @@ function Footer() {
         <div className="w-1/3 pl-16">
           <h3 className="text-orange mb-4">Links</h3>
           <Link
-            className="text-white hover:text-orange no-underline block"
+            className="bezier text-white hover:text-orange no-underline block"
             to="/infos"
           >
             Informationen
           </Link>
           <Link
-            className="text-white hover:text-orange no-underline block mt-4"
+            className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/about"
           >
             Über Uns
           </Link>
           <Link
-            className="text-white hover:text-orange no-underline block mt-4"
+            className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/gallery"
           >
             Galerie
           </Link>
           <Link
-            className="text-white hover:text-orange no-underline block mt-4"
+            className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/contact"
           >
             Kontakt
@@ -42,13 +42,13 @@ function Footer() {
         <div className="w-1/3 pl-16">
           <h3 className="text-orange mb-4">Rechtlich</h3>
           <Link
-            className="text-white hover:text-orange no-underline block"
+            className="bezier text-white hover:text-orange no-underline block"
             to="/imprint"
           >
             Impressum
           </Link>
           <Link
-            className="text-white hover:text-orange no-underline block mt-4"
+            className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/privacy"
           >
             Datenschutz
