@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import { FlagIcon } from "react-flag-kit";
-
 import { LanguageContext } from "../../contexts/LanguageContext";
 
 import config from "../../config.json";
+import { switchLanguageSet } from "../../utils/switchLanguageSet";
 
 const flagIconClasses =
   "no-underline select-none cursor-pointer text-center ml-2 mr-4";
@@ -14,10 +14,9 @@ const flagIconSize = 26;
 
 function FlagMenu() {
   const [showLangMenu, setLangMenuToggle] = useState(false);
-
-  const { language } = useContext(LanguageContext);
+  const ctx = useContext(LanguageContext);
   const [userAgentLang] = config.languages.filter(element =>
-    language.includes(element.id)
+    ctx.language.includes(element.id)
   );
 
   return (
@@ -31,8 +30,6 @@ function FlagMenu() {
           setLangMenuToggle(!showLangMenu);
         }}
       />
-      {/* hidden add below shadow-md*/}
-      {console.log(showLangMenu)}
       <CSSTransition
         in={showLangMenu}
         timeout={300}
@@ -49,6 +46,10 @@ function FlagMenu() {
                     style={flagIconStyle}
                     code={lang.flag}
                     size={flagIconSize}
+                    onClick={() => {
+                      ctx.language = lang.id;
+                      switchLanguageSet(ctx, lang.id);
+                    }}
                   />
                 </li>
               );
