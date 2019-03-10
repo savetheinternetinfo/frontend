@@ -10,7 +10,7 @@ function About() {
   return (
     <React.Fragment>
       <Header />
-      <div className="w-1/2 mx-auto py-16">
+      <div className="w-1/2 mx-auto py-16 text-white">
         <h1>Über uns</h1> <br />
         <h3>Wer sind wir?</h3>
         <br />
