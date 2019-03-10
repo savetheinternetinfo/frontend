@@ -5,6 +5,7 @@ import geojs from "../mapcoords.json";
 import moment from "moment";
 import { LanguageContext } from "../contexts/LanguageContext";
 import Footer from "./Footer";
+import Banner from "./common/Banner";
 function Demos() {
   const ctx = useContext(LanguageContext);
   const [count, setCount] = useState(0);
@@ -89,15 +90,9 @@ function Demos() {
 
   return (
     <div>
+      <Navbar />
+      <Banner />
       <React.Fragment>
-        <div class="w-full bg-blue h-auto">
-          <Navbar />
-        </div>
-        <div
-          className="w-full bg-grey-lightest z-10"
-          style={{ height: window.innerHeight / 1.8 + "px" }}
-          id="demomap"
-        />
         <div
           className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue-light"
           ref={eventlist}
@@ -124,6 +119,11 @@ function Demos() {
             );
           })}
         </div>
+        <div
+          className="w-full bg-grey-lightest z-10"
+          style={{ height: window.innerHeight / 1.3 + "px" }}
+          id="demomap"
+        />
       </React.Fragment>
       <Footer />
     </div>

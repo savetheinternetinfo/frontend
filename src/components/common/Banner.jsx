@@ -44,7 +44,7 @@ function Banner() {
       </div>
       <Button text={"Sign the petition"} href={links.petition} />
       <video
-        className="absolute z-video pin-t pin-l min-w-full"
+        className="absolute z-video pin-t pin-l w-full"
         autoPlay
         loop
         muted
