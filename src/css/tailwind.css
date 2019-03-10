@@ -4897,6 +4897,20 @@ table {
   right: 0;
 }
 
+.tr-45 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.-tr-45 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.bezier {
+  transition: all .27s cubic-bezier(.3, .1, .58, 1);
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

@@ -6,25 +6,13 @@ function NavIcon({ icon, route, url, size }) {
   const IconComponent = Feather[icon];
   const iconSize = size || 16;
   const classes =
-    "focus:outline-none text-white hover:text-orange-lighter text-center px-2 py-2 m-2 select-none";
+    "bezier focus:outline-none text-white hover:text-orange-lighter cursor-pointer text-center px-2 py-2 m-2 select-none";
   return typeof route === "undefined" ? (
-    <a
-      href={url}
-      className={classes}
-      style={{
-        transition: "color .25s ease-in-out"
-      }}
-    >
+    <a href={url} className={classes}>
       <IconComponent size={iconSize} />
     </a>
   ) : (
-    <Link
-      to={route}
-      className={classes}
-      style={{
-        transition: "color .25s ease-in-out"
-      }}
-    >
+    <Link to={route} className={classes}>
       <IconComponent size={iconSize} />
     </Link>
   );
