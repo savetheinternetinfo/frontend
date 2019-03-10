@@ -6,7 +6,7 @@ import FlagMenu from "./common/FlagMenu";
 
 function Navbar() {
   return (
-    <nav className="z-50 flex flex-row-reverse bg-blue h-auto">
+    <nav className="z-50 flex flex-row-reverse h-auto">
       <FlagMenu />
       <NavURL text="Demos" route="/" />
       <NavURL text="About" route="/" />

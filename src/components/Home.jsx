@@ -10,9 +10,11 @@ function Home() {
   return (
     <React.Fragment>
       <div className="flex mb-4">
-        <div className="w-full bg-blue h-auto">
-          <Navbar />
-          <Banner />
+        <div className="w-full h-auto">
+          <div>
+            <Navbar />
+            <Banner />
+          </div>
         </div>
       </div>
     </React.Fragment>

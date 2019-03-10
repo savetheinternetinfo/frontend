@@ -2890,6 +2890,10 @@ table {
   margin: -8rem;
 }
 
+.-m-64 {
+  margin: -16rem;
+}
+
 .-m-px {
   margin: -1px;
 }
@@ -3032,6 +3036,16 @@ table {
 .-mx-32 {
   margin-left: -8rem;
   margin-right: -8rem;
+}
+
+.-my-64 {
+  margin-top: -16rem;
+  margin-bottom: -16rem;
+}
+
+.-mx-64 {
+  margin-left: -16rem;
+  margin-right: -16rem;
 }
 
 .-my-px {
@@ -3266,6 +3280,22 @@ table {
 
 .-ml-32 {
   margin-left: -8rem;
+}
+
+.-mt-64 {
+  margin-top: -16rem;
+}
+
+.-mr-64 {
+  margin-right: -16rem;
+}
+
+.-mb-64 {
+  margin-bottom: -16rem;
+}
+
+.-ml-64 {
+  margin-left: -16rem;
 }
 
 .-mt-px {
@@ -4859,6 +4889,10 @@ table {
 
 .z-auto {
   z-index: auto;
+}
+
+.z-video {
+  z-index: -1000;
 }
 
 .tilt {
@@ -7270,6 +7304,10 @@ table {
     margin: -8rem;
   }
 
+  .sm\:-m-64 {
+    margin: -16rem;
+  }
+
   .sm\:-m-px {
     margin: -1px;
   }
@@ -7412,6 +7450,16 @@ table {
   .sm\:-mx-32 {
     margin-left: -8rem;
     margin-right: -8rem;
+  }
+
+  .sm\:-my-64 {
+    margin-top: -16rem;
+    margin-bottom: -16rem;
+  }
+
+  .sm\:-mx-64 {
+    margin-left: -16rem;
+    margin-right: -16rem;
   }
 
   .sm\:-my-px {
@@ -7646,6 +7694,22 @@ table {
 
   .sm\:-ml-32 {
     margin-left: -8rem;
+  }
+
+  .sm\:-mt-64 {
+    margin-top: -16rem;
+  }
+
+  .sm\:-mr-64 {
+    margin-right: -16rem;
+  }
+
+  .sm\:-mb-64 {
+    margin-bottom: -16rem;
+  }
+
+  .sm\:-ml-64 {
+    margin-left: -16rem;
   }
 
   .sm\:-mt-px {
@@ -9223,6 +9287,10 @@ table {
 
   .sm\:z-auto {
     z-index: auto;
+  }
+
+  .sm\:z-video {
+    z-index: -1000;
   }
 }
 
@@ -11585,6 +11653,10 @@ table {
     margin: -8rem;
   }
 
+  .md\:-m-64 {
+    margin: -16rem;
+  }
+
   .md\:-m-px {
     margin: -1px;
   }
@@ -11727,6 +11799,16 @@ table {
   .md\:-mx-32 {
     margin-left: -8rem;
     margin-right: -8rem;
+  }
+
+  .md\:-my-64 {
+    margin-top: -16rem;
+    margin-bottom: -16rem;
+  }
+
+  .md\:-mx-64 {
+    margin-left: -16rem;
+    margin-right: -16rem;
   }
 
   .md\:-my-px {
@@ -11961,6 +12043,22 @@ table {
 
   .md\:-ml-32 {
     margin-left: -8rem;
+  }
+
+  .md\:-mt-64 {
+    margin-top: -16rem;
+  }
+
+  .md\:-mr-64 {
+    margin-right: -16rem;
+  }
+
+  .md\:-mb-64 {
+    margin-bottom: -16rem;
+  }
+
+  .md\:-ml-64 {
+    margin-left: -16rem;
   }
 
   .md\:-mt-px {
@@ -13538,6 +13636,10 @@ table {
 
   .md\:z-auto {
     z-index: auto;
+  }
+
+  .md\:z-video {
+    z-index: -1000;
   }
 }
 
@@ -15900,6 +16002,10 @@ table {
     margin: -8rem;
   }
 
+  .lg\:-m-64 {
+    margin: -16rem;
+  }
+
   .lg\:-m-px {
     margin: -1px;
   }
@@ -16042,6 +16148,16 @@ table {
   .lg\:-mx-32 {
     margin-left: -8rem;
     margin-right: -8rem;
+  }
+
+  .lg\:-my-64 {
+    margin-top: -16rem;
+    margin-bottom: -16rem;
+  }
+
+  .lg\:-mx-64 {
+    margin-left: -16rem;
+    margin-right: -16rem;
   }
 
   .lg\:-my-px {
@@ -16276,6 +16392,22 @@ table {
 
   .lg\:-ml-32 {
     margin-left: -8rem;
+  }
+
+  .lg\:-mt-64 {
+    margin-top: -16rem;
+  }
+
+  .lg\:-mr-64 {
+    margin-right: -16rem;
+  }
+
+  .lg\:-mb-64 {
+    margin-bottom: -16rem;
+  }
+
+  .lg\:-ml-64 {
+    margin-left: -16rem;
   }
 
   .lg\:-mt-px {
@@ -17853,6 +17985,10 @@ table {
 
   .lg\:z-auto {
     z-index: auto;
+  }
+
+  .lg\:z-video {
+    z-index: -1000;
   }
 }
 
@@ -20215,6 +20351,10 @@ table {
     margin: -8rem;
   }
 
+  .xl\:-m-64 {
+    margin: -16rem;
+  }
+
   .xl\:-m-px {
     margin: -1px;
   }
@@ -20357,6 +20497,16 @@ table {
   .xl\:-mx-32 {
     margin-left: -8rem;
     margin-right: -8rem;
+  }
+
+  .xl\:-my-64 {
+    margin-top: -16rem;
+    margin-bottom: -16rem;
+  }
+
+  .xl\:-mx-64 {
+    margin-left: -16rem;
+    margin-right: -16rem;
   }
 
   .xl\:-my-px {
@@ -20591,6 +20741,22 @@ table {
 
   .xl\:-ml-32 {
     margin-left: -8rem;
+  }
+
+  .xl\:-mt-64 {
+    margin-top: -16rem;
+  }
+
+  .xl\:-mr-64 {
+    margin-right: -16rem;
+  }
+
+  .xl\:-mb-64 {
+    margin-bottom: -16rem;
+  }
+
+  .xl\:-ml-64 {
+    margin-left: -16rem;
   }
 
   .xl\:-mt-px {
@@ -22168,5 +22334,9 @@ table {
 
   .xl\:z-auto {
     z-index: auto;
+  }
+
+  .xl\:z-video {
+    z-index: -1000;
   }
 }
