@@ -1,68 +1,87 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SaveTheInternet
 
-## Available Scripts
+<p align="center">
+<img height="150" width="auto" src="https://i.imgur.com/SXC70FD.png" /><br>
+Save the Internet with us
+</p>
 
-In the project directory, you can run:
+<hr>
 
-### `npm start`
+## :pushpin: About
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+On 20 June, the European Parliament voted on the Copyright Directive. <br>
+Members of the parliament are the only ones that can stand in the way of bad copyright legislation.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+**Note:** This is a ReactJS revamp to replace the [current website](https://github.com/savetheinternetinfo/website)
 
-### `npm test`
+<hr>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :computer: Website TBA
 
-### `npm run build`
+<!-- **Deployment:**
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[https://savetheinternet.info](https://savetheinternet.info)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+**Staging (dev branch):**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[https://dev.savetheinternet.info/](https://dev.savetheinternet.info/)
 
-### `npm run eject`
+<hr> -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :wrench: Used technologies / Libraries / Frameworks
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Dependencies**:
+| Name | Description |
+| ---------------------------------------------------- | :-----------------------------: |
+| [axios](https://ghub.io/axios) | Promise based HTTP client for the browser and node.js |
+| [leaflet](https://ghub.io/leaflet) | JavaScript library for mobile-friendly interactive maps |
+| [moment](https://ghub.io/moment) | Parse, validate, manipulate, and display dates |
+| [react](https://ghub.io/react) | React is a JavaScript library for building user interfaces. |
+| [react-dom](https://ghub.io/react-dom) | React package for working with the DOM. |
+| [react-feather](https://ghub.io/react-feather) | React component for Feather icons |
+| [react-flag-kit](https://ghub.io/react-flag-kit) | FlagKit for React |
+| [react-helmet](https://ghub.io/react-helmet) | A document head manager for React |
+| [react-router-dom](https://ghub.io/react-router-dom) | DOM bindings for React Router |
+| [react-scripts](https://ghub.io/react-scripts) | Configuration and scripts for Create React App. |
+| [react-typed](https://ghub.io/react-typed) | A react wrapper for typed.js |
+| [tailwindcss](https://ghub.io/tailwindcss) | A utility-first CSS framework for rapidly building custom user interfaces. |
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<hr>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## :chart_with_upwards_trend: Local testing
 
-## Learn More
+Current deployment platform specifications:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Operating System: macOS Mojave 10.14.3
+- Architecture: x86_64
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Installation & Quick setup:**
 
-### Code Splitting
+0. Open up your favorite terminal (and navigate somewhere you want to download the repository to) <br><br>
+1. Make sure you have nodejs installed. Test by entering <br>
+   \$ `node -v` <br>
+   If this returns a version number, NodeJS is installed. **If not**, get NodeJS <a href="https://nodejs.org/en/download/package-manager/">here</a>. <br><br>
+1. Clone the repository and navigate to it. <br>
+   \$ `git clone https://github.com/savetheinternetinfo/frontend.git && cd frontend` <br><br>
+1. Install all dependencies by typing <br>
+   \$ `npm i`<br>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**Developing & Building:**
 
-### Analyzing the Bundle Size
+Build and run a local instance: <br>
+\$ `npm start`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Build only:<br>
+\$ `npm run build`
 
-### Making a Progressive Web App
+**Info:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Per default, the server runs on port 3000 (http://localhost:3000). <br>
 
-### Advanced Configuration
+Save the Internet with us
+<br>
+**YEE**
+<img height="36" width="auto" src="https://lh3.googleusercontent.com/AxIOHcH_lkUSXysooWMb80b4ev5vkQKtRp7z5N3csvNo0EHz9T3FPopuypVwawh94EOf
+" /><br>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<hr>

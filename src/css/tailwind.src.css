@@ -1,0 +1,55 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+.tilt {
+  transform: skew(-3deg, 0.5deg) translateZ(0);
+}
+
+.untilt {
+  transform: skew(3deg, -0.5deg) translateZ(0);
+}
+
+.underline {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+.underline:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 100%;
+  bottom: 0px;
+  background: #ffffff;
+  height: 2px;
+  transition-property: left right;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after {
+  right: 0;
+}
+
+.tr-45 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.-tr-45 {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.bezier {
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
