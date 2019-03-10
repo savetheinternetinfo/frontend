@@ -1,1 +1,0 @@
-This Folder is used for reusable Components like Buttons.
