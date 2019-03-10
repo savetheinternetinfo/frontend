@@ -57,3 +57,8 @@ body {
 .bezier {
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
 }
+
+.center-video-fix {
+  left: 50;
+  transform: translate(-50%, 0);
+}

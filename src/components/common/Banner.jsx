@@ -11,7 +11,7 @@ import heroVideo from "../../assets/hero.mp4";
 function Banner() {
   const { links } = config;
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center overflow-hidden">
       <div className="relative tilt text-5xl bg-white mt-16 p-4">
         <div className="untilt">
           <a
@@ -43,14 +43,16 @@ function Banner() {
         <SocialButton icon="Youtube" link={links.youtube} />
       </div>
       <Button text={"Sign the petition"} href={links.petition} />
-      <video
-        className="absolute z-video pin-t pin-l w-full"
-        autoPlay
-        loop
-        muted
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
+      <div className="absolute z-video pin-t pin-l w-full overflow-hidden">
+        <video
+          className="min-h-full min-w-full relative center-video-fix"
+          autoPlay
+          loop
+          muted
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+      </div>
       <div className="relative w-full h-24" />
     </div>
   );
