@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.tilt {
+  transform: skew(-3deg, 0.5deg) translateZ(0);
+}
+
+.untilt {
+  transform: skew(3deg, -0.5deg) translateZ(0);
+}
+
 .underline {
   display: inline;
   position: relative;
