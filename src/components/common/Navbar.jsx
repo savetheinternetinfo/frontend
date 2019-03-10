@@ -13,7 +13,7 @@ function Navbar() {
       <NavURL text={translation["sti_day"]} route="/demos" />
       <NavURL text={translation["about_title"]} route="/" />
       <NavURL text={translation["memes_title"]} route="/" />
-      <NavURL text={translation["gallery_title"]} route="/" />
+      <NavURL text={translation["gallery_title"]} route="/gallery" />
       <NavURL text={translation["about_us_heading"]} route="/about" />
       <NavIcon icon="Home" route="/" />
     </nav>

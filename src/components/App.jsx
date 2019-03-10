@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Helmet from "react-helmet";
 import Logo from "../assets/favicon.ico";
 import Home from "./Home";
+import Gallery from "./Gallery";
 import About from "./About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -25,6 +26,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/demos" component={Demos} />
         </Switch>
       </Router>
