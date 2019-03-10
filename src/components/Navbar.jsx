@@ -13,7 +13,7 @@ function Navbar() {
       <NavURL text="Memes" route="/" />
       <NavURL text="Gallery" route="/" />
       <NavURL text="About us" route="/" />
-      <NavIcon icon="Home" url="http://google.com" />
+      <NavIcon icon="Home" route="/" />
     </nav>
   );
 }
