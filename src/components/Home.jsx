@@ -9,8 +9,8 @@ function Home() {
   const ctx = useContext(LanguageContext);
   return (
     <React.Fragment>
-      <div class="flex mb-4">
-        <div class="w-full bg-blue h-auto">
+      <div className="flex mb-4">
+        <div className="w-full bg-blue h-auto">
           <Navbar />
           <Banner />
         </div>
