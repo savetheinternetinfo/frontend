@@ -3,7 +3,7 @@ import leaflet from "leaflet";
 import geojs from "../mapcoords.json";
 import moment from "moment";
 import { LanguageContext } from "../contexts/LanguageContext";
-import Footer from "./Footer";
+import Footer from "./common/Footer";
 import Header from "./common/Header";
 
 function Demos() {

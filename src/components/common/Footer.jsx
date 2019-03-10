@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavIcon from "./common/NavIcon";
+import NavIcon from "./NavIcon";
 function Footer() {
   return (
-    <div className="w-full bg-blue-dark">
+    <div className="w-full bg-blue-dark mt-auto">
       <div className="bg-blue w-full p-4 text-center text-orange">
         Wir fordern jeden auf, nur die von uns freigegebenen Werbemittel an
         gestatteten Orten zu nutzen und zu verbreiten. Wir distanzieren uns von

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
-import Footer from "./Footer";
+import Footer from "./common/Footer";
 import Header from "./common/Header";
 
 import Masonry from "react-masonry-component";
@@ -59,10 +59,7 @@ function Gallery() {
       <React.Fragment>
         <div className="container mx-auto py-4">
           <div className="gallery-sizer w-1/5"></div>
-          <Masonry
-          className=""
-            options={masonryOptions}
-          >
+          <Masonry options={masonryOptions}>
             {galleryData.map((i, idx) => 
               <div key={idx} className="gallery-item w-1/4 p-1" onClick={() => {setLightboxIndex(idx); setLightboxOpen(true)}}>
                 <img className="w-full" src={i.thumbUrl}></img>

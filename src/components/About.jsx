@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import { LanguageContext } from "../contexts/LanguageContext";
-import Footer from "./Footer";
+import Footer from "./common/Footer";
 import Header from "./common/Header";
 
 function About() {
