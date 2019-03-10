@@ -4,7 +4,7 @@ import leaflet from "leaflet";
 import geojs from "../mapcoords.json";
 import moment from "moment";
 import { LanguageContext } from "../contexts/LanguageContext";
-
+import Footer from "./Footer";
 function Demos() {
   const ctx = useContext(LanguageContext);
   const [count, setCount] = useState(0);
@@ -125,6 +125,7 @@ function Demos() {
           })}
         </div>
       </React.Fragment>
+      <Footer />
     </div>
   );
 }
