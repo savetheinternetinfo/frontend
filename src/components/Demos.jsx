@@ -51,7 +51,7 @@ function Demos() {
             format = format.replace(/.YYYY/, "");
             element.value = momentObj.locale(ctx.language).format(format);
           }
-          na.push({ icon: element.fa_icon, val: element.value });
+          na.push({ icon: element.fa_icon, value: element.value });
           popupText += `<p class="mb-0 font-thin"><i class="fa ${
             element.fa_icon
           }" aria-hidden="true"></i> ${element.value}</p>`;
@@ -98,11 +98,28 @@ function Demos() {
           style={{ height: window.innerHeight / 1.8 + "px" }}
           id="demomap"
         />
-        <div className="flex flex-wrap" ref={eventlist}>
+        <div
+          className="flex flex-no-wrap p-2 w-full overflow-x-scroll"
+          ref={eventlist}
+        >
           {events.map(x => {
             return (
-              <div className="w-1/4 p-2">
-                <div className="bg-grey-lighter rounded p-4 w-full">a</div>
+              <div className="w-1/6 flex-none p-2 ">
+                <div className="bg-blue text-white rounded p-4 w-full h-full shadow rounded">
+                  {x.map(e => {
+                    return (
+                      <p class="font-thin mt-2">
+                        <span className="flex">
+                          <i
+                            className={"w-8 fa " + e.icon}
+                            aria-hidden="true"
+                          />
+                          <div dangerouslySetInnerHTML={{ __html: e.value }} />
+                        </span>
+                      </p>
+                    );
+                  })}
+                </div>
               </div>
             );
           })}
