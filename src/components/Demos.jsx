@@ -12,7 +12,9 @@ function Demos() {
   const [events, setEvents] = useState([]);
   useEffect(() => {
     if (count === 0) {
-      const demomap = leaflet.map("demomap");
+      const demomap = leaflet.map("demomap", {
+        scrollWheelZoom: false,
+      });
       leaflet
         .tileLayer(
           "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
@@ -94,7 +96,7 @@ function Demos() {
         <div className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue-light">
           {events.map(x => {
             return (
-              <div className="w-1/6 flex-none p-2 ">
+              <div className="flex-none p-2" style={{'width': '15rem'}}>
                 <div className="bg-blue text-white rounded p-4 w-full h-full shadow rounded">
                   {x.map(e => {
                     return (
