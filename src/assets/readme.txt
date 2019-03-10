@@ -1,1 +1,0 @@
-This Folder is used for Permanent Static Assets
