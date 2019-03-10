@@ -4899,6 +4899,10 @@ table {
   z-index: -1;
 }
 
+body {
+  background-color: rgba(43, 91, 140, .2);
+}
+
 .tilt {
   -webkit-transform: skew(-3deg, .5deg) translateZ(0);
           transform: skew(-3deg, .5deg) translateZ(0);

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: rgba(43, 91, 140, 0.2);
+}
+
 .tilt {
   transform: skew(-3deg, 0.5deg) translateZ(0);
 }
