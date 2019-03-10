@@ -99,7 +99,7 @@ function Demos() {
           id="demomap"
         />
         <div
-          className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-grey-lighter"
+          className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue-light"
           ref={eventlist}
         >
           {events.map(x => {
