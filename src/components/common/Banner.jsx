@@ -44,13 +44,14 @@ function Banner() {
       </div>
       <Button text={"Sign the petition"} href={links.petition} />
       <video
-        className="absolute z-video pin-t pin-l min-w-full "
+        className="absolute z-video pin-t pin-l min-w-full"
         autoPlay
         loop
         muted
       >
         <source src={heroVideo} type="video/mp4" />
       </video>
+      <div className="relative w-full h-24" />
     </div>
   );
 }

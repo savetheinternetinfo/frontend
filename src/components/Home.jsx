@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
 // import Button from "./common/Button";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import Banner from "./common/Banner";
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
     <React.Fragment>
       <Navbar />
       <Banner />
+      <Footer />
     </React.Fragment>
   );
 }
