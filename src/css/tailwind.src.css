@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: rgba(43, 91, 140, 0.2);
+  background-color: #0e2036;
 }
 
 .tilt {
