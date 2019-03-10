@@ -79,7 +79,6 @@ Per default, the server runs on port 3000 (http://localhost:3000). <br>
 Save the Internet with us
 <br>
 **YEE**
-<img height="36" width="auto" src="https://lh3.googleusercontent.com/AxIOHcH_lkUSXysooWMb80b4ev5vkQKtRp7z5N3csvNo0EHz9T3FPopuypVwawh94EOf
-" /><br>
+<img height="36" width="auto" src="https://pbs.twimg.com/profile_images/504715443479670784/fauyuPDy_400x400.png"/><br>
 
 <hr>
