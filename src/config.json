@@ -5,5 +5,27 @@
     "twitter": "https://twitter.com/uploadfilter",
     "instagram": "https://www.instagram.com/savetheinternetpetition/",
     "youtube": "https://www.youtube.com/channel/UCfsfq_B3zJU4_Zjqtw5lhhQ"
-  }
+  },
+  "languages": [
+    {
+      "id": "de",
+      "flag": "DE"
+    },
+    {
+      "id": "en",
+      "flag": "GB"
+    },
+    {
+      "id": "fr",
+      "flag": "FR"
+    },
+    {
+      "id": "it",
+      "flag": "IT"
+    },
+    {
+      "id": "nl",
+      "flag": "NL"
+    }
+  ]
 }
