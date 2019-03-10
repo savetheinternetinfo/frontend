@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
 
 import { LanguageContext } from "../contexts/LanguageContext";
-import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Banner from "./common/Banner";
+import Header from "./common/Header";
 
 function About() {
   const ctx = useContext(LanguageContext);
 
   return (
     <React.Fragment>
-      <Navbar />
-      <Banner />
+      <Header />
       <div className="w-1/2 mx-auto py-16">
         <h1>Über uns</h1> <br />
         <h3>Wer sind wir?</h3>

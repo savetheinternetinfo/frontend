@@ -1,12 +1,12 @@
 import React from "react";
-import NavURL from "./common/NavURL";
-import NavIcon from "./common/NavIcon";
+import NavURL from "./NavURL";
+import NavIcon from "./NavIcon";
 
-import FlagMenu from "./common/FlagMenu";
+import FlagMenu from "./FlagMenu";
 
 function Navbar() {
   return (
-    <nav className="z-50 flex flex-row-reverse h-auto">
+    <nav className="z-50 flex flex-row-reverse h-auto self-end">
       <FlagMenu />
       <NavURL text="Demos" route="/demos" />
       <NavURL text="About" route="/" />

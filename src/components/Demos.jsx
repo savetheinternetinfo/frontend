@@ -1,11 +1,11 @@
-import Navbar from "./Navbar";
+
 import React, { useState, useRef, useContext, useEffect } from "react";
 import leaflet from "leaflet";
 import geojs from "../mapcoords.json";
 import moment from "moment";
 import { LanguageContext } from "../contexts/LanguageContext";
 import Footer from "./Footer";
-import Banner from "./common/Banner";
+import Header from "./common/Header";
 function Demos() {
   const ctx = useContext(LanguageContext);
   const [count, setCount] = useState(0);
@@ -90,8 +90,7 @@ function Demos() {
 
   return (
     <div>
-      <Navbar />
-      <Banner />
+      <Header />
       <React.Fragment>
         <div
           className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue-light"
