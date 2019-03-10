@@ -10,7 +10,6 @@ import Demos from "./Demos";
 
 function App() {
   const ctx = useContext(LanguageContext);
-
   return (
     <React.Fragment>
       <Helmet>
