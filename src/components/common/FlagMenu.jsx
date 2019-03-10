@@ -18,6 +18,9 @@ function FlagMenu() {
   const [userAgentLang] = config.languages.filter(element =>
     ctx.language.includes(element.id)
   );
+  const otherLanguages = config.languages.filter(
+    element => !ctx.language.includes(element.id)
+  );
 
   return (
     <div className="language-picker mr-2">
@@ -38,7 +41,7 @@ function FlagMenu() {
       >
         <menu className="absolute w-full m-0 p-0 pin-l">
           <ul className="flex flex-wrap justify-end w-full list-reset">
-            {config.languages.map(lang => {
+            {otherLanguages.map(lang => {
               return (
                 <li className={"mb-2 mr-2"} key={`key-${lang.id}`}>
                   <FlagIcon
@@ -49,6 +52,7 @@ function FlagMenu() {
                     onClick={() => {
                       ctx.language = lang.id;
                       switchLanguageSet(ctx, lang.id);
+                      setLangMenuToggle(!showLangMenu);
                     }}
                   />
                 </li>
