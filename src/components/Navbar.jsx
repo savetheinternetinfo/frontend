@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="z-50 flex flex-row-reverse h-auto">
       <FlagMenu />
-      <NavURL text="Demos" route="/" />
+      <NavURL text="Demos" route="/demos" />
       <NavURL text="About" route="/" />
       <NavURL text="Memes" route="/" />
       <NavURL text="Gallery" route="/" />
