@@ -29,7 +29,7 @@ function Banner() {
       <p class="text-xl px-2 text-center text-white">
         The Internet is in danger and you can save it!
       </p>
-      <div className="flex flex-row">
+      <div className="flex flex-row my-6">
         <SocialButton icon="Facebook" link="https://savetheinternet.info/" />
         <SocialButton icon="Twitter" link="https://savetheinternet.info/" />
         <SocialButton icon="Instagram" link="https://savetheinternet.info/" />
