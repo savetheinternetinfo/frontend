@@ -1,5 +1,4 @@
-
-import React, { useState, useRef, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import leaflet from "leaflet";
 import geojs from "../mapcoords.json";
 import moment from "moment";
@@ -10,7 +9,6 @@ function Demos() {
   const ctx = useContext(LanguageContext);
   const [count, setCount] = useState(0);
   const [events, setEvents] = useState([]);
-  const eventlist = useRef(null);
   useEffect(() => {
     if (count === 0) {
       const demomap = leaflet.map("demomap");
@@ -92,10 +90,7 @@ function Demos() {
     <div>
       <Header />
       <React.Fragment>
-        <div
-          className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue-light"
-          ref={eventlist}
-        >
+        <div className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue-light">
           {events.map(x => {
             return (
               <div className="w-1/6 flex-none p-2 ">
