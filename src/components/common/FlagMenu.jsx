@@ -5,9 +5,12 @@ function FlagMenu() {
   return (
     <div>
       <FlagIcon
-        className="text-center px-2 py-2 m-2 no-underline select-none"
+        className="no-underline select-none cursor-pointer text-center ml-2 mr-4"
+        style={{
+          marginTop: "0.68rem"
+        }}
         code="DE"
-        size={36}
+        size={26}
       />
     </div>
   );

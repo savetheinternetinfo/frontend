@@ -686,7 +686,8 @@ module.exports = {
     "16": "4rem",
     "20": "5rem",
     "24": "6rem",
-    "32": "8rem"
+    "32": "8rem",
+    "64": "16rem"
   },
 
   /*
@@ -731,6 +732,7 @@ module.exports = {
 
   zIndex: {
     auto: "auto",
+    video: -1000,
     "0": 0,
     "10": 10,
     "20": 20,
