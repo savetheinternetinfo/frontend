@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FootIcon from "./common/FootIcon";
+import NavIcon from "./common/NavIcon";
 function Footer() {
   return (
     <div className="w-full bg-blue-dark">
@@ -15,25 +15,25 @@ function Footer() {
         <div className="w-1/3 pl-16">
           <h3 className="text-orange mb-4">Links</h3>
           <Link
-            className="text-orange hover:text-white no-underline block"
+            className="text-white hover:text-orange no-underline block"
             to="/infos"
           >
             Informationen
           </Link>
           <Link
-            className="text-orange hover:text-white no-underline block mt-4"
+            className="text-white hover:text-orange no-underline block mt-4"
             to="/about"
           >
             Über Uns
           </Link>
           <Link
-            className="text-orange hover:text-white no-underline block mt-4"
+            className="text-white hover:text-orange no-underline block mt-4"
             to="/gallery"
           >
             Galerie
           </Link>
           <Link
-            className="text-orange hover:text-white no-underline block mt-4"
+            className="text-white hover:text-orange no-underline block mt-4"
             to="/contact"
           >
             Kontakt
@@ -42,13 +42,13 @@ function Footer() {
         <div className="w-1/3 pl-16">
           <h3 className="text-orange mb-4">Rechtlich</h3>
           <Link
-            className="text-orange hover:text-white no-underline block"
+            className="text-white hover:text-orange no-underline block"
             to="/imprint"
           >
             Impressum
           </Link>
           <Link
-            className="text-orange hover:text-white no-underline block mt-4"
+            className="text-white hover:text-orange no-underline block mt-4"
             to="/privacy"
           >
             Datenschutz
@@ -56,15 +56,15 @@ function Footer() {
         </div>
         <div className="w-1/3 pl-16">
           <h3 className="mx-4 text-orange mb-4">Social</h3>
-          <FootIcon size={18} icon="Facebook" route="/" />
-          <FootIcon size={18} icon="Twitter" route="/" />
+          <NavIcon size={18} icon="Facebook" route="/" />
+          <NavIcon size={18} icon="Twitter" route="/" />
           <br />
           <br />
-          <FootIcon size={18} icon="Instagram" route="/" />
-          <FootIcon size={18} icon="Youtube" route="/" />
+          <NavIcon size={18} icon="Instagram" route="/" />
+          <NavIcon size={18} icon="Youtube" route="/" />
           <br />
           <br />
-          <FootIcon size={18} icon="GitHub" route="/" />
+          <NavIcon size={18} icon="GitHub" route="/" />
         </div>
       </div>
       <div className="w-full p-2 bg-blue-dark text-orange text-center border-t border-blue">
