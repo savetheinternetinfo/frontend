@@ -1,7 +1,5 @@
 import React, { useContext, useState } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
-import Footer from "./common/Footer";
-import Header from "./common/Header";
 
 import Masonry from "react-masonry-component";
 import Lightbox from "react-image-lightbox";
@@ -55,7 +53,6 @@ function Gallery() {
 
   return (
     <React.Fragment>
-      <Header />
       <React.Fragment>
         <div className="container mx-auto py-4">
           <div className="gallery-sizer w-1/5"></div>
@@ -79,7 +76,6 @@ function Gallery() {
           />}
         </div>
       </React.Fragment>
-      <Footer />
     </React.Fragment>
   );
 }

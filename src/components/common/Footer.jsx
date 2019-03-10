@@ -11,7 +11,7 @@ function Footer() {
         Flächen. Zusätzlich übernehmen wir keinerlei Haftung für dadurch
         entstandene Schäden.{" "}
       </div>
-      <div className="w-3/4 px-4 py-8 flex mx-auto">
+      <div className="w-3/4 px-4 pt-8 pb-2 flex mx-auto">
         <div className="w-1/3 pl-16">
           <h3 className="text-orange mb-4">Links</h3>
           <Link
@@ -67,7 +67,7 @@ function Footer() {
           <NavIcon size={18} icon="GitHub" route="/" />
         </div>
       </div>
-      <div className="w-full p-2 bg-blue-dark text-orange text-center border-t border-blue">
+      <div className="w-full p-4 bg-blue-dark text-orange text-center">
         © 2019 - savetheinternet.info - CC BY-NC-ND
       </div>
     </div>

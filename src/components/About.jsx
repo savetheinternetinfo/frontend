@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
 
 import { LanguageContext } from "../contexts/LanguageContext";
-import Footer from "./common/Footer";
-import Header from "./common/Header";
 
 function About() {
   const ctx = useContext(LanguageContext);
 
   return (
     <React.Fragment>
-      <Header />
       <div className="w-1/2 mx-auto py-16 text-white">
         <h1>Über uns</h1> <br />
         <h3>Wer sind wir?</h3>
@@ -62,7 +59,6 @@ function About() {
         Unterstütze unsere Arbeit mit der Petition oder direkt mit einer Spende
         und beteilige dich an den Diskussionen im Netz. <br />
       </div>
-      <Footer />
     </React.Fragment>
   );
 }

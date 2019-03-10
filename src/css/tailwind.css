@@ -4928,17 +4928,6 @@ body {
   background-color: #142e4d;
 }
 
-#root {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  min-height: 100vh;
-}
-
 .tilt {
   -webkit-transform: skew(-3deg, .5deg) translateZ(0);
           transform: skew(-3deg, .5deg) translateZ(0);

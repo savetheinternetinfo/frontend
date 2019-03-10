@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import Helmet from "react-helmet";
 import Logo from "../assets/favicon.ico";
+import Header from "./common/Header";
+import Footer from "./common/Footer";
 import Home from "./Home";
 import Gallery from "./Gallery";
 import About from "./About";
@@ -23,12 +25,16 @@ function App() {
         <link rel="icon" type="image/png" href={Logo} sizes="16x16" />
       </Helmet>
       <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/gallery" component={Gallery} />
-          <Route exact path="/demos" component={Demos} />
-        </Switch>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/gallery" component={Gallery} />
+            <Route exact path="/demos" component={Demos} />
+          </Switch>
+          <Footer />
+        </div>
       </Router>
     </React.Fragment>
   );

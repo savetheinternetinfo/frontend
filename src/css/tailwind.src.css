@@ -6,12 +6,6 @@ body {
   background-color: #142e4d;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 .tilt {
   transform: skew(-3deg, 0.5deg) translateZ(0);
 }
