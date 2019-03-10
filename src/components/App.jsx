@@ -6,6 +6,7 @@ import About from "./About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { LanguageContext } from "../contexts/LanguageContext";
+import Demos from "./Demos";
 
 function App() {
   const ctx = useContext(LanguageContext);
@@ -21,6 +22,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/demos" component={Demos} />
         </Switch>
       </Router>
     </React.Fragment>
