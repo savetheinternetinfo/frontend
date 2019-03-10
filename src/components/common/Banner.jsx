@@ -45,13 +45,7 @@ function Banner() {
         <SocialButton icon="Instagram" link={links.instagram} />
         <SocialButton icon="Youtube" link={links.youtube} />
       </div>
-      <Button
-        text={"Sign the petition"}
-        onClick={() => {
-          window.location.href =
-            "https://www.change.org/p/european-parliament-stop-the-censorship-machinery-save-the-internet";
-        }}
-      />
+      <Button text={"Sign the petition"} href={links.petition} />
     </div>
   );
 }
