@@ -6,10 +6,13 @@ import About from "./About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { LanguageContext } from "../contexts/LanguageContext";
+import { switchLanguageSet } from "../utils/switchLanguageSet";
+
 import Demos from "./Demos";
 
 function App() {
   const ctx = useContext(LanguageContext);
+  switchLanguageSet(ctx, ctx.language);
 
   return (
     <React.Fragment>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #142e4d;
+}
+
 .tilt {
   transform: skew(-3deg, 0.5deg) translateZ(0);
 }
@@ -51,5 +55,24 @@
 }
 
 .bezier {
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+
+.center-video-fix {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.langmenu-enter {
+  opacity: 0.01;
+}
+.langmenu-enter-active {
+  opacity: 1;
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+.langmenu-exit {
+  opacity: 1;
+}
+.langmenu-exit-active {
+  opacity: 0;
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
 }

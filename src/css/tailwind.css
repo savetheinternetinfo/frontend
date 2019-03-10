@@ -4891,8 +4891,16 @@ table {
   z-index: auto;
 }
 
+.z-background {
+  z-index: -2;
+}
+
 .z-video {
-  z-index: -1000;
+  z-index: -1;
+}
+
+body {
+  background-color: #142e4d;
 }
 
 .tilt {
@@ -4942,6 +4950,30 @@ table {
 }
 
 .bezier {
+  transition: all .27s cubic-bezier(.3, .1, .58, 1);
+}
+
+.center-video-fix {
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.langmenu-enter {
+  opacity: .01;
+}
+
+.langmenu-enter-active {
+  opacity: 1;
+  transition: all .27s cubic-bezier(.3, .1, .58, 1);
+}
+
+.langmenu-exit {
+  opacity: 1;
+}
+
+.langmenu-exit-active {
+  opacity: 0;
   transition: all .27s cubic-bezier(.3, .1, .58, 1);
 }
 
@@ -9289,8 +9321,12 @@ table {
     z-index: auto;
   }
 
+  .sm\:z-background {
+    z-index: -2;
+  }
+
   .sm\:z-video {
-    z-index: -1000;
+    z-index: -1;
   }
 }
 
@@ -13638,8 +13674,12 @@ table {
     z-index: auto;
   }
 
+  .md\:z-background {
+    z-index: -2;
+  }
+
   .md\:z-video {
-    z-index: -1000;
+    z-index: -1;
   }
 }
 
@@ -17987,8 +18027,12 @@ table {
     z-index: auto;
   }
 
+  .lg\:z-background {
+    z-index: -2;
+  }
+
   .lg\:z-video {
-    z-index: -1000;
+    z-index: -1;
   }
 }
 
@@ -22336,7 +22380,11 @@ table {
     z-index: auto;
   }
 
+  .xl\:z-background {
+    z-index: -2;
+  }
+
   .xl\:z-video {
-    z-index: -1000;
+    z-index: -1;
   }
 }

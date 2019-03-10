@@ -732,7 +732,8 @@ module.exports = {
 
   zIndex: {
     auto: "auto",
-    video: -1000,
+    background: -2,
+    video: -1,
     "0": 0,
     "10": 10,
     "20": 20,

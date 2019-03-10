@@ -1,22 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 // import { Link } from "react-router-dom";
-import { LanguageContext } from "../contexts/LanguageContext";
+
 // import Button from "./common/Button";
-import Navbar from "./Navbar";
-import Banner from "./common/Banner";
+import Footer from "./Footer";
+import Header from "./common/Header";
 
 function Home() {
-  const ctx = useContext(LanguageContext);
   return (
     <React.Fragment>
-      <div className="flex mb-4">
-        <div className="w-full h-auto">
-          <div>
-            <Navbar />
-            <Banner />
-          </div>
-        </div>
-      </div>
+      <Header />
+      <Footer />
     </React.Fragment>
   );
 }

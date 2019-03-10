@@ -31,6 +31,7 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 ## :wrench: Used technologies / Libraries / Frameworks
 
 **Dependencies**:
+
 - [axios](https://ghub.io/axios): Promise based HTTP client for the browser and node.js
 - [leaflet](https://ghub.io/leaflet): JavaScript library for mobile-friendly interactive maps
 - [moment](https://ghub.io/moment): Parse, validate, manipulate, and display dates
@@ -41,6 +42,7 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 - [react-helmet](https://ghub.io/react-helmet): A document head manager for React
 - [react-router-dom](https://ghub.io/react-router-dom): DOM bindings for React Router
 - [react-scripts](https://ghub.io/react-scripts): Configuration and scripts for Create React App.
+- [react-transition-group](https://ghub.io/react-transition-group): A react component toolset for managing animations
 - [react-typed](https://ghub.io/react-typed): A react wrapper for typed.js
 - [tailwindcss](https://ghub.io/tailwindcss): A utility-first CSS framework for rapidly building custom user interfaces.
 
