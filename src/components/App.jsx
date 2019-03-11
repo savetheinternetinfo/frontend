@@ -11,36 +11,13 @@ import Gallery from "./Gallery";
 import About from "./About";
 import Demos from "./Demos";
 
-import de from "../assets/languages/de.json";
-import en from "../assets/languages/en.json";
-import es from "../assets/languages/es.json";
-import fr from "../assets/languages/fr.json";
-import it from "../assets/languages/it.json";
-import nl from "../assets/languages/nl.json";
+import languages from "../assets/languages/languages.json";
 
 function getLanguageData(lang) {
-  switch (lang) {
-    case "de":
-      return de;
-
-    case "en":
-      return en;
-
-    case "es":
-      return es;
-
-    case "fr":
-      return fr;
-
-    case "it":
-      return it;
-
-    case "nl":
-      return nl;
-
-    default:
-      return en;
+  if (languages[lang]) {
+    return languages[lang];
   }
+  return languages["en"];
 }
 
 function App() {
