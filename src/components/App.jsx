@@ -1,6 +1,9 @@
-import React from "react";
+import config from "../config.json";
+
+import React, { useState, useEffect } from "react";
 import Helmet from "react-helmet";
-import Logo from "../assets/favicon.ico";
+import axios from "axios";
+
 import { StateProvider } from "../contexts/StateContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -11,36 +14,49 @@ import Gallery from "./Gallery";
 import About from "./About";
 import Demos from "./Demos";
 
-import languages from "../assets/languages/languages.json";
-
-function getLanguageData(lang) {
-  if (languages[lang]) {
-    return languages[lang];
-  }
-  return languages["en"];
-}
+import Logo from "../assets/favicon.ico";
 
 function App() {
+  const [userAgentLang] = config.languages.filter(element =>
+    navigator.language.includes("balball")
+  );
+
   let initialState = {
-    language: navigator.language,
-    translation: getLanguageData(navigator.language)
+    language: userAgentLang || "en"
   };
+
+  const [appData, setAppData] = useState(initialState);
+
+  useEffect(() => {
+    axios("http://localhost:3001/languages").then(res =>
+      setAppData({
+        ...appData,
+        langData: res.data,
+        translation: res.data[appData.language]
+      })
+    );
+  }, []);
 
   const reducer = (state, action) => {
     switch (action.type) {
       case "changeLanguage":
         return {
-          ...state,
-          language: action.newLanguage,
-          translation: getLanguageData(action.newLanguage)
+          ...appData,
+          translation: appData.langData[action.newLanguage]
         };
       default:
         return state;
     }
   };
 
+  // TODO: Fancy loading animation.
+  // Return a React component while axios is requesting languages
+  if (!appData["langData"]) {
+    // return <div>Loading... </div>;
+  }
+
   return (
-    <StateProvider initialState={initialState} reducer={reducer}>
+    <StateProvider initialState={appData} reducer={reducer}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Save the Internet</title>

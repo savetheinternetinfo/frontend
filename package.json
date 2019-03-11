@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
     "leaflet": "^1.4.0",
     "moment": "^2.24.0",
     "react": "^16.8.4",
@@ -22,11 +25,13 @@
   "scripts": {
     "tailwind:css": "./node_modules/.bin/tailwind build src/css/tailwind.src.css -c  tailwind.js -o src/css/tailwind.css",
     "tailwind:win": "./node_modules/.bin/tailwind.cmd build src/css/tailwind.src.css -c  tailwind.js -o src/css/tailwind.css",
+    "dev": "concurrently \"npm:start --silent\" \"nodemon src/test/mockServer.js\"",
     "start": "npm run tailwind:css && react-scripts start",
     "start:win": "npm run tailwind:win && react-scripts start",
     "build": "npm run tailwind:css && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postsetup": "npm i -g nodemon"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +41,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {}
 }

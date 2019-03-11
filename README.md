@@ -33,6 +33,9 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 **Dependencies**:
 
 - [axios](https://ghub.io/axios): Promise based HTTP client for the browser and node.js
+- [concurrently](https://ghub.io/concurrently): Run commands concurrently
+- [cors](https://ghub.io/cors): Node.js CORS middleware
+- [express](https://ghub.io/express): Fast, unopinionated, minimalist web framework
 - [leaflet](https://ghub.io/leaflet): JavaScript library for mobile-friendly interactive maps
 - [moment](https://ghub.io/moment): Parse, validate, manipulate, and display dates
 - [react](https://ghub.io/react): React is a JavaScript library for building user interfaces.

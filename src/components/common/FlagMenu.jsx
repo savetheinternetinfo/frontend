@@ -7,7 +7,7 @@ import { FlagIcon } from "react-flag-kit";
 import { useStateValue } from "../../contexts/StateContext";
 
 const flagIconClasses =
-  "grey-filter bezier no-underline select-none cursor-pointer text-center ml-2 mr-4";
+  "bezier grey-filter no-underline select-none cursor-pointer text-center ml-2 mr-4";
 const flagIconStyle = { marginTop: "0.68rem" };
 const flagIconSize = 26;
 
