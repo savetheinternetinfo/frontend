@@ -8,7 +8,7 @@ function SocialButton({ icon, link }) {
   return (
     <a href={link}>
       <div
-        className="m-3 tr-45 bezier border border-1 rounded-sm text-white cursor-pointer hover:text-orange-lighter hover:bg-blue hover:border-blue"
+        className="m-3 tr-45 bezier border border-1 rounded-sm text-white cursor-pointer hover:text-orange-lighter hover:bg-blue-dark hover:border-blue-dark"
         style={{
           height: "2.25rem",
           width: "2.25rem"
