@@ -1,6 +1,7 @@
 import config from "../../config.json";
 import React from "react";
 import Typed from "react-typed";
+import { useStateValue } from "../../contexts/StateContext";
 
 import Button from "./Button";
 import SocialButton from "./SocialButton";
@@ -8,6 +9,7 @@ import Navbar from "./Navbar";
 import heroVideo from "../../assets/hero.mp4";
 
 function Header(props) {
+  const [{ translation }] = useStateValue();
   const { links } = config;
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden">
@@ -34,7 +36,7 @@ function Header(props) {
         </div>
       </div>
       <p className="text-xl mt-6 text-center text-white">
-        The Internet is in danger and you can save it!
+        {translation["header_tagline"]}
       </p>
       {props.social !== false && (
         <div className="flex flex-row mt-6 mb-6">
@@ -45,7 +47,7 @@ function Header(props) {
         </div>
       )}
       {props.petition !== false && (
-        <Button text={"Sign the petition"} href={links.petition} />
+        <Button text={translation["sign_petition"]} href={links.petition} />
       )}
       <div className="absolute z-video pin-t pin-l h-full w-full overflow-hidden">
         <video

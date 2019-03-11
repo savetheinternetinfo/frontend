@@ -1,15 +1,13 @@
 import React from "react";
+import { useStateValue } from "../../contexts/StateContext";
 import { Link } from "react-router-dom";
 import NavIcon from "./NavIcon";
 function Footer() {
+  const [{ translation }] = useStateValue();
   return (
     <div className="w-full bg-blue-dark mt-auto">
       <div className="bg-blue w-full p-4 text-center text-orange">
-        Wir fordern jeden auf, nur die von uns freigegebenen Werbemittel an
-        gestatteten Orten zu nutzen und zu verbreiten. Wir distanzieren uns von
-        jeglichen fremden Werbemitteln und deren Anbringung an rechtswidrigen
-        Flächen. Zusätzlich übernehmen wir keinerlei Haftung für dadurch
-        entstandene Schäden.{" "}
+        {translation["footer_notice"]}
       </div>
       <div className="w-3/4 px-4 pt-8 pb-2 flex mx-auto">
         <div className="w-1/3 pl-16">
@@ -18,40 +16,38 @@ function Footer() {
             className="bezier text-white hover:text-orange no-underline block"
             to="/infos"
           >
-            Informationen
+            {translation["about_title"]}
           </Link>
           <Link
             className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/about"
           >
-            Über Uns
+            {translation["imprint_link"]}
           </Link>
           <Link
             className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/gallery"
           >
-            Galerie
+            {translation["gallery_title"]}
           </Link>
           <Link
             className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/contact"
-          >
-            Kontakt
-          </Link>
+          />
         </div>
         <div className="w-1/3 pl-16">
-          <h3 className="text-orange mb-4">Rechtlich</h3>
+          <h3 className="text-orange mb-4">Legal</h3>
           <Link
             className="bezier text-white hover:text-orange no-underline block"
             to="/imprint"
           >
-            Impressum
+            {translation["imprint_link"]}
           </Link>
           <Link
             className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/privacy"
           >
-            Datenschutz
+            {translation["privacy_link"]}
           </Link>
         </div>
         <div className="w-1/3 pl-16">
