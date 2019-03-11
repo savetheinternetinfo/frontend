@@ -32,12 +32,15 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 
 **Dependencies**:
 
+- [autoprefixer](https://ghub.io/autoprefixer): Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website
 - [axios](https://ghub.io/axios): Promise based HTTP client for the browser and node.js
 - [concurrently](https://ghub.io/concurrently): Run commands concurrently
 - [cors](https://ghub.io/cors): Node.js CORS middleware
+- [cssnano](https://ghub.io/cssnano): A modular minifier, built on top of the PostCSS ecosystem.
 - [express](https://ghub.io/express): Fast, unopinionated, minimalist web framework
 - [leaflet](https://ghub.io/leaflet): JavaScript library for mobile-friendly interactive maps
 - [moment](https://ghub.io/moment): Parse, validate, manipulate, and display dates
+- [postcss-cli](https://ghub.io/postcss-cli): CLI for PostCSS
 - [react](https://ghub.io/react): React is a JavaScript library for building user interfaces.
 - [react-dom](https://ghub.io/react-dom): React package for working with the DOM.
 - [react-feather](https://ghub.io/react-feather): React component for Feather icons
