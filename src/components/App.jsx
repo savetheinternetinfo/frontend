@@ -52,7 +52,7 @@ function App() {
   // TODO: Fancy loading animation.
   // Return a React component while axios is requesting languages
   if (!appData["langData"]) {
-    // return <div>Loading... </div>;
+    return <div />;
   }
 
   return (
