@@ -9,10 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./common/Header";
 import Footer from "./common/Footer";
-import Home from "./Home";
-import Gallery from "./Gallery";
-import About from "./About";
-import Demos from "./Demos";
+import {Home, Gallery, About, Demos, Imprint, Privacy} from ".";
 
 import Logo from "../assets/favicon.ico";
 
@@ -64,13 +61,15 @@ function App() {
         <link rel="icon" type="image/png" href={Logo} sizes="16x16" />
       </Helmet>
       <Router>
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col text-sti">
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/gallery" component={Gallery} />
             <Route exact path="/demos" component={Demos} />
+            <Route exact path="/imprint" component={Imprint} />
+            <Route exact path="/privacy" component={Privacy} />
           </Switch>
           <Footer />
         </div>

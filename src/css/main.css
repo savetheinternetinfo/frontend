@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #142e4d;
+a {
+  @apply .text-blue-light .no-underline;
+}
+
+p {
+  @apply .my-3;
+}
+
+h1 {
+  @apply .mt-10 .mb-8;
+}
+
+h2 {
+  @apply .mt-8 .mb-6;
+}
+
+h3 {
+  @apply .mt-6;
 }
 
 .tilt {
