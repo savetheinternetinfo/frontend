@@ -1,9 +1,12 @@
+import config from "../../config.json";
+
 import React from "react";
 import { useStateValue } from "../../contexts/StateContext";
 import { Link } from "react-router-dom";
 import NavIcon from "./NavIcon";
 function Footer() {
   const [{ translation }] = useStateValue();
+  const { links } = config;
   return (
     <div className="w-full bg-blue-dark mt-auto">
       <div className="bg-blue w-full p-4 text-center text-orange">
@@ -52,15 +55,15 @@ function Footer() {
         </div>
         <div className="w-1/3 pl-16">
           <h3 className="mx-4 text-orange mb-4">Social</h3>
-          <NavIcon size={18} icon="Facebook" route="/" />
-          <NavIcon size={18} icon="Twitter" route="/" />
+          <NavIcon size={18} icon="Facebook" url={links.facebook} />
+          <NavIcon size={18} icon="Twitter" url={links.twitter} />
           <br />
           <br />
-          <NavIcon size={18} icon="Instagram" route="/" />
-          <NavIcon size={18} icon="Youtube" route="/" />
+          <NavIcon size={18} icon="Instagram" url={links.instagram} />
+          <NavIcon size={18} icon="Youtube" url={links.youtube} />
           <br />
           <br />
-          <NavIcon size={18} icon="GitHub" route="/" />
+          <NavIcon size={18} icon="GitHub" url={links.github} />
         </div>
       </div>
       <div className="w-full p-4 bg-blue-dark text-orange text-center">
