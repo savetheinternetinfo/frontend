@@ -59,6 +59,18 @@ body {
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
 }
 
+.grey-filter {
+  -webkit-filter: grayscale(40%);
+  -moz-filter: grayscale(40%);
+  filter: grayscale(40%);
+}
+
+.grey-filter:hover {
+  -webkit-filter: grayscale(10%);
+  -moz-filter: grayscale(10%);
+  filter: grayscale(10%);
+}
+
 .center-video-fix {
   left: 50%;
   transform: translate(-50%, 0);
