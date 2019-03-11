@@ -40,6 +40,8 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 - [react-feather](https://ghub.io/react-feather): React component for Feather icons
 - [react-flag-kit](https://ghub.io/react-flag-kit): FlagKit for React
 - [react-helmet](https://ghub.io/react-helmet): A document head manager for React
+- [react-image-lightbox](https://ghub.io/react-image-lightbox): A lightbox component for React.js
+- [react-masonry-component](https://ghub.io/react-masonry-component): A masonry component for React.js
 - [react-router-dom](https://ghub.io/react-router-dom): DOM bindings for React Router
 - [react-scripts](https://ghub.io/react-scripts): Configuration and scripts for Create React App.
 - [react-transition-group](https://ghub.io/react-transition-group): A react component toolset for managing animations
