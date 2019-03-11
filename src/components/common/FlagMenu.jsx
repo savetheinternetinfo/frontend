@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
-import { CSSTransition } from "react-transition-group";
-
-import { FlagIcon } from "react-flag-kit";
-import { LanguageContext } from "../../contexts/LanguageContext";
-
 import config from "../../config.json";
-import { switchLanguageSet } from "../../utils/switchLanguageSet";
+
+import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import { FlagIcon } from "react-flag-kit";
+
+import { useStateValue } from "../../contexts/StateContext";
 
 const flagIconClasses =
   "no-underline select-none cursor-pointer text-center ml-2 mr-4";
@@ -13,13 +12,14 @@ const flagIconStyle = { marginTop: "0.68rem" };
 const flagIconSize = 26;
 
 function FlagMenu() {
+  const [{ language }, dispatch] = useStateValue();
+
   const [showLangMenu, setLangMenuToggle] = useState(false);
-  const ctx = useContext(LanguageContext);
   const [userAgentLang] = config.languages.filter(element =>
-    ctx.language.includes(element.id)
+    language.includes(element.id)
   );
   const otherLanguages = config.languages.filter(
-    element => !ctx.language.includes(element.id)
+    element => !language.includes(element.id)
   );
 
   return (
@@ -50,9 +50,14 @@ function FlagMenu() {
                     code={lang.flag}
                     size={flagIconSize}
                     onClick={() => {
-                      ctx.language = lang.id;
-                      switchLanguageSet(ctx, lang.id);
                       setLangMenuToggle(!showLangMenu);
+                      // Set a small timeout so the user does not see the flags rearranging
+                      setTimeout(function() {
+                        dispatch({
+                          type: "changeLanguage",
+                          newLanguage: lang.id
+                        });
+                      }, 200);
                     }}
                   />
                 </li>

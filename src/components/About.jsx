@@ -1,10 +1,6 @@
-import React, { useContext } from "react";
-
-import { LanguageContext } from "../contexts/LanguageContext";
+import React from "react";
 
 function About() {
-  const ctx = useContext(LanguageContext);
-
   return (
     <React.Fragment>
       <div className="w-1/2 mx-auto py-16 text-white">
