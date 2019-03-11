@@ -18,7 +18,7 @@ import Logo from "../assets/favicon.ico";
 
 function App() {
   const [userAgentLang] = config.languages.filter(element =>
-    navigator.language.includes("balball")
+    navigator.language.includes(userAgentLang)
   );
 
   let initialState = {
@@ -42,6 +42,7 @@ function App() {
       case "changeLanguage":
         return {
           ...appData,
+          language: action.newLanguage,
           translation: appData.langData[action.newLanguage]
         };
       default:
