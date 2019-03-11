@@ -1,17 +1,20 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useStateValue } from "../contexts/StateContext";
+
 import leaflet from "leaflet";
 import geojs from "../mapcoords.json";
 import moment from "moment";
-import { LanguageContext } from "../contexts/LanguageContext";
-import Footer from "./Footer";
-import Header from "./common/Header";
+
 function Demos() {
-  const ctx = useContext(LanguageContext);
+  const [{ language }] = useStateValue();
+
   const [count, setCount] = useState(0);
   const [events, setEvents] = useState([]);
   useEffect(() => {
     if (count === 0) {
-      const demomap = leaflet.map("demomap");
+      const demomap = leaflet.map("demomap", {
+        scrollWheelZoom: false
+      });
       leaflet
         .tileLayer(
           "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
@@ -44,11 +47,11 @@ function Demos() {
             let momentObj = moment(element.value, "DD.MM.YYYY H:m");
 
             // Get locale data
-            var localeData = moment.localeData(ctx.language);
+            var localeData = moment.localeData(language);
             var format = localeData.longDateFormat("LLL");
             // Remove year part
             format = format.replace(/.YYYY/, "");
-            element.value = momentObj.locale(ctx.language).format(format);
+            element.value = momentObj.locale(language).format(format);
           }
           na.push({ icon: element.fa_icon, value: element.value });
           popupText += `<p class="mb-0 font-thin"><i class="fa ${
@@ -88,12 +91,11 @@ function Demos() {
 
   return (
     <div>
-      <Header />
       <React.Fragment>
         <div className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue-light">
           {events.map(x => {
             return (
-              <div className="w-1/6 flex-none p-2 ">
+              <div className="flex-none p-2" style={{ width: "15rem" }}>
                 <div className="bg-blue text-white rounded p-4 w-full h-full shadow rounded">
                   {x.map(e => {
                     return (
@@ -119,7 +121,6 @@ function Demos() {
           id="demomap"
         />
       </React.Fragment>
-      <Footer />
     </div>
   );
 }

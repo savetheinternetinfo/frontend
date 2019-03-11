@@ -23,8 +23,8 @@ body {
   content: "";
   position: absolute;
   z-index: 1;
-  left: 0;
-  right: 100%;
+  left: 50%;
+  right: 50%;
   bottom: 0px;
   background: #ffffff;
   height: 2px;
@@ -36,6 +36,7 @@ body {
 .underline:focus:after,
 .underline:active:after {
   right: 0;
+  left: 0;
 }
 
 .tr-45 {
@@ -56,6 +57,18 @@ body {
 
 .bezier {
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+
+.grey-filter {
+  -webkit-filter: grayscale(40%);
+  -moz-filter: grayscale(40%);
+  filter: grayscale(40%);
+}
+
+.grey-filter:hover {
+  -webkit-filter: grayscale(10%);
+  -moz-filter: grayscale(10%);
+  filter: grayscale(10%);
 }
 
 .center-video-fix {
