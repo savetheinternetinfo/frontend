@@ -1,4 +1,4 @@
-const languages = require("../assets/languages/languages.json");
+const languages = require("./languages/languages.json");
 
 const express = require("express");
 const cors = require("cors");
