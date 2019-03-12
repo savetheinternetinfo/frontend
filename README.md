@@ -60,7 +60,7 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 
 Current deployment platform specifications:
 
-- Operating System: macOS Mojave 10.14.3
+- Operating System: Debian 4.9.110-1
 - Architecture: x86_64
 
 **Installation & Quick setup:**
