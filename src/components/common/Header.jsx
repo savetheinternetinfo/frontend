@@ -1,5 +1,6 @@
 import config from "../../config.json";
 import React from "react";
+import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import { useStateValue } from "../../contexts/StateContext";
 
@@ -16,9 +17,9 @@ function Header(props) {
       <Navbar />
       <div className="relative tilt text-3xl sm:text-5xl bg-white mt-16 p-4">
         <div className="untilt">
-          <a
+          <Link
+            to={"/"}
             className="text-blue hover:text-blue font-bold no-underline"
-            href="/"
           >
             Save{" "}
             <Typed
@@ -32,7 +33,7 @@ function Header(props) {
               backDelay={1400}
             />{" "}
             Internet
-          </a>
+          </Link>
         </div>
       </div>
       <p className="text-xl mt-6 text-center text-white">
