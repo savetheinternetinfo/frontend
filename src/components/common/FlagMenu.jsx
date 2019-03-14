@@ -23,7 +23,7 @@ function FlagMenu() {
   );
 
   return (
-    <div className="language-picker mr-2">
+    <div className="language-picker z-50 mr-2">
       <FlagIcon
         className={flagIconClasses}
         style={flagIconStyle}

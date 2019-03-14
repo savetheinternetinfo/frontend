@@ -30,23 +30,29 @@ h3 {
   transform: skew(3deg, -0.5deg) translateZ(0);
 }
 
-.underline {
-  display: inline;
-  position: relative;
-  overflow: hidden;
+.animate-300 {
+  transition: all 300ms linear;
 }
-.underline:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  left: 50%;
-  right: 50%;
-  bottom: 0px;
-  background: #ffffff;
-  height: 2px;
-  transition-property: left right;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+
+@screen md { 
+  .underline {
+    display: inline;
+    position: relative;
+    overflow: hidden;
+  }
+  .underline:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    right: 50%;
+    bottom: 0px;
+    background: #ffffff;
+    height: 2px;
+    transition-property: left right;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+  }
 }
 .underline:hover:after,
 .underline:focus:after,
