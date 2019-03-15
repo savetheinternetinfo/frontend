@@ -7,7 +7,7 @@ function About() {
   const [{ translation }] = useStateValue();
 
   return (
-    <div className="container mx-auto py-16">
+    <div className="container mx-auto -mt-10 px-6 py-8">
       <h1>{translation.about_us_heading}</h1>
 
       <h3>{translation.about_us_1_heading}</h3>
