@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { useStateValue } from "../../contexts/StateContext";
 import { animated, useTransition } from "react-spring";
-
+import { useStateValue } from "../../contexts/StateContext";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 import NavURL from "./NavURL";
 import NavIcon from "./NavIcon";
 import FlagMenu from "./FlagMenu";
 
 function Navbar() {
   const [{ translation }] = useStateValue();
-  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const width = useWindowWidth();
 
-  console.log(showMobileNav);
+  useEffect(() => {
+    const isDesktopWidth = width >= 1100 ? true : false;
+    setShowNav(isDesktopWidth);
+  }, [width]);
 
-  const transitions = useTransition(showMobileNav, null, {
+  const transitions = useTransition(showNav, null, {
     from: { position: "absolute", opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 }
@@ -23,7 +27,7 @@ function Navbar() {
       <NavIcon
         className="z-50 md:hidden justify-start"
         icon="Menu"
-        onClick={() => setShowMobileNav(!showMobileNav)}
+        onClick={() => setShowNav(!showNav)}
       />
       <div className="flex-grow" />
       <NavIcon className="z-50" icon="Home" route="/" />
@@ -38,27 +42,27 @@ function Navbar() {
               }
             >
               <NavURL
-                onClick={() => setShowMobileNav(false)}
+                onClick={() => setShowNav(false)}
                 text={translation["memes_title"]}
                 route="/"
               />
               <NavURL
-                onClick={() => setShowMobileNav(false)}
+                onClick={() => setShowNav(false)}
                 text={translation["about_us_heading"]}
                 route="/about"
               />
               <NavURL
-                onClick={() => setShowMobileNav(false)}
+                onClick={() => setShowNav(false)}
                 text={translation["gallery_title"]}
                 route="/gallery"
               />
               <NavURL
-                onClick={() => setShowMobileNav(false)}
+                onClick={() => setShowNav(false)}
                 text={translation["about_title"]}
                 route="/"
               />
               <NavURL
-                onClick={() => setShowMobileNav(false)}
+                onClick={() => setShowNav(false)}
                 text={translation["sti_day"]}
                 route="/demos"
               />
