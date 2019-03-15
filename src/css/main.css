@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 body {
-  @apply .bg-blue-dark .text-white;
+  @apply .bg-blue-dark;
+}
+
+a,
+p,
+h1,
+h2,
+h3 {
+  @apply .text-white;
 }
 
 a {
-  @apply .no-underline;
+  @apply .no-underline .text-orange-lighter;
 }
 
 p {
