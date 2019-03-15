@@ -11,9 +11,13 @@ function Navbar() {
   const [showNav, setShowNav] = useState(false);
   const width = useWindowWidth();
 
+  function isDesktop() {
+    // md-width https://tailwindcss.com/docs/container/#app
+    return width >= 768 ? true : false;
+  }
+
   useEffect(() => {
-    const isDesktopWidth = width >= 1100 ? true : false;
-    setShowNav(isDesktopWidth);
+    setShowNav(isDesktop());
   }, [width]);
 
   const transitions = useTransition(showNav, null, {
@@ -42,27 +46,27 @@ function Navbar() {
               }
             >
               <NavURL
-                onClick={() => setShowNav(false)}
-                text={translation["memes_title"]}
-                route="/"
-              />
-              <NavURL
-                onClick={() => setShowNav(false)}
+                onClick={() => setShowNav(isDesktop)}
                 text={translation["about_us_heading"]}
                 route="/about"
               />
               <NavURL
-                onClick={() => setShowNav(false)}
+                onClick={() => setShowNav(isDesktop)}
                 text={translation["gallery_title"]}
                 route="/gallery"
               />
               <NavURL
-                onClick={() => setShowNav(false)}
+                onClick={() => setShowNav(isDesktop)}
+                text={translation["memes_title"]}
+                route="/"
+              />
+              <NavURL
+                onClick={() => setShowNav(isDesktop)}
                 text={translation["about_title"]}
                 route="/"
               />
               <NavURL
-                onClick={() => setShowNav(false)}
+                onClick={() => setShowNav(isDesktop)}
                 text={translation["sti_day"]}
                 route="/demos"
               />
