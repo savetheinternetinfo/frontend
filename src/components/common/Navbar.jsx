@@ -34,7 +34,7 @@ function Navbar() {
               key={key}
               style={props}
               className={
-                "flex-col absolute pt-1 md:pt-0 md:relative md:flex md:flex-row w-full overflow-hidden bg-blue md:bg-transparent flex"
+                "flex-col absolute pt-1 md:pt-0 md:relative md:flex md:flex-row w-full overflow-hidden bg-blue-dark md:bg-transparent flex"
               }
             >
               <NavURL
