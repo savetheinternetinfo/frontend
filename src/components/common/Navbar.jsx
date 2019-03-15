@@ -57,11 +57,6 @@ function Navbar() {
               />
               <NavURL
                 onClick={() => setShowNav(isDesktop)}
-                text={translation["memes_title"]}
-                route="/"
-              />
-              <NavURL
-                onClick={() => setShowNav(isDesktop)}
                 text={translation["about_title"]}
                 route="/"
               />
