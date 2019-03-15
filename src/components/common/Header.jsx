@@ -53,6 +53,7 @@ function Header(props) {
       <div className="absolute z-video pin-t pin-l h-full w-full overflow-hidden">
         <video
           className="min-h-full min-w-full relative center-video-fix"
+          playsInline
           autoPlay
           loop
           muted
