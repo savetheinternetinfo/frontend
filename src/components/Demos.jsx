@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from "../contexts/StateContext";
 
+import parse from "html-react-parser";
 import leaflet from "leaflet";
 import geojs from "../mapcoords.json";
 import moment from "moment";
+
+function uniqueId(str) {
+  return `${str}${Math.random()
+    .toString(36)
+    .substr(2, 9)}`;
+}
 
 function Demos() {
   const [{ language }] = useStateValue();
@@ -54,7 +61,7 @@ function Demos() {
             element.value = momentObj.locale(language).format(format);
           }
           na.push({ icon: element.fa_icon, value: element.value });
-          popupText += `<p class="mb-0 font-thin"><i class="fa ${
+          popupText += `<p className="mb-0 font-thin"><i class="fa ${
             element.fa_icon
           }" aria-hidden="true"></i> ${element.value}</p>`;
         }
@@ -95,17 +102,21 @@ function Demos() {
         <div className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue">
           {events.map(x => {
             return (
-              <div className="flex-none p-2" style={{ width: "15rem" }}>
+              <div
+                key={uniqueId("key-")}
+                className="flex-none p-2"
+                style={{ width: "15rem" }}
+              >
                 <div className="bg-blue-dark text-white rounded p-4 w-full h-full shadow rounded">
                   {x.map(e => {
                     return (
-                      <p class="font-thin mt-2">
+                      <p key={uniqueId("key-")} className="font-thin mt-2">
                         <span className="flex">
                           <i
                             className={"w-8 fa " + e.icon}
                             aria-hidden="true"
                           />
-                          <div dangerouslySetInnerHTML={{ __html: e.value }} />
+                          {parse(e.value)}
                         </span>
                       </p>
                     );
