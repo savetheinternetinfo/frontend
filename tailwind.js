@@ -46,7 +46,7 @@ let colors = {
   transparent: "transparent",
 
   black: "#000",
-  white: "#fafafa",
+  white: "#f2f5f4",
 
   "blue-dark": "#0e2036",
   blue: "#142e4d",

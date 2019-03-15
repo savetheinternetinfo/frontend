@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply .bg-blue-dark .text-white;
+}
+
 a {
-  @apply .text-blue-light .no-underline;
+  @apply .no-underline;
 }
 
 p {
