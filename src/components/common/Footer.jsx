@@ -12,7 +12,7 @@ function Footer() {
       <div className="bg-blue w-full p-4 text-center text-orange">
         {translation["footer_notice"]}
       </div>
-      <div className="pt-8 pb-2 flex justify-between mx-auto">
+      <div className="pt-8 pb-2 flex justify-around mx-auto">
         <div className="ml-8 text-center lg:text-left">
           <h3 className="text-orange mb-4">Links</h3>
           <Link
@@ -55,15 +55,17 @@ function Footer() {
         </div>
         <div className="mr-8 text-center lg:text-left">
           <h3 className="text-orange mb-4">Social</h3>
-          <NavIcon size={18} icon="Facebook" url={links.facebook} />
-          <NavIcon size={18} icon="Twitter" url={links.twitter} />
-          <br />
-          <br />
-          <NavIcon size={18} icon="Instagram" url={links.instagram} />
-          <NavIcon size={18} icon="Youtube" url={links.youtube} />
-          <br />
-          <br />
-          <NavIcon size={18} icon="GitHub" url={links.github} />
+          <div className="lg:-ml-4">
+            <NavIcon size={18} icon="Facebook" url={links.facebook} />
+            <NavIcon size={18} icon="Twitter" url={links.twitter} />
+            <br />
+            <br />
+            <NavIcon size={18} icon="Instagram" url={links.instagram} />
+            <NavIcon size={18} icon="Youtube" url={links.youtube} />
+            <br />
+            <br />
+            <NavIcon size={18} icon="GitHub" url={links.github} />
+          </div>
         </div>
       </div>
       <div className="w-full p-4 bg-blue-dark text-orange text-center">
