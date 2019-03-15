@@ -34,7 +34,7 @@ h3 {
   transition: all 300ms linear;
 }
 
-@screen md { 
+@screen md {
   .underline {
     display: inline;
     position: relative;
@@ -110,4 +110,20 @@ h3 {
 .langmenu-exit-active {
   opacity: 0;
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply .bg-blue-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply .bg-white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply .bg-orange-lighter;
 }

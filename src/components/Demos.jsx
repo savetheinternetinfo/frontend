@@ -92,11 +92,11 @@ function Demos() {
   return (
     <div>
       <React.Fragment>
-        <div className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue-light">
+        <div className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue">
           {events.map(x => {
             return (
               <div className="flex-none p-2" style={{ width: "15rem" }}>
-                <div className="bg-blue text-white rounded p-4 w-full h-full shadow rounded">
+                <div className="bg-blue-dark text-white rounded p-4 w-full h-full shadow rounded">
                   {x.map(e => {
                     return (
                       <p class="font-thin mt-2">
