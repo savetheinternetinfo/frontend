@@ -7,11 +7,11 @@ import axios from "axios";
 import { StateProvider } from "../contexts/StateContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import Logo from "../assets/favicon.ico";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
-import {Home, Gallery, About, Demos, Imprint, Privacy} from ".";
-
-import Logo from "../assets/favicon.ico";
+import LoadAnimation from "./common/LoadAnimation.jsx";
+import { Home, Gallery, About, Demos, Imprint, Privacy } from ".";
 
 function App() {
   const [userAgentLang] = config.languages.filter(element =>
@@ -25,13 +25,17 @@ function App() {
   const [appData, setAppData] = useState(initialState);
 
   useEffect(() => {
-    axios("http://localhost:3001/languages").then(res =>
-      setAppData({
-        ...appData,
-        langData: res.data,
-        translation: res.data[appData.language]
-      })
-    );
+    axios("http://localhost:3001/languages")
+      .then(res =>
+        setAppData({
+          ...appData,
+          langData: res.data,
+          translation: res.data[appData.language]
+        })
+      )
+      .catch(err => {
+        console.log(err);
+      });
   }, []);
 
   const reducer = (state, action) => {
@@ -47,10 +51,9 @@ function App() {
     }
   };
 
-  // TODO: Fancy loading animation.
-  // Return a React component while axios is requesting languages
   if (!appData["langData"]) {
-    return <div />;
+    // Return a React component while axios is requesting languages/api
+    return <LoadAnimation />;
   }
 
   return (
