@@ -1,9 +1,6 @@
 import React from "react";
-import { useStateValue } from "../contexts/StateContext";
 
 function Imprint() {
-  const [{ translation }] = useStateValue();
-
   return (
     <div className="container mx-auto -mt-10 px-6 py-8">
       <h1>Impressum</h1>

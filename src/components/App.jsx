@@ -11,7 +11,7 @@ import Logo from "../assets/favicon.ico";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import LoadAnimation from "./common/LoadAnimation.jsx";
-import { Home, Gallery, About, Demos, Imprint, Privacy } from ".";
+import { Home, Gallery, About, AboutUs, Demos, Imprint, Privacy } from ".";
 
 function App() {
   const [userAgentLang] = config.languages.filter(element =>
@@ -69,6 +69,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/aboutus" component={AboutUs} />
             <Route exact path="/gallery" component={Gallery} />
             <Route exact path="/demos" component={Demos} />
             <Route exact path="/imprint" component={Imprint} />

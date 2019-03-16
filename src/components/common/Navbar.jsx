@@ -48,7 +48,7 @@ function Navbar() {
               <NavURL
                 onClick={() => setShowNav(isDesktop)}
                 text={translation["about_us_heading"]}
-                route="/about"
+                route="/aboutus"
               />
               <NavURL
                 onClick={() => setShowNav(isDesktop)}
@@ -58,7 +58,7 @@ function Navbar() {
               <NavURL
                 onClick={() => setShowNav(isDesktop)}
                 text={translation["about_title"]}
-                route="/"
+                route="/about"
               />
               <NavURL
                 onClick={() => setShowNav(isDesktop)}
