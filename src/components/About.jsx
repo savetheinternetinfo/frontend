@@ -13,7 +13,7 @@ function About() {
         language === "es" ||
         language === "it") && (
         <React.Fragment>
-          <h3>{translation.about_summary_title}</h3>
+          <h2>{translation.about_summary_title}</h2>
           <div className="mb-16 text-sm">
             <p>{parse(translation.about_summary)}</p>
           </div>
@@ -22,7 +22,7 @@ function About() {
       {language === "de" ? (
         <React.Fragment>
           <div className="mb-16">
-            <h3>{translation.about_sub_title5}</h3>
+            <h2>{translation.about_sub_title5}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -44,7 +44,7 @@ function About() {
             />
           </div>
           <div className="mb-16">
-            <h3>{translation.about_sub_title6}</h3>
+            <h2>{translation.about_sub_title6}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -55,7 +55,7 @@ function About() {
             </a>
           </div>
           <div className="mb-16">
-            <h3>{translation.about_sub_title3}</h3>
+            <h2>{translation.about_sub_title3}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -66,7 +66,7 @@ function About() {
             </a>
           </div>
           <div className="mb-16">
-            <h3>{translation.about_sub_title2}</h3>
+            <h2>{translation.about_sub_title2}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -77,7 +77,7 @@ function About() {
             </a>
           </div>
           <div className="mb-16">
-            <h3>{translation.about_sub_title4}</h3>
+            <h2>{translation.about_sub_title4}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -88,7 +88,7 @@ function About() {
             </a>
           </div>
           <div className="mb-16">
-            <h3>{translation.about_sub_title1}</h3>
+            <h2>{translation.about_sub_title1}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -102,7 +102,7 @@ function About() {
       ) : (
         <React.Fragment>
           <div className="mb-16">
-            <h3>{translation.about_sub_title5}</h3>
+            <h2>{translation.about_sub_title5}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -124,7 +124,7 @@ function About() {
             />
           </div>
           <div className="mb-16">
-            <h3>{translation.about_sub_title7}</h3>
+            <h2>{translation.about_sub_title7}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -135,7 +135,7 @@ function About() {
             </a>
           </div>
           <div className="mb-16">
-            <h3>{translation.about_sub_title8}</h3>
+            <h2>{translation.about_sub_title8}</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
