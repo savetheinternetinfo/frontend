@@ -97,7 +97,7 @@ function Demos() {
                                     value: item.location,
                                 },
                                 {
-                                    fa_icon: "fa-clock-o",
+                                    fa_icon: "fa-clock",
                                     value: item.time,
                                 },
                                 {
