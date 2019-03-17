@@ -4,35 +4,33 @@ import logo from "../assets/blackout-logo.png";
 import { Link } from "react-router-dom";
 function Blackout() {
   return (
-    <div className="w-full bg-black text-white pt-16 min-h-screen">
+    <div className="w-full bg-black text-white pt-12 min-h-screen">
       <img
         src={blackout}
         className="w-1/2 block mx-auto"
         alt="blackout-banner"
       />
-
+      <h2 className="mx-auto w-1/2">Blackouts gegen die Zensur!</h2>
       <p className="w-1/2 mx-auto leading-normal">
-        <span className="flex">
-          <span className="w-2/3 pr-8">
-            <h2>Blackouts gegen die Zensur!</h2>
-            Aus Protest gegen Teile der aktuell viel diskutierten
-            Urheberrechtsreform und insbesondere der darin enthaltenen Artikel
-            11 und 13 (auch unter "Linksteuer" und "Uploadfilter" bekannt), sind
-            für den 21. März, somit 2 Tage vor den europaweit stattfindenden
-            Großdemonstrationen, sogenannte "Blackouts" geplant:
-            <br />
-            <br />
-            Die Unterstützer dieser Aktion sind der Meinung, dass die geplante
-            Reform die Meinungsfreiheit, den Zugriff auf freies Wissen und die
-            Informationsvielfalt im Internet massiv beschneiden wird - und das
-            ohne wirkliche Verbesserungen für all die Kreativen (Künstler,
-            Journalisten, Autoren, ...), die eine ordentliche
-            Urheberrechtsreform mit realen Verbesserungen verdient hätten!
-          </span>
-          <span className="w-1/3">
-            <img src={logo} alt="logo" />
-          </span>
-        </span>
+        <img
+          src={logo}
+          alt="logo"
+          className="float-right ml-8"
+          style={{ width: "20rem" }}
+        />
+        Aus Protest gegen Teile der aktuell viel diskutierten
+        Urheberrechtsreform und insbesondere der darin enthaltenen Artikel 11
+        und 13 (auch unter "Linksteuer" und "Uploadfilter" bekannt), sind für
+        den 21. März, somit 2 Tage vor den europaweit stattfindenden
+        Großdemonstrationen, sogenannte "Blackouts" geplant:
+        <br />
+        <br />
+        Die Unterstützer dieser Aktion sind der Meinung, dass die geplante
+        Reform die Meinungsfreiheit, den Zugriff auf freies Wissen und die
+        Informationsvielfalt im Internet massiv beschneiden wird - und das ohne
+        wirkliche Verbesserungen für all die Kreativen (Künstler, Journalisten,
+        Autoren, ...), die eine ordentliche Urheberrechtsreform mit realen
+        Verbesserungen verdient hätten!
         <br />
         <br />
         Daher soll zum Zeichen des Protests schon am 21. gezeigt werden, wie ein
