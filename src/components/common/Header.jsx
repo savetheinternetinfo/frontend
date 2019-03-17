@@ -15,7 +15,7 @@ function Header(props) {
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden">
       <Navbar />
-      <div className="relative tilt text-3xl sm:text-5xl bg-white mt-16 p-4">
+      <div className="relative tilt text-3xl sm:text-5xl bg-white mt-32 p-4">
         <div className="untilt">
           <Link
             to={"/"}
