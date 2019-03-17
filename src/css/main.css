@@ -254,6 +254,11 @@ h3 {
 .leaflet-popup-content p {
   margin: 0;
   @apply .mb-2;
+  color: white;
+}
+
+.leaflet-popup-content a {
+  @apply .text-orange;
 }
 
 .leaflet-popup-content p i {

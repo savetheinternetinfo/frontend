@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useStateValue} from "../contexts/StateContext";
+import config from '../config';
 
 import parse from "html-react-parser";
 import leaflet from "leaflet";
@@ -86,7 +87,7 @@ function Demos() {
                 });
             }
 
-            axios.get('http://new-api.savetheinternet.info/api/get?q=points')
+            axios.get(config.api.points)
                 .then(response => {
                     geojs.features = response.data.points.map(item => {
                         return {
