@@ -1,5 +1,3 @@
-import config from "../../config.json";
-
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { FlagIcon } from "react-flag-kit";
@@ -12,14 +10,11 @@ const flagIconStyle = { marginTop: "0.68rem" };
 const flagIconSize = 26;
 
 function FlagMenu() {
-  const [{ language }, dispatch] = useStateValue();
-
+  const [{ language, langData }, dispatch] = useStateValue();
   const [showLangMenu, setLangMenuToggle] = useState(false);
-  const [userAgentLang] = config.languages.filter(element =>
-    language.includes(element.id)
-  );
-  const otherLanguages = config.languages.filter(
-    element => !language.includes(element.id)
+
+  const otherLanguages = Object.keys(langData).filter(
+    element => !element.includes(language)
   );
 
   return (
@@ -27,7 +22,7 @@ function FlagMenu() {
       <FlagIcon
         className={flagIconClasses}
         style={flagIconStyle}
-        code={userAgentLang.flag}
+        code={language.slice(3)}
         size={flagIconSize}
         onClick={() => {
           setLangMenuToggle(!showLangMenu);
@@ -43,11 +38,11 @@ function FlagMenu() {
           <ul className="flex flex-wrap justify-end w-full list-reset">
             {otherLanguages.map(lang => {
               return (
-                <li className={"mb-2 mr-2"} key={`key-${lang.id}`}>
+                <li className={"mb-2 md:mr-1 mr-2"} key={`key-${lang}`}>
                   <FlagIcon
                     className={`${flagIconClasses} display-block`}
                     style={flagIconStyle}
-                    code={lang.flag}
+                    code={lang.slice(3)}
                     size={flagIconSize}
                     onClick={() => {
                       setLangMenuToggle(!showLangMenu);
@@ -55,7 +50,7 @@ function FlagMenu() {
                       setTimeout(function() {
                         dispatch({
                           type: "changeLanguage",
-                          newLanguage: lang.id
+                          newLanguage: lang
                         });
                       }, 200);
                     }}

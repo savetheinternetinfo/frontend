@@ -3,15 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply .bg-blue-dark;
-}
-
-a,
-p,
-h1,
-h2,
-h3 {
-  @apply .text-white;
+  @apply .bg-blue-dark .text-white;
 }
 
 a {
@@ -109,6 +101,7 @@ h3 {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 .langmenu-enter {
   opacity: 0.01;
 }
