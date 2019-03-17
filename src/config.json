@@ -1,4 +1,7 @@
 {
+  "api": {
+    "translation": "http://new-api.savetheinternet.info/api/get?q=translation"
+  },
   "links": {
     "petition": "https://www.change.org/p/european-parliament-stop-the-censorship-machinery-save-the-internet",
     "facebook": "https://www.facebook.com/Savetheinternet.info/",
@@ -6,31 +9,5 @@
     "instagram": "https://www.instagram.com/savetheinternetpetition/",
     "youtube": "https://www.youtube.com/channel/UCfsfq_B3zJU4_Zjqtw5lhhQ",
     "github": "https://github.com/savetheinternetinfo/frontend"
-  },
-  "languages": [
-    {
-      "id": "de",
-      "flag": "DE"
-    },
-    {
-      "id": "en",
-      "flag": "GB"
-    },
-    {
-      "id": "fr",
-      "flag": "FR"
-    },
-    {
-      "id": "es",
-      "flag": "ES"
-    },
-    {
-      "id": "it",
-      "flag": "IT"
-    },
-    {
-      "id": "nl",
-      "flag": "NL"
-    }
-  ]
+  }
 }
