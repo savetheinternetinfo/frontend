@@ -58,7 +58,7 @@ function Demos() {
                 let eventItem = [];
                 for (let index = 0; index < feature.properties.length; index++) {
                     const element = feature.properties[index];
-                    if (element.fa_icon === "fa-clock-o") {
+                    if (element.fa_icon === "fa-clock") {
                         let momentObj = moment(element.value);
 
                         // Get locale data
