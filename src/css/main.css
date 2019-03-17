@@ -109,6 +109,7 @@ h3 {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 .langmenu-enter {
   opacity: 0.01;
 }

@@ -43,7 +43,7 @@ function FlagMenu() {
           <ul className="flex flex-wrap justify-end w-full list-reset">
             {otherLanguages.map(lang => {
               return (
-                <li className={"mb-2 mr-2"} key={`key-${lang.id}`}>
+                <li className={"mb-2 md:mr-1 mr-2"} key={`key-${lang.id}`}>
                   <FlagIcon
                     className={`${flagIconClasses} display-block`}
                     style={flagIconStyle}
