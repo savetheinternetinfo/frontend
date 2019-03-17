@@ -15,25 +15,23 @@ import { Home, Gallery, About, AboutUs, Demos, Imprint, Privacy } from ".";
 import Blackout from "./Blackout";
 
 function App() {
-  const [userAgentLang] = config.languages.filter(element =>
-    navigator.language.includes(userAgentLang)
-  );
-
-  let initialState = {
-    language: userAgentLang || "en"
-  };
-
-  const [appData, setAppData] = useState(initialState);
+  const [appData, setAppData] = useState({});
 
   useEffect(() => {
-    axios("http://localhost:3001/languages")
-      .then(res =>
+    axios(config.api.translation)
+      .then(res => {
+        const { translation } = res.data;
+        const navigatorMatch = Object.keys(translation).filter(element =>
+          element.includes(navigator.language)
+        );
+        const userLanguage = navigatorMatch > 0 ? navigatorMatch[0] : "en_GB";
         setAppData({
           ...appData,
-          langData: res.data,
-          translation: res.data[appData.language]
-        })
-      )
+          language: userLanguage,
+          langData: res.data.translation,
+          translation: res.data.translation[userLanguage]
+        });
+      })
       .catch(err => {
         console.log(err);
       });

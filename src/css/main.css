@@ -2,16 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply .bg-blue-dark;
+html {
+  overflow-y: scroll;
 }
 
-a,
-p,
-h1,
-h2,
-h3 {
-  @apply .text-white;
+body {
+  @apply .bg-blue-dark .text-white;
 }
 
 a {
@@ -243,4 +239,22 @@ h3 {
     transform: perspective(140px) rotateY(180deg);
     opacity: 0;
   }
+}
+
+.leaflet-popup {
+  background: transparent;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-content,
+.leaflet-popup-tip {
+  background: config("colors.blue-dark") !important;
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+  @apply .mb-2;
+}
+
+.leaflet-popup-content p i {
 }
