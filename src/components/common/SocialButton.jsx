@@ -12,7 +12,7 @@ function SocialButton({
   const IconComponent = Feather[icon];
   const classes = "-tr-45 focus:outline-none text-center select-none";
   if (!color) color = "white";
-  if (!hoverColor) hoverColor = "orange-lighter";
+  if (!hoverColor) hoverColor = "orange";
   if (!hoverBackground) hoverBackground = "blue-dark";
   if (!hoverBorder) hoverBorder = "blue-dark";
 

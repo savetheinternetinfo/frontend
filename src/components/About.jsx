@@ -149,9 +149,9 @@ function About() {
       )}
       <div className="mb-16">
         <p className="italic">
-          <i className="text-orange-lighter">#savetheinternet </i>
-          <i className="text-orange-lighter">#saveourinternet </i>
-          <i className="text-orange-lighter">#fckart13 </i>
+          <i className="text-orange">#savetheinternet </i>
+          <i className="text-orange">#saveourinternet </i>
+          <i className="text-orange">#fckart13 </i>
         </p>
       </div>
     </div>

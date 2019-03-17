@@ -31,7 +31,7 @@ function Home() {
           </p>
         </div>
       </div>
-      <div className="bg-orange-lighter text-blue-dark text-center">
+      <div className="bg-orange text-blue-dark text-center">
         <div className="container mx-auto flex my-16">
           <div className="h-full pr-12 border-r border-blue-dark">
             <h2>Article 11</h2>
@@ -138,34 +138,34 @@ function Home() {
               <div className="flex flex-row mt-4 justify-center">
                 <SocialButton
                   icon="Facebook"
-                  color="orange-lighter"
+                  color="orange"
                   hoverColor="blue-dark"
-                  hoverBorder="orange-lighter"
-                  hoverBackground="orange-lighter"
+                  hoverBorder="orange"
+                  hoverBackground="orange"
                   link={links.facebook}
                 />
                 <SocialButton
                   icon="Twitter"
-                  color="orange-lighter"
+                  color="orange"
                   hoverColor="blue-dark"
-                  hoverBorder="orange-lighter"
-                  hoverBackground="orange-lighter"
+                  hoverBorder="orange"
+                  hoverBackground="orange"
                   link={links.twitter}
                 />
                 <SocialButton
                   icon="Instagram"
-                  color="orange-lighter"
+                  color="orange"
                   hoverColor="blue-dark"
-                  hoverBorder="orange-lighter"
-                  hoverBackground="orange-lighter"
+                  hoverBorder="orange"
+                  hoverBackground="orange"
                   link={links.instagram}
                 />
                 <SocialButton
                   icon="Youtube"
-                  color="orange-lighter"
+                  color="orange"
                   hoverColor="blue-dark"
-                  hoverBorder="orange-lighter"
-                  hoverBackground="orange-lighter"
+                  hoverBorder="orange"
+                  hoverBackground="orange"
                   link={links.youtube}
                 />
               </div>

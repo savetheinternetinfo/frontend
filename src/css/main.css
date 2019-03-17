@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  @apply .no-underline .text-orange-lighter;
+  @apply .no-underline .text-orange;
 }
 
 p {
@@ -135,7 +135,7 @@ h3 {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply .bg-orange-lighter;
+  @apply .bg-orange;
 }
 
 .loading-container {
