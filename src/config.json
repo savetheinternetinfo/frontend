@@ -1,6 +1,6 @@
 {
   "api": {
-    "translation": "http://new-api.savetheinternet.info/api/get?q=translation"
+    "translation": "https://new-api.savetheinternet.info/api/get?q=translation"
   },
   "links": {
     "petition": "https://www.change.org/p/european-parliament-stop-the-censorship-machinery-save-the-internet",
