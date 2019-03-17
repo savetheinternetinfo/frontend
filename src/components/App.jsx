@@ -62,7 +62,7 @@ function App() {
         <link rel="icon" type="image/png" href={Logo} sizes="16x16" />
       </Helmet>
       <Router>
-        <div className="min-h-screen flex flex-col text-sti">
+        <div className="min-h-screen flex flex-col">
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />

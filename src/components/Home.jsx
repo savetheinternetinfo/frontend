@@ -43,22 +43,23 @@ function Home() {
               <h2>Sign the petition</h2>
               <p>summary of article 11</p>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-              <div className="mt-8"><Button text="Petition" /></div>
+              <div className="my-8"><Button text="Petition" /></div>
             </div>
             <div className="h-full px-12 border-r border-blue">
               <h2>Go to a demonstration</h2>
               <p>summary of article 11</p>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-              <div className="mt-8"><Button text="Demos" /></div>
+              <div className="my-8"><Button text="Demos" /></div>
             </div>
             <div className="h-full pl-12 ">
               <h2>Spread the word</h2>
               <p>summary of article 13</p>
               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-              <div className="flex relative"><SocialButton icon="Facebook" link={links.facebook} />
-          <SocialButton icon="Twitter" link={links.twitter} />
-          <SocialButton icon="Instagram" link={links.instagram} />
-          <SocialButton icon="Youtube" link={links.youtube} /></div>
+              <div className="flex flex-row mt-4 justify-center">
+                <SocialButton icon="Facebook" color="orange-lighter" hoverColor="blue-dark" hoverBorder="orange-lighter" hoverBackground="orange-lighter" link={links.facebook} />
+                <SocialButton icon="Twitter" color="orange-lighter" hoverColor="blue-dark" hoverBorder="orange-lighter" hoverBackground="orange-lighter" link={links.twitter} />
+                <SocialButton icon="Instagram" color="orange-lighter" hoverColor="blue-dark" hoverBorder="orange-lighter" hoverBackground="orange-lighter" link={links.instagram} />
+                <SocialButton icon="Youtube" color="orange-lighter" hoverColor="blue-dark" hoverBorder="orange-lighter" hoverBackground="orange-lighter" link={links.youtube} /></div>
             </div>
           </div>
         </div>
