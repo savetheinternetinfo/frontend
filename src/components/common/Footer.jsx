@@ -8,11 +8,11 @@ function Footer() {
   const [{ translation }] = useStateValue();
   const { links } = config;
   return (
-    <div className="w-full bg-blue-dark mt-auto">
-      <div className="bg-blue w-full p-4 text-center text-orange">
+    <div className="w-full bg-blue mt-auto">
+      <div className="bg-blue-dark w-full p-4 text-center text-orange">
         {translation["footer_notice"]}
       </div>
-      <div className="pt-8 pb-2 flex justify-around mx-auto">
+      <div className="pt-4 pb-2 flex justify-around mx-auto">
         <div className="ml-8 text-center lg:text-left">
           <h3 className="text-orange mb-4">Links</h3>
           <Link
@@ -68,7 +68,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full p-4 bg-blue-dark text-orange text-center">
+      <div className="w-full p-4 bg-blue text-orange text-center">
         © 2019 - savetheinternet.info - CC BY-NC-ND
       </div>
     </div>
