@@ -236,3 +236,20 @@ h3 {
     opacity: 0;
   }
 }
+
+.leaflet-popup {
+  background: transparent;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-content, .leaflet-popup-tip {
+  background: config('colors.blue-dark') !important;
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+  @apply .mb-2;
+}
+
+.leaflet-popup-content p i {
+
+}
