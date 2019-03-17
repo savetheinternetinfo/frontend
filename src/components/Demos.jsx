@@ -59,7 +59,7 @@ function Demos() {
                 for (let index = 0; index < feature.properties.length; index++) {
                     const element = feature.properties[index];
                     if (element.fa_icon === "fa-clock-o") {
-                        let momentObj = moment(element.value, "DD.MM.YYYY H:m");
+                        let momentObj = moment(element.value);
 
                         // Get locale data
                         var localeData = moment.localeData(language);
@@ -98,7 +98,7 @@ function Demos() {
                                 },
                                 {
                                     fa_icon: "fa-clock-o",
-                                    value: moment(item.time).format('DD.MM.YYYY HH:mm:ss'),
+                                    value: item.time,
                                 },
                                 {
                                     fa_icon: "fb_event",
