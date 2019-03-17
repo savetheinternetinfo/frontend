@@ -105,7 +105,7 @@ function Demos() {
               <div
                 key={uniqueId("key-")}
                 className="flex-none p-2"
-                style={{ width: "15rem" }}
+                style={{ width: "18rem" }}
               >
                 <div className="bg-blue-dark text-white rounded p-4 w-full h-full shadow rounded">
                   {x.map(e => {
