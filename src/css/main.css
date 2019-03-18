@@ -63,7 +63,7 @@ h3 {
   }
 }
 .underline:hover:after,
-.underline:focus:after,
+/* .underline:focus:after, */
 .underline:active:after {
   right: 0;
   left: 0;

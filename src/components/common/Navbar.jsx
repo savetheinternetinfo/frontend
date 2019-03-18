@@ -17,10 +17,22 @@ function Navbar() {
     return width >= 768 ? true : false;
   }
 
+  function determineBackgroundColor() {
+    if (isDesktop() && scrolledBelowVideo) {
+      return "rgba(14, 32, 54, 1)";
+    } else if (isDesktop() && !scrolledBelowVideo) {
+      return "rgba(14, 32, 54, 0)";
+    } else {
+      return "rgba(14, 32, 54, 1)";
+    }
+  }
+
+  function handleNavUrlClick(e) {
+    setShowNav(isDesktop);
+  }
+
   const navScrollSpring = useSpring({
-    backgroundColor: scrolledBelowVideo
-      ? "rgba(14, 32, 54, 1)"
-      : "rgba(14, 32, 54, 0)"
+    backgroundColor: determineBackgroundColor()
   });
 
   const navMobileSpring = useSpring({ opacity: showNav ? 1 : 0 });
@@ -62,22 +74,22 @@ function Navbar() {
         }
       >
         <NavURL
-          onClick={() => setShowNav(isDesktop)}
+          onClick={handleNavUrlClick}
           text={translation["about_us_heading"]}
           route="/aboutus"
         />
         <NavURL
-          onClick={() => setShowNav(isDesktop)}
+          onClick={handleNavUrlClick}
           text={translation["gallery_title"]}
           route="/gallery"
         />
         <NavURL
-          onClick={() => setShowNav(isDesktop)}
+          onClick={handleNavUrlClick}
           text={translation["about_title"]}
           route="/about"
         />
         <NavURL
-          onClick={() => setShowNav(isDesktop)}
+          onClick={handleNavUrlClick}
           text={translation["sti_day"]}
           route="/demos"
         />

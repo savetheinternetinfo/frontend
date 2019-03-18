@@ -36,7 +36,7 @@ function FlagMenu() {
           style={flagMenuSpring}
           className="absolute w-full m-0 p-0 pin-l"
         >
-          <ul className="flex flex-wrap justify-end w-full list-reset">
+          <ul className="flex flex-wrap justify-end w-full bg-blue-dark md:bg-transparent list-reset">
             {otherLanguages.map(lang => {
               return (
                 <li className={"mb-2 md:mr-1 mr-2"} key={`key-${lang}`}>
