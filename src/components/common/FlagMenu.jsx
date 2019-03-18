@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import { animated, useSpring } from "react-spring";
 import { FlagIcon } from "react-flag-kit";
 
 import { useStateValue } from "../../contexts/StateContext";
@@ -17,6 +17,8 @@ function FlagMenu() {
     element => !element.includes(language)
   );
 
+  const flagMenuSpring = useSpring({ opacity: showLangMenu ? 1 : 0 });
+
   return (
     <div className="language-picker z-50 mr-2">
       <FlagIcon
@@ -28,13 +30,12 @@ function FlagMenu() {
           setLangMenuToggle(!showLangMenu);
         }}
       />
-      <CSSTransition
-        in={showLangMenu}
-        timeout={300}
-        classNames="langmenu"
-        unmountOnExit
-      >
-        <menu className="absolute w-full m-0 p-0 pin-l">
+
+      {showLangMenu && (
+        <animated.menu
+          style={flagMenuSpring}
+          className="absolute w-full m-0 p-0 pin-l"
+        >
           <ul className="flex flex-wrap justify-end w-full list-reset">
             {otherLanguages.map(lang => {
               return (
@@ -46,21 +47,18 @@ function FlagMenu() {
                     size={flagIconSize}
                     onClick={() => {
                       setLangMenuToggle(!showLangMenu);
-                      // Set a small timeout so the user does not see the flags rearranging
-                      setTimeout(function() {
-                        dispatch({
-                          type: "changeLanguage",
-                          newLanguage: lang
-                        });
-                      }, 200);
+                      dispatch({
+                        type: "changeLanguage",
+                        newLanguage: lang
+                      });
                     }}
                   />
                 </li>
               );
             })}
           </ul>
-        </menu>
-      </CSSTransition>
+        </animated.menu>
+      )}
     </div>
   );
 }

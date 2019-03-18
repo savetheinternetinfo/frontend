@@ -52,7 +52,6 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 - [react-router-dom](https://ghub.io/react-router-dom): DOM bindings for React Router
 - [react-scripts](https://ghub.io/react-scripts): Configuration and scripts for Create React App.
 - [react-spring](https://ghub.io/react-spring): A set of spring-physics based animation primitives
-- [react-transition-group](https://ghub.io/react-transition-group): A react component toolset for managing animations
 - [react-typed](https://ghub.io/react-typed): A react wrapper for typed.js
 - [tailwindcss](https://ghub.io/tailwindcss): A utility-first CSS framework for rapidly building custom user interfaces.
 
