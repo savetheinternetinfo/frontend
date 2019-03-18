@@ -27,9 +27,9 @@ function Home() {
           </p>
         </div>
       </div>
-      <div className="bg-white text-blue-dark text-center">
-        <div className="container mx-auto flex my-16">
-          <div className="h-full pr-12 border-r border-blue-dark flex-1">
+      <div className="bg-white text-blue-dark md:text-center">
+        <div className="container mx-auto md:flex my-16">
+          <div className="md:pr-12 md:border-r border-blue-dark flex-1">
             <h2>Artikel 11</h2>
             <p>
               Das sogenannte Leistungsschutzrecht soll Veröffentlichungen von
@@ -51,7 +51,7 @@ function Home() {
               </a>
             </p>
           </div>
-          <div className="h-full pl-12 flex-1">
+          <div className="md:pl-12 flex-1">
             <h2>Artikel 13</h2>
             <p>
               Inhalte auf Platformen, die ihren Nutzern das Hochladen von
@@ -79,95 +79,92 @@ function Home() {
           </div>
         </div>
       </div>
-      <div>
-        <div className="container mx-auto my-16">
-          <h2>Was kannst du tun?</h2>
-          <p>
-            Du findest auch, dass es zwar wichtig ist, Urheber gerecht zu
-            entlohnen, man dafür aber auf keinen Fall die unkomplizierte
-            Meinungsäußerung im Internet, das Teilen kreativer Inhalte wie z.B.
-            Memes und die Möglichkeit sich unabhängig über Geschehnisse zu
-            informieren, opfern darf?
-          </p>
-          <p>
-            Es gibt viele Möglichkeiten wie Du Dich einbringen kannst: Im vollen
-            Komfort der eigenen vier Wände die Petition unterzeichnen, Freunde
-            und Bekannte über die Situation informieren oder Seite and Seite mit
-            uns auf die Straße gehen und demonstrieren — jede Unterstützung
-            hilft. Im Folgenden findest du eine Auswahl an Möglichkeiten:
-          </p>
-          <div className="flex text-center mt-16">
-            <div className="h-full pr-12 flex-1">
-              <h2>Unterschreibe die Petition</h2>
-              <p>
-                Du willst einer von 5 Millionen sein, die sich bisher mit ihrer
-                Unterschrift gegen diese unverhältnismäßigen Veränderungen
-                aufgelehnt haben? Dann unterschreibe jetzt diese Petition und
-                zeige dadurch, dass Du kein Bot bist, sondern ein Mensch aus
-                Fleisch und Blut! Hier findest Du die Petition:
-              </p>
-              <div className="my-8">
-                <Button text="Petition" />
-              </div>
+      <div className="container mx-auto my-16">
+        <h2>Was kannst du tun?</h2>
+        <p>
+          Du findest auch, dass es zwar wichtig ist, Urheber gerecht zu
+          entlohnen, man dafür aber auf keinen Fall die unkomplizierte
+          Meinungsäußerung im Internet, das Teilen kreativer Inhalte wie z.B.
+          Memes und die Möglichkeit sich unabhängig über Geschehnisse zu
+          informieren, opfern darf?
+        </p>
+        <p>
+          Es gibt viele Möglichkeiten wie Du Dich einbringen kannst: Im vollen
+          Komfort der eigenen vier Wände die Petition unterzeichnen, Freunde und
+          Bekannte über die Situation informieren oder Seite and Seite mit uns
+          auf die Straße gehen und demonstrieren — jede Unterstützung hilft. Im
+          Folgenden findest du eine Auswahl an Möglichkeiten:
+        </p>
+        <div className="lg:flex lg:text-center mt-16">
+          <div className="lg:pr-12 flex-1">
+            <h2>Unterschreibe die Petition</h2>
+            <p>
+              Du willst einer von 5 Millionen sein, die sich bisher mit ihrer
+              Unterschrift gegen diese unverhältnismäßigen Veränderungen
+              aufgelehnt haben? Dann unterschreibe jetzt diese Petition und
+              zeige dadurch, dass Du kein Bot bist, sondern ein Mensch aus
+              Fleisch und Blut! Hier findest Du die Petition:
+            </p>
+            <div className="my-8 text-center">
+              <Button text="Petition" />
             </div>
-            <div className="h-full px-12 border-r border-l border-blue flex-1">
-              <h2>Komm auf eine Demo</h2>
-              <p>
-                Du willst, dass Dich die Politiker hören? Du willst zeigen, dass
-                das Internet voller normaler Menschen ist? Dann zeige Dich, sei
-                laut und friedlich und komm mit vielen Tausend anderen
-                Internetnutzern auf dies Straßen! Schließe Dich einer Demo an —
-                es gibt genug überall in Europa ;) — und bring Freunde,
-                Bekannte, Geschwister, Eltern, Oma, Opa und alle anderen mit!
-              </p>
-              <p>Hier findest du eine Übersicht aller Demos:</p>
-              <div className="my-8">
-                <Button text="Demos" />
-              </div>
+          </div>
+          <div className="lg:px-12 lg:border-r lg:border-l border-blue flex-1">
+            <h2>Komm auf eine Demo</h2>
+            <p>
+              Du willst, dass Dich die Politiker hören? Du willst zeigen, dass
+              das Internet voller normaler Menschen ist? Dann zeige Dich, sei
+              laut und friedlich und komm mit vielen Tausend anderen
+              Internetnutzern auf dies Straßen! Schließe Dich einer Demo an — es
+              gibt genug überall in Europa ;) — und bring Freunde, Bekannte,
+              Geschwister, Eltern, Oma, Opa und alle anderen mit!
+            </p>
+            <p>Hier findest du eine Übersicht aller Demos:</p>
+            <div className="my-8 text-center">
+              <Button text="Demos" />
             </div>
-            <div className="h-full pl-12 flex-1">
-              <h2>Verbreite Informationen</h2>
-              <p>
-                Du glaubst, dass Deine Freunde, Bekannten, und Familie noch
-                nicht ausreichend über dieses Problem Bescheid wissen? Dann
-                teile mit allen worum es geht, was und wie groß das Problem ist!
-                Natürlich kannst Du dafür auch die unten verlinkten social Media
-                benutzen.
-              </p>
-              <div className="flex flex-row mt-4 justify-center">
-                <SocialButton
-                  icon="Facebook"
-                  color="orange"
-                  hoverColor="blue-dark"
-                  hoverBorder="orange"
-                  hoverBackground="orange"
-                  link={links.facebook}
-                />
-                <SocialButton
-                  icon="Twitter"
-                  color="orange"
-                  hoverColor="blue-dark"
-                  hoverBorder="orange"
-                  hoverBackground="orange"
-                  link={links.twitter}
-                />
-                <SocialButton
-                  icon="Instagram"
-                  color="orange"
-                  hoverColor="blue-dark"
-                  hoverBorder="orange"
-                  hoverBackground="orange"
-                  link={links.instagram}
-                />
-                <SocialButton
-                  icon="Youtube"
-                  color="orange"
-                  hoverColor="blue-dark"
-                  hoverBorder="orange"
-                  hoverBackground="orange"
-                  link={links.youtube}
-                />
-              </div>
+          </div>
+          <div className="lg:pl-12 flex-1">
+            <h2>Informiere jeden</h2>
+            <p>
+              Du glaubst, dass Deine Freunde, Bekannten, und Familie noch nicht
+              ausreichend über dieses Problem Bescheid wissen? Dann teile mit
+              allen worum es geht, was und wie groß das Problem ist! Natürlich
+              kannst Du dafür auch die unten verlinkten social Media benutzen.
+            </p>
+            <div className="flex flex-row mt-4 justify-center">
+              <SocialButton
+                icon="Facebook"
+                color="orange"
+                hoverColor="blue-dark"
+                hoverBorder="orange"
+                hoverBackground="orange"
+                link={links.facebook}
+              />
+              <SocialButton
+                icon="Twitter"
+                color="orange"
+                hoverColor="blue-dark"
+                hoverBorder="orange"
+                hoverBackground="orange"
+                link={links.twitter}
+              />
+              <SocialButton
+                icon="Instagram"
+                color="orange"
+                hoverColor="blue-dark"
+                hoverBorder="orange"
+                hoverBackground="orange"
+                link={links.instagram}
+              />
+              <SocialButton
+                icon="Youtube"
+                color="orange"
+                hoverColor="blue-dark"
+                hoverBorder="orange"
+                hoverBackground="orange"
+                link={links.youtube}
+              />
             </div>
           </div>
         </div>
@@ -175,7 +172,7 @@ function Home() {
       <div className="bg-white text-blue-dark">
         <div className="container mx-auto my-16">
           <div className="my-16">
-            <h1>What happened so far?</h1>
+            <h1>Was ist bis jetzt passiert?</h1>
             <p>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
