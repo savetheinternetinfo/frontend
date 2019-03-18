@@ -7,7 +7,7 @@ const app = express();
 const port = 3001;
 app.use(cors());
 
-app.get("/languages", (req, res) => {
+app.get("/translation", (req, res) => {
   res.send(languages);
   // Fake request delay to see loader
   // setTimeout(() => {res.send(languages)}, 2000);

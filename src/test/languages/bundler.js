@@ -1,5 +1,5 @@
 const fs = require("fs-extra");
-const finalObject = {};
+const finalObject = { translation: {} };
 
 const outputPath = "./languages.json";
 if (fs.existsSync(outputPath)) {
@@ -13,7 +13,7 @@ const run = async () => {
     const jsonContent = await fs.readFile(`./${json}`, "utf-8");
     const parsedContent = JSON.parse(jsonContent);
     const [keyName] = json.split(".");
-    finalObject[keyName] = parsedContent;
+    finalObject.translation[keyName] = parsedContent;
   }
   await fs.writeFile(outputPath, JSON.stringify(finalObject));
 };

@@ -8,10 +8,10 @@ function About() {
   return (
     <div className="container mx-auto -mt-10 px-6 py-8">
       <h1>{translation.about_title}</h1>
-      {(language === "de" ||
-        language === "en" ||
-        language === "es" ||
-        language === "it") && (
+      {(language === "de_DE" ||
+        language === "en_GB" ||
+        language === "es_ES" ||
+        language === "it_IT") && (
         <React.Fragment>
           <h2>{translation.about_summary_title}</h2>
           <div className="mb-16 text-sm">
@@ -19,7 +19,7 @@ function About() {
           </div>
         </React.Fragment>
       )}
-      {language === "de" ? (
+      {language === "de_DE" ? (
         <React.Fragment>
           <div className="mb-16">
             <h2>{translation.about_sub_title5}</h2>
