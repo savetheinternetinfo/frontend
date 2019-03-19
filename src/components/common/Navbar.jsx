@@ -18,9 +18,13 @@ function Navbar() {
     return width >= 768 ? true : false;
   }
 
-  function handleNavUrlClick(e) {
-    setShowNav(isDesktop);
+  function handleHomeButtonClick() {
+    scroll.scrollToTop();
+  }
+
+  function handleNavUrlClick() {
     scroll.scrollTo(525);
+    setShowNav(isDesktop);
   }
 
   useEffect(() => {
@@ -54,7 +58,12 @@ function Navbar() {
         onClick={() => setShowNav(!showNav)}
       />
       <div className="flex-grow" />
-      <NavIcon className="z-50" icon="Home" route="/" />
+      <NavIcon
+        className="z-50"
+        icon="Home"
+        route="/"
+        onClick={handleHomeButtonClick}
+      />
 
       <CSSTransition
         in={showNav}
