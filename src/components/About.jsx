@@ -32,16 +32,19 @@ function About() {
               {translation.about_link_video}{" "}
             </a>
             <br />
-            <iframe
-              title="video"
-              width="560"
-              height="315"
-              className="mt-4"
-              src="https://www.youtube-nocookie.com/embed/SpUoLn0k5v4"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+
+            {window.innerWidth > 768 && (
+              <iframe
+                title="video"
+                width="560"
+                height="315"
+                className="mt-4"
+                src="https://www.youtube-nocookie.com/embed/SpUoLn0k5v4"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
           </div>
           <div className="mb-16">
             <h2>{translation.about_sub_title6}</h2>
@@ -112,16 +115,18 @@ function About() {
               {translation.about_link_video}{" "}
             </a>
             <br />
-            <iframe
-              title="video"
-              width="560"
-              height="315"
-              className="mt-4"
-              src="https://www.youtube-nocookie.com/embed/SpUoLn0k5v4"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            {window.innerWidth > 768 && (
+              <iframe
+                title="video"
+                width="560"
+                height="315"
+                className="mt-4"
+                src="https://www.youtube-nocookie.com/embed/SpUoLn0k5v4"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
           </div>
           <div className="mb-16">
             <h2>{translation.about_sub_title7}</h2>
