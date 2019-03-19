@@ -36,7 +36,7 @@ function Header(props) {
           </Link>
         </div>
       </div>
-      <p className="text-xl mt-6 text-center text-white">
+      <p className="text-xl mt-6 px-4 text-center text-white">
         {translation["header_tagline"]}
       </p>
       {props.social !== false && (
