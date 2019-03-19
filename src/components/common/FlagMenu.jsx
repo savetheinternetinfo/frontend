@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { animated, useSpring } from "react-spring";
+import { CSSTransition } from "react-transition-group";
 import { FlagIcon } from "react-flag-kit";
-
 import { useStateValue } from "../../contexts/StateContext";
 
 const flagIconClasses =
-  "bezier grey-filter no-underline select-none cursor-pointer text-center ml-2 mr-4";
+  "bezier grey-filter no-underline select-none focus:outline-none cursor-pointer text-center ml-2 mr-4";
 const flagIconStyle = { marginTop: "0.68rem" };
 const flagIconSize = 26;
 
@@ -16,8 +15,6 @@ function FlagMenu() {
   const otherLanguages = Object.keys(langData).filter(
     element => !element.includes(language)
   );
-
-  const flagMenuSpring = useSpring({ opacity: showLangMenu ? 1 : 0 });
 
   return (
     <div className="language-picker z-50 mr-2">
@@ -31,11 +28,13 @@ function FlagMenu() {
         }}
       />
 
-      {showLangMenu && (
-        <animated.menu
-          style={flagMenuSpring}
-          className="absolute w-full m-0 p-0 pin-l"
-        >
+      <CSSTransition
+        in={showLangMenu}
+        timeout={300}
+        classNames="langmenu"
+        unmountOnExit
+      >
+        <menu className="absolute w-full m-0 p-0 pin-l">
           <ul className="flex flex-wrap justify-end w-full bg-blue-dark md:bg-transparent list-reset">
             {otherLanguages.map(lang => {
               return (
@@ -57,8 +56,8 @@ function FlagMenu() {
               );
             })}
           </ul>
-        </animated.menu>
-      )}
+        </menu>
+      </CSSTransition>
     </div>
   );
 }

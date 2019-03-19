@@ -10,6 +10,10 @@ body {
   @apply .bg-blue-dark .text-white .font-sans;
 }
 
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 a {
   @apply .no-underline .text-orange;
 }
@@ -98,6 +102,21 @@ h3 {
   -webkit-filter: grayscale(10%);
   -moz-filter: grayscale(10%);
   filter: grayscale(10%);
+}
+
+.langmenu-enter {
+  opacity: 0.01;
+}
+.langmenu-enter-active {
+  opacity: 1;
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+.langmenu-exit {
+  opacity: 1;
+}
+.langmenu-exit-active {
+  opacity: 0;
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
 }
 
 .center-video-fix {
