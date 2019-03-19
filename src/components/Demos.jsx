@@ -15,10 +15,40 @@ function uniqueId(str) {
 }
 
 function Demos() {
-  const [{ language }] = useStateValue();
+  const [{ translation, language }] = useStateValue();
+  const [supporters, setSupporters] = useState(null);
 
   const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    axios(config.api.supporters)
+      .then(res => {
+        let supporterList = "";
+        const { supporter } = res.data;
+        for (const element of supporter) {
+          if (element.url != null && !element.url.startsWith("http")) {
+            element.url = "http://" + element.url;
+          }
+          supporterList +=
+            '<div className="w-1/2 sm:w-1/3 md:w-1/4 p-4 mt-8">' +
+            '<a href="' +
+            element.url +
+            '" target="_blank">' +
+            '<img src="' +
+            "https://supporters.savetheinternet.info" +
+            element.image +
+            '" className="max-h-16 w-auto block mx-auto"/><br /><p className="text-center w-full overflow-hidden">' +
+            element.name +
+            "</a></p></div>";
+        }
+        setSupporters(supporterList);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+
   useEffect(() => {
     const demomap = leaflet.map("demomap", {
       scrollWheelZoom: false
@@ -68,7 +98,7 @@ function Demos() {
         }
         eventItem.push({ icon: element.fa_icon, value: element.value });
         popupText += `<p className="mb-0 font-thin">
-                                    <i class="w-4 fa ${
+                                    <i className="w-4 fa ${
                                       element.fa_icon
                                     }" aria-hidden="true"></i> ${element.value}
                                   </p>`;
@@ -168,6 +198,20 @@ function Demos() {
           style={{ height: window.innerHeight / 1.3 + "px" }}
           id="demomap"
         />
+        {supporters !== null && (
+          <div className="container mx-auto -mt-10 px-6 py-8">
+            <div className="">
+              <h2>{translation["supporters_orga"]}</h2>
+              <div className="w-full flex flex-wrap">{parse(supporters)}</div>
+            </div>
+            {/* <div className="mt-16">
+              <h2>{translation["supporters_person"]}</h2>
+              <div className="w-full flex flex-wrap">
+                a{}
+              </div>
+            </div> */}
+          </div>
+        )}
       </React.Fragment>
     </div>
   );
