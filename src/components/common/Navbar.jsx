@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { animated, useSpring } from "react-spring";
 import { CSSTransition } from "react-transition-group";
+import { animateScroll as scroll } from "react-scroll";
 import { useStateValue } from "../../contexts/StateContext";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import NavURL from "./NavURL";
@@ -20,6 +20,7 @@ function Navbar() {
 
   function handleNavUrlClick(e) {
     setShowNav(isDesktop);
+    scroll.scrollTo(525);
   }
 
   useEffect(() => {
@@ -47,7 +48,6 @@ function Navbar() {
         (scrolledBelowVideo ? "md:bg-blue-darker" : "md:bg-transparent")
       }
     >
-      {console.log(scrolledBelowVideo)}
       <NavIcon
         className="z-50 md:hidden justify-start"
         icon="Menu"
