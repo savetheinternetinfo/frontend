@@ -42,8 +42,8 @@ h3 {
   transform: skew(3deg, -0.5deg) translateZ(0);
 }
 
-.animate-300 {
-  transition: all 300ms linear;
+.animate-all-fast {
+  transition: all 150ms linear;
 }
 
 @screen md {

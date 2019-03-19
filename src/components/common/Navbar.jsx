@@ -41,58 +41,57 @@ function Navbar() {
   });
 
   return (
-    <CSSTransition
-      in={scrolledBelowVideo}
-      timeout={300}
-      classNames="bezier navbg"
+    <nav
+      className={
+        "z-50 flex flex-row h-12 w-full fixed pin-t bg-blue-dark animate-all-fast " +
+        (scrolledBelowVideo ? "md:bg-blue-darker" : "md:bg-transparent")
+      }
     >
-      <nav className="z-50 flex flex-row h-12 w-full fixed pin-t bg-blue-dark md:bg-transparent">
-        {console.log(scrolledBelowVideo)}
-        <NavIcon
-          className="z-50 md:hidden justify-start"
-          icon="Menu"
-          onClick={() => setShowNav(!showNav)}
-        />
-        <div className="flex-grow" />
-        <NavIcon className="z-50" icon="Home" route="/" />
+      {console.log(scrolledBelowVideo)}
+      <NavIcon
+        className="z-50 md:hidden justify-start"
+        icon="Menu"
+        onClick={() => setShowNav(!showNav)}
+      />
+      <div className="flex-grow" />
+      <NavIcon className="z-50" icon="Home" route="/" />
 
-        <CSSTransition
-          in={showNav}
-          timeout={300}
-          classNames="bezier mobilenav"
-          unmountOnExit
+      <CSSTransition
+        in={showNav}
+        timeout={300}
+        classNames="bezier mobilenav"
+        unmountOnExit
+      >
+        <div
+          className={
+            "flex-col absolute pt-1 md:pt-0 md:relative md:flex md:flex-row w-full overflow-hidden bg-blue-dark md:bg-transparent flex"
+          }
         >
-          <div
-            className={
-              "flex-col absolute pt-1 md:pt-0 md:relative md:flex md:flex-row w-full overflow-hidden bg-blue-dark md:bg-transparent flex"
-            }
-          >
-            <NavURL
-              onClick={handleNavUrlClick}
-              text={translation["about_us_heading"]}
-              route="/aboutus"
-            />
-            <NavURL
-              onClick={handleNavUrlClick}
-              text={translation["gallery_title"]}
-              route="/gallery"
-            />
-            <NavURL
-              onClick={handleNavUrlClick}
-              text={translation["about_title"]}
-              route="/about"
-            />
-            <NavURL
-              onClick={handleNavUrlClick}
-              text={translation["sti_day"]}
-              route="/demos"
-            />
-          </div>
-        </CSSTransition>
+          <NavURL
+            onClick={handleNavUrlClick}
+            text={translation["about_us_heading"]}
+            route="/aboutus"
+          />
+          <NavURL
+            onClick={handleNavUrlClick}
+            text={translation["gallery_title"]}
+            route="/gallery"
+          />
+          <NavURL
+            onClick={handleNavUrlClick}
+            text={translation["about_title"]}
+            route="/about"
+          />
+          <NavURL
+            onClick={handleNavUrlClick}
+            text={translation["sti_day"]}
+            route="/demos"
+          />
+        </div>
+      </CSSTransition>
 
-        <FlagMenu />
-      </nav>
-    </CSSTransition>
+      <FlagMenu />
+    </nav>
   );
 }
 
