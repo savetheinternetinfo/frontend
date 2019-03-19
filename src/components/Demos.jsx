@@ -28,19 +28,21 @@ function Demos() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios(config.api.supporters)
-      .then(res => {
-        setSupporters(
-          res.data.supporter.map(supporter => {
-            supporter.image =
-              "https://supporters.savetheinternet.info" + supporter.image;
-            return supporter;
-          })
-        );
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    if (supporters === null) {
+      axios(config.api.supporters)
+        .then(res => {
+          setSupporters(
+            res.data.supporter.map(supporter => {
+              supporter.image =
+                "https://supporters.savetheinternet.info" + supporter.image;
+              return supporter;
+            })
+          );
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   }, []);
 
   useEffect(() => {
