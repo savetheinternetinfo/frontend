@@ -205,8 +205,14 @@ function Demos() {
                     className="block bg-blue rounded m-4 p-4"
                     href={supporter.url}
                   >
-                    <img className="w-full" src={supporter.image} alt="" />
-                    <div className="text-center mt-2">{supporter.name}</div>
+                    <img
+                      className="block mx-auto"
+                      src={supporter.image}
+                      alt=""
+                    />
+                    <div className="w-full text-center mt-4 break-word overflow-x-hidden">
+                      {supporter.name}
+                    </div>
                   </a>
                 </div>
               ))}
