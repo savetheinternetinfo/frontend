@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
-import { animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll, scroller } from "react-scroll";
 import { useStateValue } from "../../contexts/StateContext";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import NavURL from "./NavURL";
@@ -19,11 +19,11 @@ function Navbar() {
   }
 
   function handleHomeButtonClick() {
-    scroll.scrollToTop();
+    scroll.scrollToTop({ duration: 500 });
   }
 
   function handleNavUrlClick() {
-    scroll.scrollTo(525);
+    scroller.scrollTo("content", { smooth: true, duration: 500 });
     setShowNav(isDesktop);
   }
 

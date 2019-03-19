@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import { useStateValue } from "../../contexts/StateContext";
+import { Element as ScrollElement } from "react-scroll";
 
 import Button from "./Button";
 import SocialButton from "./SocialButton";
@@ -62,6 +63,7 @@ function Header(props) {
         </video>
       </div>
       <div className="relative w-full h-24" />
+      <ScrollElement className="absolute pin-b mb-12" name="content" />
     </div>
   );
 }
