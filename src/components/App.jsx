@@ -66,7 +66,7 @@ function App() {
         <Switch>
           <Route exact path="/blackout" component={Blackout} />
           <Route path="/">
-            <div className="min-h-screen flex flex-col">
+            <div className="min-h-screen w-full flex flex-col overflow-x-hidden break-words">
               <Header />
               <Switch>
                 <Route exact path="/" component={Home} />
