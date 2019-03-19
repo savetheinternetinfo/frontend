@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useStateValue } from "../contexts/StateContext";
+import Masonry from "react-masonry-component";
 import config from "../config";
 
 import parse from "html-react-parser";
 import leaflet from "leaflet";
-//import geojs from "../mapcoords.json";
 import moment from "moment";
 import axios from "axios";
 
@@ -13,6 +13,12 @@ function uniqueId(str) {
     .toString(36)
     .substr(2, 9)}`;
 }
+
+const masonryOptions = {
+  //columnWidth: '.gallery-sizer',
+  elementSelector: ".gallery-item",
+  percentPosition: true
+};
 
 function Demos() {
   const [{ translation, language }] = useStateValue();
@@ -24,25 +30,13 @@ function Demos() {
   useEffect(() => {
     axios(config.api.supporters)
       .then(res => {
-        let supporterList = "";
-        const { supporter } = res.data;
-        for (const element of supporter) {
-          if (element.url != null && !element.url.startsWith("http")) {
-            element.url = "http://" + element.url;
-          }
-          supporterList +=
-            '<div className="w-1/2 sm:w-1/3 md:w-1/4 p-4 mt-8">' +
-            '<a href="' +
-            element.url +
-            '" target="_blank">' +
-            '<img src="' +
-            "https://supporters.savetheinternet.info" +
-            element.image +
-            '" className="max-h-16 w-auto block mx-auto"/><br /><p className="text-center w-full overflow-hidden">' +
-            element.name +
-            "</a></p></div>";
-        }
-        setSupporters(supporterList);
+        setSupporters(
+          res.data.supporter.map(supporter => {
+            supporter.image =
+              "https://supporters.savetheinternet.info" + supporter.image;
+            return supporter;
+          })
+        );
       })
       .catch(err => {
         console.log(err);
@@ -199,17 +193,24 @@ function Demos() {
           id="demomap"
         />
         {supporters !== null && (
-          <div className="container mx-auto -mt-10 px-6 py-8">
-            <div className="">
-              <h2>{translation["supporters_orga"]}</h2>
-              <div className="w-full flex flex-wrap">{parse(supporters)}</div>
-            </div>
-            {/* <div className="mt-16">
-              <h2>{translation["supporters_person"]}</h2>
-              <div className="w-full flex flex-wrap">
-                a{}
-              </div>
-            </div> */}
+          <div className="container mx-auto px-6 py-8">
+            <h2>{translation["supporters_orga"]}</h2>
+            <Masonry options={masonryOptions} updateOnEachImageLoad>
+              {supporters.map((supporter, idx) => (
+                <div
+                  key={idx}
+                  className="gallery-item w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+                >
+                  <a
+                    className="block bg-blue rounded m-4 p-4"
+                    href={supporter.url}
+                  >
+                    <img className="w-full" src={supporter.image} alt="" />
+                    <div className="text-center mt-2">{supporter.name}</div>
+                  </a>
+                </div>
+              ))}
+            </Masonry>
           </div>
         )}
       </React.Fragment>
