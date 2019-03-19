@@ -1,7 +1,9 @@
 import config from "../../config.json";
 import React from "react";
+import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import { useStateValue } from "../../contexts/StateContext";
+import { Element as ScrollElement } from "react-scroll";
 
 import Button from "./Button";
 import SocialButton from "./SocialButton";
@@ -14,11 +16,11 @@ function Header(props) {
   return (
     <div className="relative flex flex-col items-center justify-center overflow-hidden">
       <Navbar />
-      <div className="relative tilt text-3xl sm:text-5xl bg-white mt-16 p-4">
+      <div className="relative tilt text-3xl sm:text-5xl bg-white mt-32 p-4">
         <div className="untilt">
-          <a
+          <Link
+            to={"/"}
             className="text-blue hover:text-blue font-bold no-underline"
-            href="/"
           >
             Save{" "}
             <Typed
@@ -32,10 +34,10 @@ function Header(props) {
               backDelay={1400}
             />{" "}
             Internet
-          </a>
+          </Link>
         </div>
       </div>
-      <p className="text-xl mt-6 text-center text-white">
+      <p className="text-xl mt-6 px-4 text-center text-white">
         {translation["header_tagline"]}
       </p>
       {props.social !== false && (
@@ -52,6 +54,7 @@ function Header(props) {
       <div className="absolute z-video pin-t pin-l h-full w-full overflow-hidden">
         <video
           className="min-h-full min-w-full relative center-video-fix"
+          playsInline
           autoPlay
           loop
           muted
@@ -60,6 +63,7 @@ function Header(props) {
         </video>
       </div>
       <div className="relative w-full h-24" />
+      <ScrollElement className="absolute pin-b mb-12" name="content" />
     </div>
   );
 }

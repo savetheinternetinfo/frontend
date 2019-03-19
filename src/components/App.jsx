@@ -7,34 +7,34 @@ import axios from "axios";
 import { StateProvider } from "../contexts/StateContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import Logo from "../assets/favicon.ico";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
-import Home from "./Home";
-import Gallery from "./Gallery";
-import About from "./About";
-import Demos from "./Demos";
-
-import Logo from "../assets/favicon.ico";
+import LoadAnimation from "./common/LoadAnimation.jsx";
+import { Home, Gallery, About, AboutUs, Demos, Imprint, Privacy } from ".";
+import Blackout from "./Blackout";
 
 function App() {
-  const [userAgentLang] = config.languages.filter(element =>
-    navigator.language.includes(userAgentLang)
-  );
-
-  let initialState = {
-    language: userAgentLang || "en"
-  };
-
-  const [appData, setAppData] = useState(initialState);
+  const [appData, setAppData] = useState({});
 
   useEffect(() => {
-    axios("http://localhost:3001/languages").then(res =>
-      setAppData({
-        ...appData,
-        langData: res.data,
-        translation: res.data[appData.language]
+    axios(config.api.translation)
+      .then(res => {
+        const { translation } = res.data;
+        const navigatorMatch = Object.keys(translation).filter(element =>
+          element.includes(navigator.language)
+        );
+        const userLanguage = navigatorMatch > 0 ? navigatorMatch[0] : "en_GB";
+        setAppData({
+          ...appData,
+          language: userLanguage,
+          langData: res.data.translation,
+          translation: res.data.translation[userLanguage]
+        });
       })
-    );
+      .catch(err => {
+        console.log(err);
+      });
   }, []);
 
   const reducer = (state, action) => {
@@ -50,10 +50,9 @@ function App() {
     }
   };
 
-  // TODO: Fancy loading animation.
-  // Return a React component while axios is requesting languages
   if (!appData["langData"]) {
-    return <div />;
+    // Return a React component while axios is requesting languages/api
+    return <LoadAnimation />;
   }
 
   return (
@@ -64,16 +63,24 @@ function App() {
         <link rel="icon" type="image/png" href={Logo} sizes="16x16" />
       </Helmet>
       <Router>
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/gallery" component={Gallery} />
-            <Route exact path="/demos" component={Demos} />
-          </Switch>
-          <Footer />
-        </div>
+        <Switch>
+          <Route exact path="/blackout" component={Blackout} />
+          <Route path="/">
+            <div className="min-h-screen w-full flex flex-col overflow-x-hidden break-words">
+              <Header />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/aboutus" component={AboutUs} />
+                <Route exact path="/gallery" component={Gallery} />
+                <Route exact path="/demos" component={Demos} />
+                <Route exact path="/imprint" component={Imprint} />
+                <Route exact path="/privacy" component={Privacy} />
+              </Switch>
+              <Footer />
+            </div>
+          </Route>
+        </Switch>
       </Router>
     </StateProvider>
   );

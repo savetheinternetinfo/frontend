@@ -9,6 +9,7 @@
     "cors": "^2.8.5",
     "cssnano": "^4.1.10",
     "express": "^4.16.4",
+    "html-react-parser": "^0.6.2",
     "leaflet": "^1.4.0",
     "moment": "^2.24.0",
     "postcss-cli": "^6.1.2",
@@ -21,7 +22,8 @@
     "react-masonry-component": "^6.2.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
-    "react-transition-group": "^2.6.0",
+    "react-scroll": "^1.7.11",
+    "react-transition-group": "^2.6.1",
     "react-typed": "^1.1.0",
     "tailwindcss": "^0.7.4"
   },
@@ -30,7 +32,8 @@
     "watch:css": "postcss src/css/main.css -o src/index.css -w",
     "dev": "concurrently \"npm:watch:css --silent\" \"npm:start --silent\" \"nodemon src/test/mockServer.js\"",
     "start": "npm run build:css && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "build": "npm run language && npm run build:css && react-scripts build",
+    "language": "cd src/test/languages && node bundler.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postsetup": "npm i -g nodemon"

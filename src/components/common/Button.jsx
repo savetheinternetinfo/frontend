@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Button(props) {
-  const classNames =
-    "bezier px-4 py-3 border border-1 rounded-sm border-orange-lighter bg-transparent shadow m-2 text-orange-lighter hover:bg-orange-lighter hover:text-blue cursor-pointer focus:outline-none select-none";
+  let classNames =
+    "bezier px-4 py-3 border border-1 rounded-sm border-orange bg-transparent shadow m-2 text-orange hover:bg-orange hover:text-blue-dark cursor-pointer focus:outline-none select-none";
+  if (props.className) classNames += " " + props.className;
   return typeof props.link === "undefined" ? (
     <a className={`${classNames} no-underline`} href={props.href}>
       {props.text}

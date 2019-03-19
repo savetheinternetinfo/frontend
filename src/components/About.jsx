@@ -1,61 +1,165 @@
 import React from "react";
+import parse from "html-react-parser";
+
+import { useStateValue } from "../contexts/StateContext";
 
 function About() {
+  const [{ language, translation }] = useStateValue();
   return (
-    <React.Fragment>
-      <div className="w-1/2 mx-auto py-16 text-white">
-        <h1>Über uns</h1> <br />
-        <h3>Wer sind wir?</h3>
-        <br />
-        Hinter savetheinternet.info steht eine große und bunte Gruppe von
-        Leuten, die alle dasselbe Ziel verfolgen: Das Internet retten. Unsere
-        Gruppierung hat sich zwar über das Internet zusammengefunden, unsere
-        Mitglieder leben und arbeiten jedoch über den gesamten deutschsprachigen
-        Raum verteilt. Wir agieren dabei vollkommen unparteiisch und
-        distanzieren uns auch in aller Form von jeglichen politischen
-        Ausrichtungen. Als freie Gruppe von Internetaktivisten agieren wir
-        wirtschaftlich unabhängig und vergrößern unsere Reichweite stetig. Dabei
-        achten wir jedoch sehr stark auf die Anonymität und Sicherheit unserer
-        Mitglieder. <br /> <br />
-        <h3>Wie arbeiten wir?</h3>
-        <br />
-        Unsere Gruppe ist über verschiedene Webseiten organisiert und im
-        ständigen Kontakt untereinander. Unsere Leute sind auf der Straße aktiv
-        um Flyer zu verteilen, telefonieren mit Politikern, Journalisten und
-        Influencern, organisieren Demos und Informationsstände oder kümmern sich
-        um die Webseite, Videos und Werbematerial. Wir betreiben dabei reine
-        Sachpolitik und möchten in erster Linie die Menschen darüber informieren
-        welche Gesetzesänderungen geplant sind und welche Auswirkungen diese
-        haben werden. Dabei spielt es für uns keine Rolle, von welchem
-        Parlamentsmitglied diese Änderungen vorgeschlagen werden. <br /> <br />
-        <h3>Wo treten wir auf?</h3>
-        <br />
-        Neben unserer Webseite sind wir auch auf Facebook, Twitter, Instagram
-        und YouTube aktiv. Zudem sind unsere Mitglieder auf der Straße
-        unterwegs, um mit Ständen und Flyern die Menschen zu informieren. <br />{" "}
-        <br />
-        <h3>Wie finanzieren wir uns?</h3>
-        <br />
-        Die Finanzierung unserer Kampagnen erfolgt sowohl aus Selbstfinanzierung
-        der Initiatoren, als auch durch die privaten Mittel unserer Aktivisten.
-        Seit dem 5. November haben wir eine GoFundMe-Kampagne ins Leben gerufen
-        um weiterhin aktiv zu bleiben. Wir standen dabei auf keiner Gehaltsliste
-        und lehnen dies auch für die Zukunft ab. Die Arbeit unserer Aktivisten
-        ist rein ehrenamtlich und findet ausschließlich in deren Freizeit statt,
-        um die Inhalte unserer Kampagnen der Bevölkerung näher zu bringen.
-        <br /> <br />
-        <h3>Wie sind wir erreichbar?</h3>
-        <br />
-        Der direkte Weg ist das Impressum. Selbstverständlich sind wir auch über
-        unsere anderen Plattformen erreichbar. Die entsprechenden Links befinden
-        sich im oberen linken Eck unserer Webseite. <br /> <br />
-        <h3>Wie kann ich euch unterstützen?</h3>
-        <br />
-        Informiere dich und sprich über das Thema mit deinen Freunden.
-        Unterstütze unsere Arbeit mit der Petition oder direkt mit einer Spende
-        und beteilige dich an den Diskussionen im Netz. <br />
+    <div className="container mx-auto -mt-10 px-6 py-8">
+      <h1>{translation.about_title}</h1>
+      {(language === "de_DE" ||
+        language === "en_GB" ||
+        language === "es_ES" ||
+        language === "it_IT") && (
+        <React.Fragment>
+          <h2>{translation.about_summary_title}</h2>
+          <div className="mb-16 text-sm">
+            <p>{parse(translation.about_summary)}</p>
+          </div>
+        </React.Fragment>
+      )}
+      {language === "de_DE" ? (
+        <React.Fragment>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title5}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="https://www.youtube.com/watch?v=SpUoLn0k5v4"
+            >
+              {translation.about_link_video}{" "}
+            </a>
+            <br />
+
+            {window.innerWidth > 768 && (
+              <iframe
+                title="video"
+                width="560"
+                height="315"
+                className="mt-4"
+                src="https://www.youtube-nocookie.com/embed/SpUoLn0k5v4"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
+          </div>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title6}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="http://www.europarl.europa.eu/news/de/press-room/20180906IPR12103/parlament-legt-position-zur-urheberrechtsreform-fur-das-internetzeitalter-fest"
+            >
+              {translation.about_link_text}
+            </a>
+          </div>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title3}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="https://netzpolitik.org/2018/das-eu-parlament-legt-einen-schleier-ueber-das-internet-votum-fuer-upload-filter-und-leistungsschutzrecht/"
+            >
+              {translation.about_link_text}
+            </a>
+          </div>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title2}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="https://www.heise.de/ct/ausgabe/2018-21-EU-Verbrauchern-drohen-Upload-Filter-4172829.html"
+            >
+              {translation.about_link_text}
+            </a>
+          </div>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title4}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="https://juliareda.eu/2018/10/geheime-verhandlungen-urheberrechtsreform/"
+            >
+              {translation.about_link_text}
+            </a>
+          </div>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title1}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="https://www.heise.de/newsticker/meldung/YouTube-Chefin-Neues-EU-Copyright-fuer-Plattformen-zu-riskant-4198811.html"
+            >
+              {translation.about_link_text}
+            </a>
+          </div>
+        </React.Fragment>
+      ) : (
+        <React.Fragment>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title5}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="https://www.youtube.com/watch?v=SpUoLn0k5v4"
+            >
+              {translation.about_link_video}{" "}
+            </a>
+            <br />
+            {window.innerWidth > 768 && (
+              <iframe
+                title="video"
+                width="560"
+                height="315"
+                className="mt-4"
+                src="https://www.youtube-nocookie.com/embed/SpUoLn0k5v4"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
+          </div>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title7}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="https://www.theguardian.com/commentisfree/2018/sep/13/tech-giants-eu-internet-searches-copyright-law"
+            >
+              {translation.about_link_text}
+            </a>
+          </div>
+          <div className="mb-16">
+            <h2>{translation.about_sub_title8}</h2>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic text-xl"
+              href="https://juliareda.eu/2018/10/where-eu-member-states-stand-on-upload-filters-and-the-link-tax/"
+            >
+              {translation.about_link_text}
+            </a>
+          </div>
+        </React.Fragment>
+      )}
+      <div className="mb-16">
+        <p className="italic">
+          <i className="text-orange">#savetheinternet </i>
+          <i className="text-orange">#saveourinternet </i>
+          <i className="text-orange">#fckart13 </i>
+        </p>
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

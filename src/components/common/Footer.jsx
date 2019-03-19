@@ -12,8 +12,8 @@ function Footer() {
       <div className="bg-blue w-full p-4 text-center text-orange">
         {translation["footer_notice"]}
       </div>
-      <div className="w-3/4 px-4 pt-8 pb-2 flex mx-auto">
-        <div className="w-1/3 pl-16">
+      <div className="pt-4 pb-2 flex justify-around mx-auto">
+        <div className="ml-8 text-center lg:text-left">
           <h3 className="text-orange mb-4">Links</h3>
           <Link
             className="bezier text-white hover:text-orange no-underline block"
@@ -38,7 +38,7 @@ function Footer() {
             to="/contact"
           />
         </div>
-        <div className="w-1/3 pl-16">
+        <div className="ml-4 text-center lg:text-left">
           <h3 className="text-orange mb-4">Legal</h3>
           <Link
             className="bezier text-white hover:text-orange no-underline block"
@@ -53,17 +53,19 @@ function Footer() {
             {translation["privacy_link"]}
           </Link>
         </div>
-        <div className="w-1/3 pl-16">
-          <h3 className="mx-4 text-orange mb-4">Social</h3>
-          <NavIcon size={18} icon="Facebook" url={links.facebook} />
-          <NavIcon size={18} icon="Twitter" url={links.twitter} />
-          <br />
-          <br />
-          <NavIcon size={18} icon="Instagram" url={links.instagram} />
-          <NavIcon size={18} icon="Youtube" url={links.youtube} />
-          <br />
-          <br />
-          <NavIcon size={18} icon="GitHub" url={links.github} />
+        <div className="mr-8 text-center lg:text-left">
+          <h3 className="text-orange mb-4">Social</h3>
+          <div className="lg:-ml-4">
+            <NavIcon size={18} icon="Facebook" url={links.facebook} />
+            <NavIcon size={18} icon="Twitter" url={links.twitter} />
+            <br />
+            <br />
+            <NavIcon size={18} icon="Instagram" url={links.instagram} />
+            <NavIcon size={18} icon="Youtube" url={links.youtube} />
+            <br />
+            <br />
+            <NavIcon size={18} icon="GitHub" url={links.github} />
+          </div>
         </div>
       </div>
       <div className="w-full p-4 bg-blue-dark text-orange text-center">
