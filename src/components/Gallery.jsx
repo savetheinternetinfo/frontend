@@ -32,57 +32,54 @@ function Gallery() {
 
   return (
     <React.Fragment>
-      <React.Fragment>
-        <div className="container mx-auto py-4">
-          <div className="gallery-sizer w-1/5" />
-          <Masonry options={masonryOptions}>
-            {images.map((i, idx) => (
-              <div
-                key={idx}
-                lang={i.language}
-                className="gallery-item p-2 w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
-                onClick={() => {
-                  setLightboxIndex(idx);
-                  setLightboxOpen(true);
-                }}
-              >
-                <img
-                  className="block w-full cursor-pointer"
-                  src={i.thumbnail}
-                  alt=""
-                />
-              </div>
-            ))}
-          </Masonry>
-          {lightboxOpen && (
-            <Lightbox
-              mainSrc={images[lightboxIndex].image}
-              mainSrcThumbnail={images[lightboxIndex].thumbnail}
-              nextSrc={images[(lightboxIndex + 1) % images.length].image}
-              nextSrcThumbnail={
-                images[(lightboxIndex + 1) % images.length].thumbnail
-              }
-              prevSrc={
-                images[(lightboxIndex + images.length - 1) % images.length]
-                  .image
-              }
-              prevSrcThumbnail={
-                images[(lightboxIndex + images.length - 1) % images.length]
-                  .thumbnail
-              }
-              onCloseRequest={() => setLightboxOpen(false)}
-              onMovePrevRequest={() =>
-                setLightboxIndex(
-                  (lightboxIndex + images.length - 1) % images.length
-                )
-              }
-              onMoveNextRequest={() =>
-                setLightboxIndex((lightboxIndex + 1) % images.length)
-              }
-            />
-          )}
-        </div>
-      </React.Fragment>
+      <div className="container mx-auto py-4">
+        <div className="gallery-sizer w-1/5" />
+        <Masonry options={masonryOptions}>
+          {images.map((i, idx) => (
+            <div
+              key={idx}
+              lang={i.language}
+              className="gallery-item p-2 w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+              onClick={() => {
+                setLightboxIndex(idx);
+                setLightboxOpen(true);
+              }}
+            >
+              <img
+                className="block w-full cursor-pointer"
+                src={i.thumbnail}
+                alt=""
+              />
+            </div>
+          ))}
+        </Masonry>
+        {lightboxOpen && (
+          <Lightbox
+            mainSrc={images[lightboxIndex].image}
+            mainSrcThumbnail={images[lightboxIndex].thumbnail}
+            nextSrc={images[(lightboxIndex + 1) % images.length].image}
+            nextSrcThumbnail={
+              images[(lightboxIndex + 1) % images.length].thumbnail
+            }
+            prevSrc={
+              images[(lightboxIndex + images.length - 1) % images.length].image
+            }
+            prevSrcThumbnail={
+              images[(lightboxIndex + images.length - 1) % images.length]
+                .thumbnail
+            }
+            onCloseRequest={() => setLightboxOpen(false)}
+            onMovePrevRequest={() =>
+              setLightboxIndex(
+                (lightboxIndex + images.length - 1) % images.length
+              )
+            }
+            onMoveNextRequest={() =>
+              setLightboxIndex((lightboxIndex + 1) % images.length)
+            }
+          />
+        )}
+      </div>
     </React.Fragment>
   );
 }
