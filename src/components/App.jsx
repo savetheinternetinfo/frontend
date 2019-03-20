@@ -50,7 +50,7 @@ function App() {
     }
   };
 
-  if (!appData["langData"]) {
+  if (!appData["langData"] && window.location.pathname !== "/blackout") {
     // Return a React component while axios is requesting languages/api
     return <LoadAnimation />;
   }
