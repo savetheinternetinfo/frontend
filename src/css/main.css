@@ -112,7 +112,7 @@ h3 {
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
 }
 .langmenu-exit {
-  opacity: 1;
+  opacity: 0;
 }
 .langmenu-exit-active {
   opacity: 0;
@@ -120,7 +120,7 @@ h3 {
 }
 
 .mobilenav-enter {
-  opacity: 0.01;
+  opacity: 0;
 }
 .mobilenav-enter-active {
   opacity: 1;

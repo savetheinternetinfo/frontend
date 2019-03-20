@@ -30,8 +30,8 @@ function FlagMenu() {
 
       <CSSTransition
         in={showLangMenu}
-        timeout={300}
-        classNames="bezier langmenu"
+        timeout={150}
+        classNames="langmenu"
         unmountOnExit
       >
         <menu className="absolute w-full m-0 p-0 pin-l">
