@@ -72,7 +72,7 @@ function Demos() {
     };
 
     function bindPopoup(feature, layer) {
-      const popupText = `
+      let popupText = `
         <p className="font-thin mt-2">
           <i className="w-8 fa fa-map-marker" aria-hidden="true" />
           ${feature.event.location}
@@ -81,11 +81,14 @@ function Demos() {
           <i className="w-8 fa fa-clock" aria-hidden="true" />
           ${moment(feature.event.time).format(eventDateFormat)}
         </p>
-        <p className="font-thin mt-2">
-          <i className="w-8 fa" aria-hidden="true" />
-          ${feature.event.facebookEvent}
-        </p>
       `;
+
+      if(feature.event.facebookEvent && feature.event.facebookEvent.length > 0) {
+        popupText += `<p className="font-thin mt-2">
+          <i className="w-8 fa" aria-hidden="true" />
+          <a href="${feature.event.facebookEvent}" target="_blank">Mehr Informationen</a>
+        </p>`
+      }
 
       let popup = layer.bindPopup(popupText);
       popup.on("click", function(e) {
@@ -153,10 +156,10 @@ function Demos() {
                 <i className="w-8 fa fa-clock" aria-hidden="true" />
                 {moment(e.time).format(eventDateFormat)}
               </p>
-              <p
-                className="font-thin mt-2 ml-8"
-                dangerouslySetInnerHTML={{ __html: e.facebookEvent }}
-              />
+              {e.facebookEvent && (<p
+                className="font-thin mt-2 ml-8">
+                 <a href={e.facebookEvent} target="_blank">Mehr Informationen</a>
+              </p>)}
             </div>
           </div>
         ))}
