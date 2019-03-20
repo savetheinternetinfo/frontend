@@ -108,7 +108,7 @@ function Demos() {
           STIDemo: item.sti_event,
           geometry: {
             type: "Point",
-            coordinates: [item.latitude, item.longitude]
+            coordinates: [item.longitude, item.latitude]
           }
         };
       });
@@ -128,7 +128,7 @@ function Demos() {
 
   const handleEventClick = e => () => {
     if (mapRef.current && mapRef.current.leafletElement) {
-      mapRef.current.leafletElement.flyTo([e.longitude, e.latitude], 14, {
+      mapRef.current.leafletElement.flyTo([e.latitude, e.longitude], 14, {
         animate: true,
         duration: 1.5
       });
