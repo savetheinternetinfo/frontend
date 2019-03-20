@@ -92,7 +92,7 @@ function Home() {
           auf die Straße gehen und demonstrieren — jede Unterstützung hilft. Im
           Folgenden findest du eine Auswahl an Möglichkeiten:
         </p>
-        <div className="lg:flex lg:text-center">
+        <div className="my-10 lg:flex lg:text-center">
           <div className="lg:pr-12 flex-1">
             <h2>Unterschreibe die Petition</h2>
             <p>
