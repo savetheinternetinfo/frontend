@@ -34,7 +34,7 @@ function Gallery() {
     <React.Fragment>
       <div className="container mx-auto py-4">
         <div className="gallery-sizer w-1/5" />
-        <Masonry options={masonryOptions}>
+        <Masonry options={masonryOptions} updateOnEachImageLoad>
           {images.map((i, idx) => (
             <div
               key={idx}
