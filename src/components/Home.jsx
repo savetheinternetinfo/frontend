@@ -100,8 +100,8 @@ function Home() {
       </div>
       <div className="bg-white text-blue-dark">
         <div className="container mx-auto -mt-10 px-6 py-8">
-          <h1>{translation.home_whathappened_title}</h1>
-          <p>{translation.home_whathappened_text}</p>
+          {/* <h1>{translation.home_whathappened_title}</h1>
+          <p>{translation.home_whathappened_text}</p> */}
           <h1>{translation.home_article11_detailed_title}</h1>
           <p>{translation.home_article11_detailed_text}</p>
           <h1>{translation.home_article13_detailed_title}</h1>
