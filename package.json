@@ -19,6 +19,7 @@
     "react-flag-kit": "^0.3.1",
     "react-helmet": "^5.2.0",
     "react-image-lightbox": "^5.1.0",
+    "react-leaflet": "^2.2.1",
     "react-masonry-component": "^6.2.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
@@ -46,5 +47,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {}
 }

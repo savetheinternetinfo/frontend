@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useStateValue } from "../contexts/StateContext";
 import Masonry from "react-masonry-component";
 import config from "../config";
 
 import parse from "html-react-parser";
+import { Map, TileLayer } from "react-leaflet";
 import leaflet from "leaflet";
 import moment from "moment";
 import axios from "axios";
@@ -20,12 +21,30 @@ const masonryOptions = {
   percentPosition: true
 };
 
+const STIIcon = leaflet.icon({
+  iconUrl: "/pin_sti.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 37],
+  popupAnchor: [0, -28]
+});
+const nonSTIIcon = leaflet.icon({
+  iconUrl: "/pin_blank.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 37],
+  popupAnchor: [0, -28]
+});
+
 function Demos() {
   const [{ translation, language }] = useStateValue();
   const [supporters, setSupporters] = useState(null);
 
-  const [loading, setLoading] = useState(true);
   const [events, setEvents] = useState([]);
+  const mapRef = useRef();
+
+  const eventDateFormat = moment
+    .localeData(language)
+    .longDateFormat("LLL")
+    .replace(/.YYYY/, "");
 
   useEffect(() => {
     if (supporters === null) {
@@ -46,182 +65,135 @@ function Demos() {
   }, []);
 
   useEffect(() => {
-    const demomap = leaflet.map("demomap", {
-      scrollWheelZoom: false
-    });
-    leaflet
-      .tileLayer(
-        "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
-        {
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL | Save the Internet!'
-        }
-      )
-      .addTo(demomap);
-
-    const STIIcon = leaflet.icon({
-      iconUrl: "/pin_sti.png",
-      iconSize: [32, 32],
-      iconAnchor: [16, 37],
-      popupAnchor: [0, -28]
-    });
-    const nonSTIIcon = leaflet.icon({
-      iconUrl: "/pin_blank.png",
-      iconSize: [32, 32],
-      iconAnchor: [16, 37],
-      popupAnchor: [0, -28]
-    });
-
+    const map = mapRef.current.leafletElement;
     const geojs = {
       type: "FeatureCollection",
       features: []
     };
 
     function bindPopoup(feature, layer) {
-      let popupText = "";
-      let eventItem = [];
-      for (let index = 0; index < feature.properties.length; index++) {
-        const element = feature.properties[index];
-        if (element.fa_icon === "fa-clock") {
-          let momentObj = moment(element.value);
-
-          // Get locale data
-          var localeData = moment.localeData(language);
-          var format = localeData.longDateFormat("LLL");
-          // Remove year part
-          format = format.replace(/.YYYY/, "");
-          element.value = momentObj.locale(language).format(format);
-        }
-        eventItem.push({ icon: element.fa_icon, value: element.value });
-        popupText += `<p className="mb-0 font-thin">
-                                    <i className="w-4 fa ${
-                                      element.fa_icon
-                                    }" aria-hidden="true"></i> ${element.value}
-                                  </p>`;
-      }
-      let tmp = events;
-      tmp.push(eventItem);
-      setEvents(tmp);
+      const popupText = `
+        <p className="font-thin mt-2">
+          <i className="w-8 fa fa-map-marker" aria-hidden="true" />
+          ${feature.event.location}
+        </p>
+        <p className="font-thin mt-2">
+          <i className="w-8 fa fa-clock" aria-hidden="true" />
+          ${moment(feature.event.time).format(eventDateFormat)}
+        </p>
+        <p className="font-thin mt-2">
+          <i className="w-8 fa" aria-hidden="true" />
+          ${feature.event.facebookEvent}
+        </p>
+      `;
 
       let popup = layer.bindPopup(popupText);
       popup.on("click", function(e) {
-        demomap.flyTo(e.latlng, 14, {
+        map.flyTo(e.latlng, 14, {
           animate: true,
           duration: 1.5
         });
       });
     }
 
-    axios
-      .get(config.api.points)
-      .then(response => {
-        geojs.features = response.data.points.map(item => {
-          return {
-            type: "Feature",
-            properties: [
-              {
-                fa_icon: "fa-map-marker",
-                value: item.location
-              },
-              {
-                fa_icon: "fa-clock",
-                value: item.time
-              },
-              {
-                fa_icon: "fb_event",
-                value: item.facebookEvent || ""
-              }
-            ],
-            STIDemo: item.sti_event,
-            geometry: {
-              type: "Point",
-              coordinates: [item.latitude, item.longitude]
-            }
-          };
-        });
-
-        let geoJSONLayer = leaflet
-          .geoJSON(geojs, {
-            pointToLayer: function(feature, latlng) {
-              if (feature["STIDemo"]) {
-                return leaflet.marker(latlng, { icon: STIIcon });
-              }
-              return leaflet.marker(latlng, { icon: nonSTIIcon });
-            },
-            onEachFeature: bindPopoup
-          })
-          .addTo(demomap);
-        demomap.fitBounds(geoJSONLayer.getBounds());
-        setLoading(false);
-      })
-      .catch(error => {
-        setLoading(false);
+    axios.get(config.api.points).then(response => {
+      setEvents(response.data.points);
+      geojs.features = response.data.points.map(item => {
+        return {
+          type: "Feature",
+          event: item,
+          STIDemo: item.sti_event,
+          geometry: {
+            type: "Point",
+            coordinates: [item.latitude, item.longitude]
+          }
+        };
       });
+
+      const geoJSONLayer = leaflet.geoJSON(geojs, {
+        pointToLayer: function(feature, latlng) {
+          return leaflet.marker(latlng, {
+            icon: feature["STIDemo"] ? STIIcon : nonSTIIcon
+          });
+        },
+        onEachFeature: bindPopoup
+      });
+      geoJSONLayer.addTo(map);
+      map.fitBounds(geoJSONLayer.getBounds());
+    });
   }, []);
+
+  const handleEventClick = e => () => {
+    if (mapRef.current && mapRef.current.leafletElement) {
+      mapRef.current.leafletElement.flyTo([e.longitude, e.latitude], 14, {
+        animate: true,
+        duration: 1.5
+      });
+    }
+  };
 
   return (
     <div>
-      <React.Fragment>
-        <div className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue">
-          {events.map(x => {
-            return (
-              <div
-                key={uniqueId("key-")}
-                className="flex-none p-2"
-                style={{ width: "17rem" }}
-              >
-                <div className="bg-blue-dark text-white rounded p-4 w-full h-full shadow rounded">
-                  {x.map(e => {
-                    return (
-                      <p key={uniqueId("key-")} className="font-thin mt-2">
-                        <span className="flex">
-                          <i
-                            className={"w-8 fa " + e.icon}
-                            aria-hidden="true"
-                          />
-                          {parse(e.value)}
-                        </span>
-                      </p>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <div
-          className="w-full bg-grey-lightest z-10"
-          style={{ height: window.innerHeight / 1.3 + "px" }}
-          id="demomap"
-        />
-        {supporters !== null && (
-          <div className="container mx-auto px-6 py-8">
-            <h2>{translation["supporters_orga"]}</h2>
-            <Masonry options={masonryOptions} updateOnEachImageLoad>
-              {supporters.map((supporter, idx) => (
-                <div
-                  key={idx}
-                  className="gallery-item w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
-                >
-                  <a
-                    className="block bg-blue rounded m-4 p-4"
-                    href={supporter.url}
-                  >
-                    <img
-                      className="block mx-auto"
-                      src={supporter.image}
-                      alt=""
-                    />
-                    <div className="w-full text-center mt-4 break-word overflow-x-hidden">
-                      {supporter.name}
-                    </div>
-                  </a>
-                </div>
-              ))}
-            </Masonry>
+      <div className="flex flex-no-wrap p-2 w-full overflow-x-scroll bg-blue">
+        {events.map(e => (
+          <div
+            key={uniqueId("key-")}
+            className="flex-none p-2"
+            style={{ width: "17rem" }}
+          >
+            <div
+              className="bg-blue-dark text-white rounded p-4 w-full h-full shadow rounded font-thin"
+              onClick={handleEventClick(e)}
+            >
+              <p className="font-thin mt-2">
+                <i className="w-8 fa fa-map-marker" aria-hidden="true" />
+                {parse(e.location)}
+              </p>
+              <p className="font-thin mt-2">
+                <i className="w-8 fa fa-clock" aria-hidden="true" />
+                {moment(e.time).format(eventDateFormat)}
+              </p>
+              <p
+                className="font-thin mt-2 ml-8"
+                dangerouslySetInnerHTML={{ __html: e.facebookEvent }}
+              />
+            </div>
           </div>
-        )}
-      </React.Fragment>
+        ))}
+      </div>
+      <Map
+        ref={mapRef}
+        scrollWheelZoom={false}
+        style={{ height: window.innerHeight / 1.3 + "px" }}
+      >
+        <TileLayer
+          url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+          attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors | Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL | Save the Internet!"
+        />
+      </Map>
+      {supporters !== null && (
+        <div className="container mx-auto px-6 py-8">
+          <h2>{translation["supporters_orga"]}</h2>
+          <Masonry options={masonryOptions} updateOnEachImageLoad>
+            {supporters.map((supporter, idx) => (
+              <div
+                key={idx}
+                className="gallery-item w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
+              >
+                <a
+                  className="block bg-blue rounded m-4 p-4"
+                  href={supporter.url}
+                >
+                  <img className="block mx-auto" src={supporter.image} alt="" />
+                  <div className="w-full text-center mt-4 break-word overflow-x-hidden">
+                    {supporter.name}
+                  </div>
+                </a>
+              </div>
+            ))}
+          </Masonry>
+        </div>
+      )}
     </div>
   );
 }
