@@ -21,20 +21,20 @@ function Home() {
           <div className="md:pr-12 md:border-r border-blue-dark flex-1">
             <h2>{translation.home_article11_title}</h2>
             <p>{translation.home_article11_text}</p>
-            <p>
+            {/* <p>
               <a className="text-blue-dark" href="#">
                 mehr...
               </a>
-            </p>
+            </p> */}
           </div>
           <div className="md:pl-12 flex-1 pb-6">
             <h2>{translation.home_article13_title}</h2>
             <p>{translation.home_article13_text}</p>
-            <p>
+            {/* <p>
               <a className="text-blue-dark" href="#">
                 mehr...
               </a>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
@@ -101,17 +101,7 @@ function Home() {
       <div className="bg-white text-blue-dark">
         <div className="container mx-auto -mt-10 px-6 py-8">
           <h1>{translation.home_whathappened_title}</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-            no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+          <p>{translation.home_whathappened_text}</p>
           <h1>{translation.home_article11_detailed_title}</h1>
           <p>{translation.home_article11_detailed_text}</p>
           <h1>{translation.home_article13_detailed_title}</h1>
