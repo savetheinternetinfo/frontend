@@ -79,7 +79,6 @@ function Demos() {
         ? decodeURI(window.location.hash.substr(1)).toLowerCase()
         : false;
 
-    console.log(urlHash);
     function bindPopoup(feature, layer) {
       let popupText = `
         <div class="mt-2 flex items-center">
@@ -126,7 +125,6 @@ function Demos() {
     }
 
     axios.get(config.api.points).then(response => {
-      setEvents(response.data.points);
       const now = moment().subtract(6, "hours");
       const points = response.data.points
         .map(p => {
@@ -220,6 +218,9 @@ function Demos() {
         ref={mapRef}
         scrollWheelZoom={config.scrollWheelZoom}
         style={{ height: window.innerHeight / 1.3 + "px" }}
+        onClick={() => {
+          mapRef.current.leafletElement.scrollWheelZoom.enable();
+        }}
       >
         <TileLayer
           url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
