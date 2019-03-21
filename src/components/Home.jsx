@@ -51,14 +51,21 @@ function Home() {
             <h2>{translation.home_signthepetition_title}</h2>
             <p>{translation.home_signthepetition_text}</p>
             <div className="text-center my-10">
-              <Button text="Petition" />
+              <Button
+                text={translation["sign_petition"]}
+                href={links.petition}
+              />
             </div>
           </div>
           <div className="lg:px-12 lg:border-r lg:border-l border-blue flex-1">
             <h2>{translation.home_gotodemo_title}</h2>
             <p>{translation.home_gotodemo_text}</p>
             <div className="text-center my-10">
-              <Button className="mt-4" text="Demos" />
+              <Button
+                className="mt-4"
+                text={translation.sti_day}
+                link="/demos"
+              />
             </div>
           </div>
           <div className="lg:pl-12 flex-1">

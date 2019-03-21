@@ -11,6 +11,7 @@ function Button(props) {
     </a>
   ) : (
     <Link to={props.link}>
+      {console.log("hi")}
       <button className={classNames} onClick={props.onClick}>
         {props.text}
       </button>
