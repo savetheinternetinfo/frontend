@@ -79,7 +79,6 @@ function Demos() {
         ? decodeURI(window.location.hash.substr(1)).toLowerCase()
         : false;
 
-    console.log(urlHash);
     function bindPopoup(feature, layer) {
       let popupText = `
         <div class="mt-2 flex items-center">
@@ -110,14 +109,12 @@ function Demos() {
         });
 
       let popup = layer.bindPopup(popupText);
-      popup.on("click", function(e) {
+      popup.on("click", e => {
         flyTo(e.latlng);
+        window.location.hash = feature.event.city;
       });
 
-      if (
-        urlHash &&
-        feature.event.location.split(" -")[0].toLowerCase() === urlHash
-      ) {
+      if (urlHash && feature.event.city.toLowerCase() === urlHash) {
         urlHash = false;
         scroller.scrollTo("map", { smooth: true, duration: 500 });
         setTimeout(() => {
@@ -128,27 +125,28 @@ function Demos() {
     }
 
     axios.get(config.api.points).then(response => {
-      setEvents(response.data.points);
       const now = moment().subtract(6, "hours");
-      geojs.features = response.data.points
+      const points = response.data.points
         .map(p => {
           return {
             ...p,
-            time: moment(p.time)
+            time: moment(p.time),
+            city: p.location.split(" -")[0].toLowerCase()
           };
         })
-        .filter(p => p.time > now)
-        .map(item => {
-          return {
-            type: "Feature",
-            event: item,
-            STIDemo: item.sti_event,
-            geometry: {
-              type: "Point",
-              coordinates: [item.longitude, item.latitude]
-            }
-          };
-        });
+        .filter(p => p.time > now);
+      setEvents(points);
+      geojs.features = points.map(item => {
+        return {
+          type: "Feature",
+          event: item,
+          STIDemo: item.sti_event,
+          geometry: {
+            type: "Point",
+            coordinates: [item.longitude, item.latitude]
+          }
+        };
+      });
 
       const geoJSONLayer = leaflet.geoJSON(geojs, {
         pointToLayer: function(feature, latlng) {
@@ -165,6 +163,7 @@ function Demos() {
 
   const handleEventClick = e => () => {
     if (mapRef.current && mapRef.current.leafletElement) {
+      window.location.hash = e.city;
       mapRef.current.leafletElement.flyTo([e.latitude, e.longitude], 14, {
         animate: true,
         duration: 1.5
@@ -185,7 +184,7 @@ function Demos() {
               className="bg-blue-dark text-white rounded p-4 w-full h-full shadow rounded"
               onClick={handleEventClick(e)}
             >
-              <div className="mt-2 flex items-start">
+              <div className="mt-2 flex items-start cursor-pointer">
                 <i
                   className="block flex-none w-5 mt-1 mr-3 fa fa-map-marker text-center"
                   aria-hidden="true"
@@ -219,6 +218,9 @@ function Demos() {
         ref={mapRef}
         scrollWheelZoom={config.scrollWheelZoom}
         style={{ height: window.innerHeight / 1.3 + "px" }}
+        onClick={() => {
+          mapRef.current.leafletElement.scrollWheelZoom.enable();
+        }}
       >
         <TileLayer
           url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
