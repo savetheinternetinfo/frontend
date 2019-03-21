@@ -112,7 +112,7 @@ h3 {
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
 }
 .langmenu-exit {
-  opacity: 1;
+  opacity: 0;
 }
 .langmenu-exit-active {
   opacity: 0;
@@ -120,7 +120,7 @@ h3 {
 }
 
 .mobilenav-enter {
-  opacity: 0.01;
+  opacity: 0;
 }
 .mobilenav-enter-active {
   opacity: 1;
@@ -260,24 +260,18 @@ h3 {
 }
 
 .leaflet-popup {
-  background: transparent;
+  @apply .bg-transparent .roman;
 }
 
 .leaflet-popup-content-wrapper,
-.leaflet-popup-content,
 .leaflet-popup-tip {
   background: config("colors.blue-dark") !important;
 }
 
-.leaflet-popup-content p {
-  margin: 0;
-  @apply .mb-2;
-  color: white;
+.leaflet-popup-content-wrapper {
+  @apply .text-sm .text-white .rounded;
 }
 
 .leaflet-popup-content a {
   @apply .text-orange;
-}
-
-.leaflet-popup-content p i {
 }

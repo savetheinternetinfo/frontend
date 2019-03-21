@@ -3,7 +3,8 @@
     "translation": "https://new-api.savetheinternet.info/api/get?q=translation",
     "mock_translation": "http://localhost:3001/translation",
     "points": "https://new-api.savetheinternet.info/api/get?q=points",
-    "supporters": "https://new-api.savetheinternet.info/api/get?q=supporter"
+    "supporters": "https://new-api.savetheinternet.info/api/get?q=supporter",
+    "gallery": "https://new-api.savetheinternet.info/api/get?q=gallery"
   },
   "links": {
     "petition": "https://www.change.org/p/european-parliament-stop-the-censorship-machinery-save-the-internet",
@@ -12,5 +13,6 @@
     "instagram": "https://www.instagram.com/savetheinternetpetition/",
     "youtube": "https://www.youtube.com/channel/UCfsfq_B3zJU4_Zjqtw5lhhQ",
     "github": "https://github.com/savetheinternetinfo/frontend"
-  }
+  },
+  "scrollWheelZoom": false
 }
