@@ -32,7 +32,7 @@
     "build:css": "postcss src/css/main.css -o src/index.css",
     "watch:css": "postcss src/css/main.css -o src/index.css -w",
     "dev": "concurrently \"npm:watch:css --silent\" \"npm:start --silent\" \"nodemon src/test/mockServer.js\"",
-    "start": "npm run build:css && react-scripts start",
+    "start": "npm run watch:css & react-scripts start",
     "build": "npm run language && npm run build:css && react-scripts build",
     "language": "cd src/test/languages && node bundler.js",
     "test": "react-scripts test",

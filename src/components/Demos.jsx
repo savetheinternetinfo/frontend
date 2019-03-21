@@ -8,6 +8,7 @@ import { Map, TileLayer } from "react-leaflet";
 import leaflet from "leaflet";
 import moment from "moment";
 import axios from "axios";
+import { Element as ScrollElement, scroller } from "react-scroll";
 
 import pinBlankSVG from "../assets/leaflet/pin_blank.svg";
 import pinStiSVG from "../assets/leaflet/pin_sti.svg";
@@ -77,29 +78,29 @@ function Demos() {
       window.location.hash.length > 1
         ? decodeURI(window.location.hash.substr(1)).toLowerCase()
         : false;
+
     console.log(urlHash);
     function bindPopoup(feature, layer) {
       let popupText = `
-        <p className="font-thin mt-2">
-          <i className="w-8 fa fa-map-marker" aria-hidden="true" />
-          ${feature.event.location}
-        </p>
-        <p className="font-thin mt-2">
-          <i className="w-8 fa fa-clock" aria-hidden="true" />
-          ${moment(feature.event.time).format(eventDateFormat)}
-        </p>
+        <div class="mt-2 flex items-center">
+          <i class="block w-4 mr-2 flex-none fa fa-map-marker text-center" aria-hidden="true"></i>
+          <div>${feature.event.location}</div>
+        </div>
+        <div class="mt-2 flex items-center">
+          <i class="block w-4 mr-2 flex-none fa fa-clock text-center" aria-hidden="true"></i>
+          <div>${feature.event.time.format(eventDateFormat)}</div>
+        </div>
       `;
 
       if (
         feature.event.facebookEvent &&
         feature.event.facebookEvent.length > 0
       ) {
-        popupText += `<p className="font-thin mt-2">
-          <i className="w-8 fa" aria-hidden="true" />
+        popupText += `<div class="mt-2 ml-6">
           <a href="${
             feature.event.facebookEvent
           }" target="_blank">Mehr Informationen</a>
-        </p>`;
+        </div>`;
       }
 
       const flyTo = latlng =>
@@ -118,10 +119,11 @@ function Demos() {
         feature.event.location.split(" -")[0].toLowerCase() === urlHash
       ) {
         urlHash = false;
+        scroller.scrollTo("map", { smooth: true, duration: 500 });
         setTimeout(() => {
-          popup.openPopup();
           flyTo(popup.getLatLng());
-        }, 500);
+          popup.openPopup();
+        }, 0); // open the popup after it was added.
       }
     }
 
@@ -180,28 +182,39 @@ function Demos() {
             style={{ width: "17rem" }}
           >
             <div
-              className="bg-blue-dark text-white rounded p-4 w-full h-full shadow rounded font-thin"
+              className="bg-blue-dark text-white rounded p-4 w-full h-full shadow rounded"
               onClick={handleEventClick(e)}
             >
-              <p className="font-thin mt-2">
-                <i className="w-8 fa fa-map-marker" aria-hidden="true" />
-                {parse(e.location)}
-              </p>
-              <p className="font-thin mt-2">
-                <i className="w-8 fa fa-clock" aria-hidden="true" />
-                {moment(e.time).format(eventDateFormat)}
-              </p>
+              <div className="mt-2 flex items-start">
+                <i
+                  className="block flex-none w-5 mt-1 mr-3 fa fa-map-marker text-center"
+                  aria-hidden="true"
+                />
+                <div>{parse(e.location)}</div>
+              </div>
+              <div className="mt-3 flex items-start">
+                <i
+                  className="block flex-none w-5 mt-1 mr-3 fa fa-clock text-center"
+                  aria-hidden="true"
+                />
+                <div>{moment(e.time).format(eventDateFormat)}</div>
+              </div>
               {e.facebookEvent && (
-                <p className="font-thin mt-2 ml-8">
-                  <a href={e.facebookEvent} target="_blank">
+                <div className="mt-2 ml-8">
+                  <a
+                    href={e.facebookEvent}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Mehr Informationen
                   </a>
-                </p>
+                </div>
               )}
             </div>
           </div>
         ))}
       </div>
+      <ScrollElement className="pt-12 -mt-12" name="map" />
       <Map
         ref={mapRef}
         scrollWheelZoom={config.scrollWheelZoom}
