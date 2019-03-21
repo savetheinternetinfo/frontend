@@ -83,11 +83,16 @@ function Demos() {
         </p>
       `;
 
-      if(feature.event.facebookEvent && feature.event.facebookEvent.length > 0) {
+      if (
+        feature.event.facebookEvent &&
+        feature.event.facebookEvent.length > 0
+      ) {
         popupText += `<p className="font-thin mt-2">
           <i className="w-8 fa" aria-hidden="true" />
-          <a href="${feature.event.facebookEvent}" target="_blank">Mehr Informationen</a>
-        </p>`
+          <a href="${
+            feature.event.facebookEvent
+          }" target="_blank">Mehr Informationen</a>
+        </p>`;
       }
 
       let popup = layer.bindPopup(popupText);
@@ -156,17 +161,20 @@ function Demos() {
                 <i className="w-8 fa fa-clock" aria-hidden="true" />
                 {moment(e.time).format(eventDateFormat)}
               </p>
-              {e.facebookEvent && (<p
-                className="font-thin mt-2 ml-8">
-                 <a href={e.facebookEvent} target="_blank">Mehr Informationen</a>
-              </p>)}
+              {e.facebookEvent && (
+                <p className="font-thin mt-2 ml-8">
+                  <a href={e.facebookEvent} target="_blank">
+                    Mehr Informationen
+                  </a>
+                </p>
+              )}
             </div>
           </div>
         ))}
       </div>
       <Map
         ref={mapRef}
-        scrollWheelZoom={false}
+        scrollWheelZoom={config.scrollWheelZoom}
         style={{ height: window.innerHeight / 1.3 + "px" }}
       >
         <TileLayer

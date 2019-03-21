@@ -13,5 +13,6 @@
     "instagram": "https://www.instagram.com/savetheinternetpetition/",
     "youtube": "https://www.youtube.com/channel/UCfsfq_B3zJU4_Zjqtw5lhhQ",
     "github": "https://github.com/savetheinternetinfo/frontend"
-  }
+  },
+  "scrollWheelZoom": false
 }
