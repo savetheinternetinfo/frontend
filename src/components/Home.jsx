@@ -14,7 +14,9 @@ function Home() {
     <React.Fragment>
       <div className="container mx-auto -mt-10 px-6 py-8">
         <h1>{translation.home_whyindanger_title}</h1>
-        <p>{translation.home_whyindanger_text}</p>
+        <p>{translation.home_whyindanger_text1}</p>
+        <p>{translation.home_whyindanger_text2}</p>
+        <p>{translation.home_whyindanger_text3}</p>
       </div>
       <div className="bg-white text-blue-dark md:text-center md:py-10">
         <div className="container mx-auto px-6 md:flex">
@@ -40,8 +42,10 @@ function Home() {
       </div>
       <div className="container mx-auto px-6">
         <h2>{translation.home_whatcanyoudo_title}</h2>
-        <p>{translation.home_whatcanyoudo_text_1}</p>
-        <p>{translation.home_whatcanyoudo_text_2}</p>
+        <p>{translation.home_whatcanyoudo_text1}</p>
+        <p>{translation.home_whatcanyoudo_text2}</p>
+        <p>{translation.home_whatcanyoudo_text3}</p>
+
         <div className="my-10 lg:flex lg:text-center">
           <div className="lg:pr-12 flex-1">
             <h2>{translation.home_signthepetition_title}</h2>
@@ -52,8 +56,7 @@ function Home() {
           </div>
           <div className="lg:px-12 lg:border-r lg:border-l border-blue flex-1">
             <h2>{translation.home_gotodemo_title}</h2>
-            <p>{translation.home_gotodemo_text_1}</p>
-            <p>{translation.home_gotodemo_text_2}</p>
+            <p>{translation.home_gotodemo_text}</p>
             <div className="text-center my-10">
               <Button className="mt-4" text="Demos" />
             </div>
@@ -96,16 +99,6 @@ function Home() {
               />
             </div>
           </div>
-        </div>
-      </div>
-      <div className="bg-white text-blue-dark">
-        <div className="container mx-auto -mt-10 px-6 py-8">
-          {/* <h1>{translation.home_whathappened_title}</h1>
-          <p>{translation.home_whathappened_text}</p> */}
-          <h1>{translation.home_article11_detailed_title}</h1>
-          <p>{translation.home_article11_detailed_text}</p>
-          <h1>{translation.home_article13_detailed_title}</h1>
-          <p>{translation.home_article13_detailed_text}</p>
         </div>
       </div>
     </React.Fragment>
