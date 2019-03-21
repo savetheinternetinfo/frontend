@@ -127,17 +127,26 @@ function Demos() {
 
     axios.get(config.api.points).then(response => {
       setEvents(response.data.points);
-      geojs.features = response.data.points.map(item => {
-        return {
-          type: "Feature",
-          event: item,
-          STIDemo: item.sti_event,
-          geometry: {
-            type: "Point",
-            coordinates: [item.longitude, item.latitude]
-          }
-        };
-      });
+      const now = moment().subtract(6, "hours");
+      geojs.features = response.data.points
+        .map(p => {
+          return {
+            ...p,
+            time: moment(p.time)
+          };
+        })
+        .filter(p => p.time > now)
+        .map(item => {
+          return {
+            type: "Feature",
+            event: item,
+            STIDemo: item.sti_event,
+            geometry: {
+              type: "Point",
+              coordinates: [item.longitude, item.latitude]
+            }
+          };
+        });
 
       const geoJSONLayer = leaflet.geoJSON(geojs, {
         pointToLayer: function(feature, latlng) {
