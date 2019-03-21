@@ -42,8 +42,14 @@ function Home() {
       </div>
       <div className="container mx-auto px-6">
         <h2>{translation.home_whatcanyoudo_title}</h2>
-        <p>{parse(translation.home_whatcanyoudo_text1)}</p>
-        <p>{parse(translation.home_whatcanyoudo_text2)}</p>
+        <p>
+          {translation.home_whatcanyoudo_text1 &&
+            parse(translation.home_whatcanyoudo_text1)}
+        </p>
+        <p>
+          {translation.home_whatcanyoudo_text2 &&
+            parse(translation.home_whatcanyoudo_text2)}
+        </p>
         <p>{translation.home_whatcanyoudo_text3}</p>
 
         <div className="my-10 lg:flex lg:text-center">
