@@ -9,6 +9,9 @@ import leaflet from "leaflet";
 import moment from "moment";
 import axios from "axios";
 
+import pinBlankSVG from "../assets/leaflet/pin_blank.svg";
+import pinStiSVG from "../assets/leaflet/pin_sti.svg";
+
 function uniqueId(str) {
   return `${str}${Math.random()
     .toString(36)
@@ -22,13 +25,13 @@ const masonryOptions = {
 };
 
 const STIIcon = leaflet.icon({
-  iconUrl: "/pin_sti.png",
+  iconUrl: pinStiSVG,
   iconSize: [32, 32],
   iconAnchor: [16, 37],
   popupAnchor: [0, -28]
 });
 const nonSTIIcon = leaflet.icon({
-  iconUrl: "/pin_blank.png",
+  iconUrl: pinBlankSVG,
   iconSize: [32, 32],
   iconAnchor: [16, 37],
   popupAnchor: [0, -28]
