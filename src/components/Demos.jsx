@@ -73,7 +73,11 @@ function Demos() {
       type: "FeatureCollection",
       features: []
     };
-
+    let urlHash =
+      window.location.hash.length > 1
+        ? decodeURI(window.location.hash.substr(1)).toLowerCase()
+        : false;
+    console.log(urlHash);
     function bindPopoup(feature, layer) {
       let popupText = `
         <p className="font-thin mt-2">
@@ -98,13 +102,27 @@ function Demos() {
         </p>`;
       }
 
-      let popup = layer.bindPopup(popupText);
-      popup.on("click", function(e) {
-        map.flyTo(e.latlng, 14, {
+      const flyTo = latlng =>
+        map.flyTo(latlng, 14, {
           animate: true,
           duration: 1.5
         });
+
+      let popup = layer.bindPopup(popupText);
+      popup.on("click", function(e) {
+        flyTo(e.latlng);
       });
+
+      if (
+        urlHash &&
+        feature.event.location.split(" -")[0].toLowerCase() === urlHash
+      ) {
+        urlHash = false;
+        setTimeout(() => {
+          popup.openPopup();
+          flyTo(popup.getLatLng());
+        }, 500);
+      }
     }
 
     axios.get(config.api.points).then(response => {
