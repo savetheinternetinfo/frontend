@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+import config from "../config";
+
 import { useStateValue } from "../contexts/StateContext";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Contact() {
   const [{ translation }] = useStateValue();
+  const [isSubmitted, setIsSubmitted] = useState(null);
+  const [response, setResponse] = useState("");
 
   const ContactFormSchema = Yup.object().shape({
-    firstName: Yup.string()
+    firstname: Yup.string()
       .min(0, translation.contactform_empty_field)
       .required(translation.contactform_required_info),
-    lastName: Yup.string()
+    lastname: Yup.string()
       .min(0, translation.contactform_empty_field)
       .required(translation.contactform_required_info),
     email: Yup.string()
@@ -21,14 +28,36 @@ function Contact() {
       .required(translation.contactform_empty_message)
   });
 
+  useEffect(() => {
+    ReactDOM.render(
+      <ReCAPTCHA sitekey={config.tokens.recaptcha} />,
+      document.getElementById("recaptcha")
+    );
+  }, []);
+
+  function handleFormSubmission(value) {
+    axios
+      .post(config.api.contact, value)
+      .then(function({ data }) {
+        if (data.valid && data.send) {
+          setIsSubmitted(true);
+        } else {
+          setResponse(data.error);
+          setIsSubmitted(false);
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
   return (
     <div className="container mx-auto flex justify-center">
       <Formik
-        initialValues={{ firstName: "", lastName: "", email: "", message: "" }}
+        initialValues={{ firstname: "", lastname: "", email: "", message: "" }}
         validationSchema={ContactFormSchema}
         onSubmit={values => {
-          // same shape as initial values
-          console.log(values);
+          handleFormSubmission(values);
         }}
       >
         {({ errors, touched }) => (
@@ -44,13 +73,13 @@ function Contact() {
                     {translation.contactform_firstname}
                   </label>
                   <Field
-                    name="firstName"
+                    name="firstname"
                     className="mb-3 appearance-none block w-full bg-grey-lighter border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
                     placeholder={translation.contactform_firstname}
                     type="text"
                   />
-                  {errors.firstName && touched.firstName ? (
-                    <div>{errors.firstName}</div>
+                  {errors.firstname && touched.firstname ? (
+                    <div>{errors.firstname}</div>
                   ) : null}
                 </div>
                 <div className="w-full md:w-1/2 px-3">
@@ -61,13 +90,13 @@ function Contact() {
                     {translation.contactform_lastname}
                   </label>
                   <Field
-                    name="lastName"
+                    name="lastname"
                     className="mb-3 appearance-none block w-full bg-grey-lighter border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey"
                     placeholder={translation.contactform_lastname}
                     type="text"
                   />
-                  {errors.lastName && touched.lastName ? (
-                    <div>{errors.lastName}</div>
+                  {errors.lastname && touched.lastname ? (
+                    <div>{errors.lastname}</div>
                   ) : null}
                 </div>
               </div>
@@ -116,10 +145,7 @@ function Contact() {
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <div
-                    className="g-recaptcha"
-                    data-sitekey="<%= recaptcha_sitekey %>"
-                  />
+                  <div id="recaptcha" />
                 </div>
                 <div className="w-full md:w-1/2 px-3">
                   <button
@@ -131,6 +157,49 @@ function Contact() {
                   <p className="text-xs italic mt-2">
                     {translation.contactform_required_info}
                   </p>
+
+                  {(function() {
+                    switch (isSubmitted) {
+                      case null:
+                        return;
+                      case "success":
+                        return (
+                          <div className="bg-green-lightest border-t-4 border-green rounded-b text-green-darkest px-4 py-3 shadow-md">
+                            <div className="flex">
+                              <div className="py-1">
+                                <i className="fa fa-info text-xl text-green mr-4" />
+                              </div>
+                              <div>
+                                <p className="font-bold">
+                                  {translation.contactform_send_header}
+                                </p>
+                                <p className="text-sm">
+                                  {translation.contactform_send_info}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      case "error":
+                        return (
+                          <div className="bg-red-lightest border-t-4 border-red rounded-b text-red-darkest px-4 py-3 shadow-md mb-6">
+                            <div className="flex">
+                              <div className="py-1">
+                                <i className="fa fa-exclamation text-xl text-red mr-4" />
+                              </div>
+                              <div>
+                                <p className="font-bold">
+                                  {translation.contactform_error_header}
+                                </p>
+                                <p className="text-sm">{response}</p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      default:
+                        return null;
+                    }
+                  })()}
                 </div>
               </div>
             </div>
