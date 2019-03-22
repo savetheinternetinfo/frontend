@@ -11,7 +11,17 @@ import Logo from "../assets/favicon.ico";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
 import LoadAnimation from "./common/LoadAnimation.jsx";
-import { Home, Gallery, About, AboutUs, Demos, Imprint, Privacy } from ".";
+import {
+  Home,
+  Gallery,
+  About,
+  AboutUs,
+  Demos,
+  Imprint,
+  Privacy,
+  Contact,
+  PressReview
+} from ".";
 import Blackout from "./Blackout";
 
 function App() {
@@ -76,6 +86,8 @@ function App() {
                 <Route exact path="/demos" component={Demos} />
                 <Route exact path="/imprint" component={Imprint} />
                 <Route exact path="/privacy" component={Privacy} />
+                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/pressreview" component={PressReview} />
               </Switch>
               <Footer />
             </div>
