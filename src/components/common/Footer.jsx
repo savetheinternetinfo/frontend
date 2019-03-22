@@ -25,7 +25,7 @@ function Footer() {
             className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/pressreview"
           >
-            {`${translation.pressreview} (TODO)`}
+            {translation.pressreview}
           </Link>
         </div>
         <div className="ml-4 text-center lg:text-left">

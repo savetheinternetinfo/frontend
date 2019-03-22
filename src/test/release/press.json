@@ -1,0 +1,16 @@
+{
+  "press": [
+    {
+      "title": "mock_title",
+      "time": "mock_time",
+      "url": "mock_url",
+      "lang": "mock_lang"
+    },
+    {
+      "title": "mock_title_2",
+      "time": "mock_time_2",
+      "url": "mock_url_2",
+      "lang": "mock_lang_2"
+    }
+  ]
+}

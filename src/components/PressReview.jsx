@@ -1,40 +1,51 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import config from "../config";
+
 import { useStateValue } from "../contexts/StateContext";
 
 function PressReview() {
   const [{ translation }] = useStateValue();
+  const [pressReviews, setPressReviews] = useState(null);
+  useEffect(() => {
+    axios(config.api.press)
+      .then(res => {
+        setPressReviews(res.data.press);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className="container mx-auto -mt-10 px-6 py-8">
-      <h1 class="mb-16">{translation.pressreview}</h1>
+      <h1 className="mb-16">{translation.pressreview}</h1>
       {/* <p>
       {translation.pressreview_construction}
       </p> */}
-      <table class="w-full text-left table-collapse">
+      <table className="w-full text-left table-collapse">
         <thead>
           <tr>
-            <th class="text-sm p-2 text-black bg-grey-lightest">
+            <th className="text-sm p-2 text-black bg-grey-lightest">
               {translation.date}
             </th>
-            <th class="text-sm p-2 text-black bg-grey-lightest">
+            <th className="text-sm p-2 text-black bg-grey-lightest">
               {translation.pressreview}
             </th>
           </tr>
         </thead>
-        <tbody class="align-baseline">
-          {/* <% rows.forEach(function(row){ %>
-              <% if (row.length > 0) { %>
-              <tr>
-                  <td class="p-2 border-t border-grey-light text-sm">
-                      <%= row[0] %>
-                  </td>
-                  <td class="p-2 border-t border-grey-light text-sm">
-                      <a href="<%= row[1] %>" target="_blank">
-                          <%= row[2] %></a>
-                  </td>
+        <tbody className="align-baseline">
+          {pressReviews !== null &&
+            pressReviews.map((review, index) => (
+              <tr key={`key-press-${index}`}>
+                <td className="p-2 border-t border-grey-light text-sm">
+                  {review.time}
+                </td>
+                <td className="p-2 border-t border-grey-light text-sm">
+                  <a href={review.url}>{review.title}</a>
+                </td>
               </tr>
-              <% }; %>
-          <% }); %> */}
+            ))}
         </tbody>
       </table>
     </div>
