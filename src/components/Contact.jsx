@@ -12,6 +12,7 @@ function Contact() {
   const [{ translation }] = useStateValue();
   const [isSubmitted, setIsSubmitted] = useState(null);
   const [response, setResponse] = useState("");
+  const [recaptchaValue, setRecaptchaValue] = useState("");
 
   const ContactFormSchema = Yup.object().shape({
     firstname: Yup.string()
@@ -30,14 +31,25 @@ function Contact() {
 
   useEffect(() => {
     ReactDOM.render(
-      <ReCAPTCHA sitekey={config.tokens.recaptcha} />,
+      <ReCAPTCHA
+        onChange={handleRecaptchaChange}
+        sitekey={config.tokens.recaptcha}
+      />,
       document.getElementById("recaptcha")
     );
   }, []);
 
+  function handleRecaptchaChange(value) {
+    setRecaptchaValue(value);
+  }
+
   function handleFormSubmission(value) {
+    const postObj = {
+      ...value,
+      recaptchaValue
+    };
     axios
-      .post(config.api.contact, value)
+      .post(config.api.contact, postObj)
       .then(function({ data }) {
         if (data.valid && data.send) {
           setIsSubmitted(true);
