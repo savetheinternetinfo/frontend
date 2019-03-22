@@ -6,3 +6,6 @@ export { default as Gallery } from "./Gallery";
 export { default as Home } from "./Home";
 export { default as Imprint } from "./Imprint";
 export { default as Privacy } from "./Privacy";
+export { default as Contact } from "./Contact";
+export { default as PressReview } from "./PressReview";
+export { default as Blackout } from "./Blackout";

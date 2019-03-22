@@ -38,6 +38,7 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 - [cors](https://ghub.io/cors): Node.js CORS middleware
 - [cssnano](https://ghub.io/cssnano): A modular minifier, built on top of the PostCSS ecosystem.
 - [express](https://ghub.io/express): Fast, unopinionated, minimalist web framework
+- [formik](https://ghub.io/formik): Forms in React, without tears
 - [html-react-parser](https://ghub.io/html-react-parser): An HTML to React parser.
 - [leaflet](https://ghub.io/leaflet): JavaScript library for mobile-friendly interactive maps
 - [moment](https://ghub.io/moment): Parse, validate, manipulate, and display dates
@@ -56,6 +57,7 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 - [react-transition-group](https://ghub.io/react-transition-group): A react component toolset for managing animations
 - [react-typed](https://ghub.io/react-typed): A react wrapper for typed.js
 - [tailwindcss](https://ghub.io/tailwindcss): A utility-first CSS framework for rapidly building custom user interfaces.
+- [yup](https://ghub.io/yup): Dead simple Object schema validation
 
 <hr>
 
