@@ -19,7 +19,7 @@ function Footer() {
             className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/contact"
           >
-            {`${translation.contact_link} (TODO)`}
+            {translation.contact_link}
           </Link>
           <Link
             className="bezier text-white hover:text-orange no-underline block mt-4"

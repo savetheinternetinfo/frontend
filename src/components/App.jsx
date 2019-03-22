@@ -20,9 +20,9 @@ import {
   Imprint,
   Privacy,
   Contact,
-  PressReview
+  PressReview,
+  Blackout
 } from ".";
-import Blackout from "./Blackout";
 
 function App() {
   const [appData, setAppData] = useState({});
