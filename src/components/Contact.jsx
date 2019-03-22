@@ -160,12 +160,24 @@ function Contact() {
                   <div id="recaptcha" />
                 </div>
                 <div className="w-full md:w-1/2 px-3">
-                  <button
-                    className="bezier px-4 py-3 border border-1 text-base rounded-sm border-orange bg-transparent shadow m-2 text-orange hover:bg-orange hover:text-blue-dark cursor-pointer focus:outline-none select-none"
-                    type="submit"
-                  >
-                    {translation.contactform_submit}
-                  </button>
+                  {Object.keys(touched).length > 0 &&
+                  Object.keys(errors).length === 0 ? (
+                    <button
+                      className={`bezier px-4 py-3 border border-1 text-base rounded-sm border-orange bg-transparent shadow m-2 text-orange hover:bg-orange hover:text-blue-dark cursor-pointer focus:outline-none select-none`}
+                      type="submit"
+                    >
+                      {translation.contactform_submit}
+                    </button>
+                  ) : (
+                    <button
+                      className={`bezier px-4 py-3 border border-1 text-base rounded-sm border-orange bg-transparent shadow m-2 text-orange cursor-pointer focus:outline-none select-none cursor-not-allowed`}
+                      type="submit"
+                      disabled
+                    >
+                      {translation.contactform_submit}
+                    </button>
+                  )}
+
                   <p className="text-xs italic mt-2">
                     {translation.contactform_required_info}
                   </p>
