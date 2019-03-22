@@ -52,10 +52,10 @@ function Contact() {
       .post(config.api.contact, postObj)
       .then(function({ data }) {
         if (data.valid && data.send) {
-          setIsSubmitted(true);
+          setIsSubmitted("success");
         } else {
           setResponse(data.error);
-          setIsSubmitted(false);
+          setIsSubmitted("error");
         }
       })
       .catch(function(error) {
