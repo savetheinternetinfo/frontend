@@ -16,27 +16,17 @@ function Footer() {
         <div className="ml-8 text-center lg:text-left">
           <h3 className="text-orange mb-4">Links</h3>
           <Link
-            className="bezier text-white hover:text-orange no-underline block"
-            to="/infos"
-          >
-            {translation["about_title"]}
-          </Link>
-          <Link
-            className="bezier text-white hover:text-orange no-underline block mt-4"
-            to="/about"
-          >
-            {translation["imprint_link"]}
-          </Link>
-          <Link
-            className="bezier text-white hover:text-orange no-underline block mt-4"
-            to="/gallery"
-          >
-            {translation["gallery_title"]}
-          </Link>
-          <Link
             className="bezier text-white hover:text-orange no-underline block mt-4"
             to="/contact"
-          />
+          >
+            {`${translation["contact_link"]} (TODO)`}
+          </Link>
+          <Link
+            className="bezier text-white hover:text-orange no-underline block mt-4"
+            to="/pressreview"
+          >
+            Press Review (TODO)
+          </Link>
         </div>
         <div className="ml-4 text-center lg:text-left">
           <h3 className="text-orange mb-4">Legal</h3>
