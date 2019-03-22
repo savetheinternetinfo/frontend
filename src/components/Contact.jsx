@@ -46,7 +46,7 @@ function Contact() {
   function handleFormSubmission(value) {
     const postObj = {
       ...value,
-      recaptchaValue
+      reCAPTCHA_VAL: recaptchaValue
     };
     axios
       .post(config.api.contact, postObj)
