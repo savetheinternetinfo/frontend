@@ -12,7 +12,7 @@ function Footer() {
       <div className="bg-blue w-full p-4 text-center text-orange">
         {translation.footer_notice}
       </div>
-      <div className="pt-4 pb-2 flex justify-around mx-auto">
+      <div className="w-full pt-4 pb-2 flex justify-around mx-auto">
         <div className="ml-8 text-center lg:text-left">
           <h3 className="text-orange mb-4">Links</h3>
           <Link
@@ -38,12 +38,13 @@ function Footer() {
           </Link>
           <Link
             className="bezier text-white hover:text-orange no-underline block mt-4"
+            style={{ wordBreak: "break-word" }}
             to="/privacy"
           >
             {translation.privacy_link}
           </Link>
         </div>
-        <div className="mr-8 text-center lg:text-left">
+        <div className="mr-8 text-center lg:text-left flex-no-shrink">
           <h3 className="text-orange mb-4">Social</h3>
           <div className="lg:-ml-4">
             <NavIcon size={18} icon="Facebook" url={links.facebook} />

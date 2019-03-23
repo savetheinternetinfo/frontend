@@ -49,7 +49,12 @@ function Header(props) {
         </div>
       )}
       {props.petition !== false && (
-        <Button text={translation["sign_petition"]} href={links.petition} />
+        <div className="flex">
+        <Button text={translation["sign_petition"]} href={links.petition} />   
+        <Button
+          text={translation["visit_stream"]}
+          href={links.stream}
+        /></div>
       )}
       <div className="absolute z-video pin-t pin-l h-full w-full overflow-hidden">
         <video
