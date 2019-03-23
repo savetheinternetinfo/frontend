@@ -12,7 +12,6 @@ function Home() {
 
   return (
     <React.Fragment>
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jF32o95edEQ" frameborder="0" className="mx-auto mb-8" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <div className="container mx-auto -mt-10 px-6 py-8">
         <h1>{translation.home_whyindanger_title}</h1>
         <p>{translation.home_whyindanger_text1}</p>
