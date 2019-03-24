@@ -126,8 +126,7 @@ function Demos() {
 
     axios.get(config.api.points).then(response => {
       const now = moment().subtract(6, "hours");
-      const points = [];
-      response.data.points
+      const points = response.data.points
         .map(p => {
           return {
             ...p,
