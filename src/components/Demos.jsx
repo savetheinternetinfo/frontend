@@ -126,7 +126,8 @@ function Demos() {
 
     axios.get(config.api.points).then(response => {
       const now = moment().subtract(6, "hours");
-      const points = response.data.points
+      const points = [];
+      response.data.points
         .map(p => {
           return {
             ...p,
@@ -157,7 +158,19 @@ function Demos() {
         onEachFeature: bindPopoup
       });
       geoJSONLayer.addTo(map);
-      map.fitBounds(geoJSONLayer.getBounds());
+      if (geojs.features.length > 1) {
+        map.fitBounds(geoJSONLayer.getBounds());
+      } else if (geojs.features.length === 1) {
+        map.setView(
+          new leaflet.LatLng(
+            geojs.features[0].geometry.coordinates[1],
+            geojs.features[0].geometry.coordinates[0]
+          ),
+          4
+        );
+      } else {
+        map.setView(new leaflet.LatLng(50.10222, 9.25442), 5);
+      }
     });
   }, []);
 
