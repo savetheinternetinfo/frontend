@@ -47,10 +47,13 @@ let colors = {
 
   black: "#000",
   white: "#f2f5f4",
-
-  "blue-dark": "#0e2036",
-  blue: "#142e4d",
-  "blue-light": "#2b5d8c",
+  // Temporary for the dark day
+  // "blue-dark": "#0e2036",
+  // blue: "#142e4d",
+  // "blue-light": "#2b5d8c",
+  "blue-dark": "#000000",
+  blue: "#000000",
+  "blue-light": "#000000",
 
   orange: "#ffbf00",
   "orange-lighter": "#fc3",
