@@ -64,7 +64,7 @@ function Contact() {
   }
 
   return (
-    <div className="container mx-auto flex justify-center -mt-10 px-6 py-8">
+    <div className="container mx-auto flex justify-center">
       <Formik
         initialValues={{ firstname: "", lastname: "", email: "", message: "" }}
         validationSchema={ContactFormSchema}

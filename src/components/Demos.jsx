@@ -125,16 +125,16 @@ function Demos() {
     }
 
     axios.get(config.api.points).then(response => {
-      // Uncomment to get the 6 hour filter back
-      // const now = moment().subtract(6, "hours");
-      const points = response.data.points.map(p => {
-        return {
-          ...p,
-          time: moment(p.time),
-          city: p.location.split(" -")[0].toLowerCase()
-        };
-      });
-      // .filter(p => p.time > now);
+      const now = moment().subtract(6, "hours");
+      const points = response.data.points
+        .map(p => {
+          return {
+            ...p,
+            time: moment(p.time),
+            city: p.location.split(" -")[0].toLowerCase()
+          };
+        })
+        .filter(p => p.time > now);
       setEvents(points);
       geojs.features = points.map(item => {
         return {
