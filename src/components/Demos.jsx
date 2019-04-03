@@ -81,11 +81,11 @@ function Demos() {
 
     function bindPopoup(feature, layer) {
       let popupText = `
-        <div class="mt-2 flex items-center">
+        <div class="text-white mt-2 flex items-center">
           <i class="block w-4 mr-2 flex-none fa fa-map-marker text-center" aria-hidden="true"></i>
           <div>${feature.event.location}</div>
         </div>
-        <div class="mt-2 flex items-center">
+        <div class="text-white mt-2 flex items-center">
           <i class="block w-4 mr-2 flex-none fa fa-clock text-center" aria-hidden="true"></i>
           <div>${feature.event.time.format(eventDateFormat)}</div>
         </div>
@@ -126,13 +126,15 @@ function Demos() {
 
     axios.get(config.api.points).then(response => {
       const now = moment().subtract(6, "hours");
-      const points = response.data.points.map(p => {
-        return {
-          ...p,
-          time: moment(p.time),
-          city: p.location.split(" -")[0].toLowerCase()
-        };
-      }).filter(p => p.time > now);
+      const points = response.data.points
+        .map(p => {
+          return {
+            ...p,
+            time: moment(p.time),
+            city: p.location.split(" -")[0].toLowerCase()
+          };
+        })
+        .filter(p => p.time > now);
       setEvents(points);
       geojs.features = points.map(item => {
         return {
