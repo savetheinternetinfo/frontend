@@ -22,7 +22,7 @@ import {
   Contact,
   PressReview,
   Blackout
-} from ".";
+} from "../pages";
 
 function App() {
   const [appData, setAppData] = useState({});
@@ -34,7 +34,8 @@ function App() {
         const navigatorMatch = Object.keys(translation).filter(element =>
           element.includes(navigator.language)
         );
-        const userLanguage = navigatorMatch > 0 ? navigatorMatch[0] : "en_GB";
+        const userLanguage =
+          navigatorMatch.length > 0 ? navigatorMatch[0] : "en_GB";
         setAppData({
           ...appData,
           language: userLanguage,

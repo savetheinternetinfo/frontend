@@ -1,4 +1,4 @@
-export { default as App } from "./App";
+export { default as App } from "../components/App";
 export { default as About } from "./About";
 export { default as AboutUs } from "./AboutUs";
 export { default as Demos } from "./Demos";
