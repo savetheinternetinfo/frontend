@@ -1,9 +1,9 @@
-import config from "../../config.json";
+import config from "../config.json";
 
 import React from "react";
-import { useStateValue } from "../../contexts/StateContext";
+import { useStateValue } from "../contexts/StateContext";
 import { Link } from "react-router-dom";
-import NavIcon from "./NavIcon";
+import NavIcon from "./common/NavIcon";
 function Footer() {
   const [{ translation }] = useStateValue();
   const { links } = config;

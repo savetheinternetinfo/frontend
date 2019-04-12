@@ -8,8 +8,8 @@ import { StateProvider } from "../contexts/StateContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Logo from "../assets/favicon.ico";
-import Header from "./common/Header";
-import Footer from "./common/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import LoadAnimation from "./common/LoadAnimation.jsx";
 import {
   Home,
