@@ -247,3 +247,33 @@ h3 {
 
 .leaflet-popup-content p i {
 }
+
+.langmenu-enter {
+  opacity: 0.01;
+}
+.langmenu-enter-active {
+  opacity: 1;
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+.langmenu-exit {
+  opacity: 0;
+}
+.langmenu-exit-active {
+  opacity: 0;
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+
+.mobilenav-enter {
+  opacity: 0;
+}
+.mobilenav-enter-active {
+  opacity: 1;
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}
+.mobilenav-exit {
+  opacity: 1;
+}
+.mobilenav-exit-active {
+  opacity: 0;
+  transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+}

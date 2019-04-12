@@ -98,7 +98,6 @@ function Navbar() {
           />
         </div>
       </CSSTransition>
-
       <FlagMenu />
     </nav>
   );

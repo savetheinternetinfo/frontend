@@ -3,8 +3,8 @@ import parse from "html-react-parser";
 
 import config from "../config.json";
 import { useStateValue } from "../contexts/StateContext";
-import Button from "./common/Button";
-import SocialButton from "./common/SocialButton";
+import Button from "../components/common/Button";
+import SocialButton from "../components/common/SocialButton";
 
 function Home() {
   const [{ translation }] = useStateValue();

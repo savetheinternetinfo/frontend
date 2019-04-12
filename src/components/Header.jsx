@@ -1,14 +1,14 @@
-import config from "../../config.json";
+import config from "../config.json";
 import React from "react";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
-import { useStateValue } from "../../contexts/StateContext";
+import { useStateValue } from "../contexts/StateContext";
 import { Element as ScrollElement } from "react-scroll";
 
-import Button from "./Button";
-import SocialButton from "./SocialButton";
-import Navbar from "./Navbar";
-import heroVideo from "../../assets/hero.mp4";
+import Button from "./common/Button";
+import SocialButton from "./common/SocialButton";
+import Navbar from "./common/Navbar";
+import heroVideo from "../assets/hero.mp4";
 
 function Header(props) {
   const [{ translation }] = useStateValue();
@@ -49,8 +49,7 @@ function Header(props) {
         </div>
       )}
       {props.petition !== false && (
-
-        <Button text={translation["sign_petition"]} href={links.petition} />   
+        <Button text={translation["sign_petition"]} href={links.petition} />
       )}
       <div className="absolute z-video pin-t pin-l h-full w-full overflow-hidden">
         <video

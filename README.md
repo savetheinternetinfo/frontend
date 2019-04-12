@@ -32,6 +32,7 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 
 **Dependencies**:
 
+- [@fullhuman/postcss-purgecss](https://ghub.io/@fullhuman/postcss-purgecss): PostCSS plugin for PurgeCSS
 - [autoprefixer](https://ghub.io/autoprefixer): Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website
 - [axios](https://ghub.io/axios): Promise based HTTP client for the browser and node.js
 - [concurrently](https://ghub.io/concurrently): Run commands concurrently
@@ -47,6 +48,7 @@ Members of the parliament are the only ones that can stand in the way of bad cop
 - [react-dom](https://ghub.io/react-dom): React package for working with the DOM.
 - [react-feather](https://ghub.io/react-feather): React component for Feather icons
 - [react-flag-kit](https://ghub.io/react-flag-kit): FlagKit for React
+- [react-google-recaptcha](https://ghub.io/react-google-recaptcha): React Component Wrapper for Google reCAPTCHA
 - [react-helmet](https://ghub.io/react-helmet): A document head manager for React
 - [react-image-lightbox](https://ghub.io/react-image-lightbox): A lightbox component for React.js
 - [react-leaflet](https://ghub.io/react-leaflet): React components for Leaflet maps
