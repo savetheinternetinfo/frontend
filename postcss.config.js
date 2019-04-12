@@ -2,7 +2,7 @@ const tailwindcss = require("tailwindcss");
 const purgecss = require("@fullhuman/postcss-purgecss")({
   content: ["**/*.jsx", "public/index.html"],
   css: ["src/css/index.css"],
-  whitelist: ["bg-blue-dark"],
+  whitelistPatterns: [/blue-dark$/, /langmenu/, /mobilenav/, /leaflet/],
   extractors: [
     {
       extractor: class {
