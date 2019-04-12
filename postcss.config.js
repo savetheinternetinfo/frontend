@@ -2,7 +2,7 @@ const tailwindcss = require("tailwindcss");
 const purgecss = require("@fullhuman/postcss-purgecss")({
   content: ["**/*.jsx", "public/index.html"],
   css: ["src/css/index.css"],
-  whitelistPatterns: [/blue-dark$/],
+  whitelist: ["bg-blue-dark"],
   extractors: [
     {
       extractor: class {
@@ -18,7 +18,16 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
 module.exports = {
   plugins: [
     tailwindcss("./tailwind.js"),
-    require("cssnano")({ preset: "default" }),
+    require("cssnano")({
+      preset: [
+        "default",
+        {
+          discardComments: {
+            removeAll: true
+          }
+        }
+      ]
+    }),
     require("autoprefixer"),
     ...(process.env.NODE_ENV === "production" ? [purgecss] : [])
   ]
