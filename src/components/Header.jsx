@@ -46,6 +46,7 @@ function Header(props) {
           <SocialButton icon="Twitter" link={links.twitter} />
           <SocialButton icon="Instagram" link={links.instagram} />
           <SocialButton icon="Youtube" link={links.youtube} />
+          <SocialButton icon="Reddit" link={links.reddit} />
         </div>
       )}
       {props.petition !== false && (

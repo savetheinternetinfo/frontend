@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as Feather from "react-feather";
+import { ReactComponent as Reddit } from "../../assets/reddit.svg";
 
 function NavIcon({ icon, route, url, size, className, onClick }) {
   const IconComponent = Feather[icon];
@@ -13,7 +14,11 @@ function NavIcon({ icon, route, url, size, className, onClick }) {
     className;
   return typeof route === "undefined" ? (
     <a href={url} style={styles} className={classes} onClick={onClick}>
-      <IconComponent size={iconSize} />
+      {icon !== "Reddit" ? (
+        <IconComponent size={iconSize} />
+      ) : (
+        <Reddit className="w-6 h-6 stroke-current hover:text-${hoverColor}" />
+      )}
     </a>
   ) : (
     <Link to={route} style={styles} className={classes} onClick={onClick}>

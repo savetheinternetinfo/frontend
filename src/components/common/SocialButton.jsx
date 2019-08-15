@@ -1,5 +1,6 @@
 import React from "react";
 import * as Feather from "react-feather";
+import { ReactComponent as Reddit } from "../../assets/reddit.svg";
 
 function SocialButton({
   icon,
@@ -25,13 +26,24 @@ function SocialButton({
           width: "2.25rem"
         }}
       >
-        <IconComponent
-          className={classes}
-          style={{
-            marginTop: "0.5rem"
-          }}
-          size={18}
-        />
+        {icon !== "Reddit" ? (
+          <IconComponent
+            className={classes}
+            style={{
+              marginTop: "0.5rem"
+            }}
+            size={18}
+          />
+        ) : (
+          <div
+            className={
+              classes +
+              " mt-1 w-6 h-6 ml-1 stroke-current hover:text-${hoverColor}"
+            }
+          >
+            <Reddit />
+          </div>
+        )}
       </div>
     </a>
   );

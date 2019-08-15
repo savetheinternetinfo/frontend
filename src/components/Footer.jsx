@@ -56,6 +56,7 @@ function Footer() {
             <br />
             <br />
             <NavIcon size={18} icon="GitHub" url={links.github} />
+            <NavIcon size={18} icon="Reddit" url={links.reddit} />
           </div>
         </div>
       </div>
