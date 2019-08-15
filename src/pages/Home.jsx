@@ -110,6 +110,14 @@ function Home() {
                 hoverBackground="orange"
                 link={links.youtube}
               />
+              <SocialButton
+                icon="Reddit"
+                color="orange"
+                hoverColor="blue-dark"
+                hoverBorder="orange"
+                hoverBackground="orange"
+                link={links.youtube}
+              />
             </div>
           </div>
         </div>
