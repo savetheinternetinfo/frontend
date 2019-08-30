@@ -21,7 +21,8 @@ import {
   Privacy,
   Contact,
   PressReview,
-  Blackout
+  Blackout,
+  Documents
 } from "../pages";
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
                 <Route exact path="/aboutus" component={AboutUs} />
                 <Route exact path="/gallery" component={Gallery} />
                 <Route exact path="/demos" component={Demos} />
+                <Route exact path="/documents" component={Documents} />
                 <Route exact path="/imprint" component={Imprint} />
                 <Route exact path="/privacy" component={Privacy} />
                 <Route exact path="/contact" component={Contact} />
