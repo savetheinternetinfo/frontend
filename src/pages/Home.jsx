@@ -61,7 +61,7 @@ function Home() {
         <div className="my-10 lg:flex lg:text-center">
           <div className="lg:pr-12 flex-1">
             <h2>{translation.home_signthepetition_title}</h2>
-            <p>{translation.home_signthepetition_text}</p>
+            <p>{translation.home_signthepetition_text && parse(translation.home_signthepetition_text)}</p>
             <div className="text-center my-10">
               <Button
                 text={translation["sign_petition"]}
@@ -71,7 +71,7 @@ function Home() {
           </div>
           <div className="lg:px-12 lg:border-r lg:border-l border-blue flex-1">
             <h2>{translation.home_gotodemo_title}</h2>
-            <p>{translation.home_gotodemo_text}</p>
+            <p>{translation.home_gotodemo_text && parse(translation.home_gotodemo_text)}</p>
             <div className="text-center my-10">
               <Button
                 className="mt-4"
@@ -82,7 +82,7 @@ function Home() {
           </div>
           <div className="lg:pl-12 flex-1">
             <h2>{translation.home_informeveryone_title}</h2>
-            <p>{translation.home_informeveryone_text}</p>
+            <p>{translation.home_informeveryone_text && parse(translation.home_informeveryone_text)}</p>
             <div className="flex flex-row my-10 justify-center">
               <SocialButton
                 icon="Facebook"
