@@ -22,7 +22,10 @@ function Home() {
         <div className="container mx-auto px-6 md:flex">
           <div className="md:pr-12 md:border-r border-blue-dark flex-1">
             <h2>{translation.home_article11_title}</h2>
-            <p>{translation.home_article11_text}</p>
+            <p>
+              {translation.home_article11_text && 
+                 parse(translation.home_article11_text)}
+            </p>
             {/* <p>
               <a className="text-blue-dark" href="#">
                 mehr...
@@ -31,7 +34,10 @@ function Home() {
           </div>
           <div className="md:pl-12 flex-1 pb-6">
             <h2>{translation.home_article13_title}</h2>
-            <p>{translation.home_article13_text}</p>
+            <p>
+              {translation.home_article13_text && 
+                parse(translation.home_article13_text)}
+            </p>
             {/* <p>
               <a className="text-blue-dark" href="#">
                 mehr...
