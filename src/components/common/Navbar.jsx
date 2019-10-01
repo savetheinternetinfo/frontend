@@ -32,13 +32,13 @@ function Navbar() {
   }, [width]);
 
   useEffect(() => {
-    window.addEventListener("scroll", function(event) {
+    window.addEventListener("scroll", function (event) {
       // 490 is when bottom border of navbar matches with video height
       const scrolledPastVideo = window.scrollY > 490 ? true : false;
       setScrolledBelowVideo(scrolledPastVideo);
     });
     return () => {
-      window.removeEventListener("scroll", function(event) {
+      window.removeEventListener("scroll", function (event) {
         const scrolledPastVideo = window.scrollY > 490 ? true : false;
         setScrolledBelowVideo(scrolledPastVideo);
       });
@@ -95,6 +95,11 @@ function Navbar() {
             onClick={handleNavUrlClick}
             text={translation["sti_day"]}
             route="/demos"
+          />
+          <NavURL
+            onClick={handleNavUrlClick}
+            text={translation["documents_title"]}
+            route="/documents"
           />
         </div>
       </CSSTransition>
