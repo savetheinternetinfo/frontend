@@ -41,7 +41,8 @@
     "language": "cd src/test/languages && node bundler.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postsetup": "npm i -g nodemon"
+    "postsetup": "npm i -g nodemon",
+    "start_nocss": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
