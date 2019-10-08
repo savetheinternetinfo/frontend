@@ -45,8 +45,10 @@ function Supporters() {
                 key={idx}
                 className="gallery-item w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
               >
-                <div className="w-full text-center mt-4 break-word overflow-x-hidden">
-                  {supporter.name}
+                <div className="block bg-blue rounded m-4 p-4">
+                  <div className="w-full text-center break-word overflow-x-hidden">
+                    {supporter.name}
+                  </div>
                 </div>
               </div>
             ))}
