@@ -96,6 +96,11 @@ function Navbar() {
             text={translation["sti_day"]}
             route="/demos"
           />
+          <NavURL
+            onClick={handleNavUrlClick}
+            text={translation["open_letter"]}
+            route="/open-letter"
+          />
         </div>
       </CSSTransition>
       <FlagMenu />
