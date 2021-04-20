@@ -55,11 +55,13 @@ function Demos() {
       axios(config.api.supporters)
         .then(res => {
           setSupporters(
-            res.data.supporter.map(supporter => {
-              supporter.image =
-                "https://supporters.savetheinternet.info" + supporter.image;
-              return supporter;
-            })
+            res.data.supporter
+              .filter(e => typeof e.image !== "undefined")
+              .map(supporter => {
+                supporter.image =
+                  "https://supporters.savetheinternet.info" + supporter.image;
+                return supporter;
+              })
           );
         })
         .catch(err => {
@@ -96,9 +98,7 @@ function Demos() {
         feature.event.facebookEvent.length > 0
       ) {
         popupText += `<div class="mt-2 ml-6">
-          <a href="${
-            feature.event.facebookEvent
-          }" target="_blank">Mehr Informationen</a>
+          <a href="${feature.event.facebookEvent}" target="_blank">Mehr Informationen</a>
         </div>`;
       }
 
