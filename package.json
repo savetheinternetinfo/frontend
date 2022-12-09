@@ -9,7 +9,7 @@
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "cssnano": "^4.1.10",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "formik": "^1.5.1",
     "html-react-parser": "^0.6.2",
     "leaflet": "^1.4.0",
